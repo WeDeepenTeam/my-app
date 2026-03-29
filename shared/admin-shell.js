@@ -13,6 +13,12 @@ import { initNavTabList, scrollActiveIntoView } from './tab-utils.js';
 import { getEnabledFeatures } from './feature-registry.js';
 
 // =============================================
+// BASE PATH (for GitHub Pages subdirectory hosting)
+// =============================================
+// Detect base path from current URL: /my-app/spaces/admin/foo.html → /my-app
+const BASE_PATH = window.location.pathname.replace(/\/(spaces|residents|associates|login|vendor)\/.*$/, '') || '';
+
+// =============================================
 // TAB DEFINITIONS
 // =============================================
 // Permission keys for staff/admin section detection
@@ -81,7 +87,7 @@ export const ALL_ADMIN_TABS = [
   { id: 'brand', label: 'Brand', href: 'brand.html', permission: 'view_settings', section: 'admin' },
   { id: 'accounting', label: 'Accounting', href: 'accounting.html', permission: 'view_accounting', section: 'admin' },
   { id: 'testdev', label: 'Test Dev', href: 'testdev.html', permission: 'view_settings', section: 'admin' },
-  { id: 'lifeofpai', label: 'Life of PAI', href: '/residents/lifeofpaiadmin.html', permission: 'admin_pai_settings', section: 'admin', feature: 'pai' },
+  { id: 'lifeofpai', label: 'Life of PAI', href: `${BASE_PATH}/residents/lifeofpaiadmin.html`, permission: 'admin_pai_settings', section: 'admin', feature: 'pai' },
   { id: 'openclaw', label: 'AlpaClaw', href: 'ai-admin.html', permission: 'view_openclaw', section: 'admin', feature: 'pai' },
   // DevControl is a top-level nav item (in context switcher), not an admin sub-tab
 ];
@@ -224,7 +230,7 @@ function renderUserInfo(el, appUser, profileHref) {
     </button>
     <div class="user-menu-dropdown hidden">
       <a href="${profileHref}" class="user-menu-item">Profile</a>
-      <a href="/residents/lighting.html" class="user-menu-item">Intranet</a>
+      <a href="${BASE_PATH}/residents/lighting.html" class="user-menu-item">Intranet</a>
       <button class="user-menu-item user-menu-signout" id="headerSignOutBtn">Sign Out</button>
     </div>`;
 
@@ -275,22 +281,22 @@ async function renderContextSwitcher(userRole, activeSection = 'staff') {
   const enabledFeatures = await getEnabledFeatures();
   const firstStaffTab = ALL_ADMIN_TABS.find(t => t.section === 'staff' && (!t.feature || enabledFeatures[t.feature]) && hasAnyPermission(t.permission));
   const firstAdminTab = ALL_ADMIN_TABS.find(t => t.section === 'admin' && (!t.feature || enabledFeatures[t.feature]) && hasAnyPermission(t.permission));
-  const staffHref = firstStaffTab ? (firstStaffTab.href.startsWith('/') ? firstStaffTab.href : `/spaces/admin/${firstStaffTab.href}`) : '/spaces/admin/';
-  const adminHref = firstAdminTab ? (firstAdminTab.href.startsWith('/') ? firstAdminTab.href : `/spaces/admin/${firstAdminTab.href}`) : '/spaces/admin/users.html';
+  const staffHref = firstStaffTab ? (firstStaffTab.href.startsWith('/') || firstStaffTab.href.startsWith(BASE_PATH) ? firstStaffTab.href : `${BASE_PATH}/spaces/admin/${firstStaffTab.href}`) : `${BASE_PATH}/spaces/admin/`;
+  const adminHref = firstAdminTab ? (firstAdminTab.href.startsWith('/') || firstAdminTab.href.startsWith(BASE_PATH) ? firstAdminTab.href : `${BASE_PATH}/spaces/admin/${firstAdminTab.href}`) : `${BASE_PATH}/spaces/admin/users.html`;
 
   const DEVICE_PERMISSION_KEYS = ['view_lighting', 'view_music', 'view_cameras', 'view_climate', 'view_laundry', 'view_cars', 'view_oven', 'view_glowforge', 'view_printer'];
   const hasDevicePerms = hasAnyPermission(...DEVICE_PERMISSION_KEYS);
   const hasAssociatePerms = hasAnyPermission('clock_in_out', 'view_own_hours');
 
   const tabs = [];
-  if (hasDevicePerms) tabs.push({ id: 'devices', label: 'Devices', href: '/residents/devices.html' });
-  tabs.push({ id: 'resident', label: 'Residents', href: '/residents/' });
+  if (hasDevicePerms) tabs.push({ id: 'devices', label: 'Devices', href: `${BASE_PATH}/residents/devices.html` });
+  tabs.push({ id: 'resident', label: 'Residents', href: `${BASE_PATH}/residents/` });
   if (hasAssociatePerms || ['staff', 'admin', 'oracle'].includes(userRole)) {
-    tabs.push({ id: 'associate', label: 'Associates', href: '/associates/worktracking.html' });
+    tabs.push({ id: 'associate', label: 'Associates', href: `${BASE_PATH}/associates/worktracking.html` });
   }
   if (hasStaffPerms) tabs.push({ id: 'staff', label: 'Staff', href: staffHref });
   if (hasAdminPerms) tabs.push({ id: 'admin', label: 'Admin', href: adminHref });
-  if (hasAdminPerms) tabs.push({ id: 'devcontrol', label: 'DevControl', href: '/spaces/admin/devcontrol.html' });
+  if (hasAdminPerms) tabs.push({ id: 'devcontrol', label: 'DevControl', href: `${BASE_PATH}/spaces/admin/devcontrol.html` });
 
   // Hide if only one tab (nothing to switch between)
   if (tabs.length <= 1) {
@@ -361,7 +367,7 @@ function renderAccessDenied(state, activeTab) {
       <div class="unauthorized-actions" style="flex-direction:column;align-items:stretch">
         <button id="requestAccessBtn" class="btn-secondary" style="background:var(--accent,#d4883a);color:#fff;border:none;padding:0.6rem 1rem;border-radius:8px;cursor:pointer;font-weight:600">Request Access</button>
         <div style="display:flex;gap:0.75rem;justify-content:center">
-          <a href="/spaces/" class="btn-secondary">View Public Spaces</a>
+          <a href="${BASE_PATH}/spaces/" class="btn-secondary">View Public Spaces</a>
           <button id="signOutBtn" class="btn-secondary">Sign Out</button>
         </div>
       </div>
@@ -373,7 +379,7 @@ function renderAccessDenied(state, activeTab) {
   if (signOutBtn) {
     signOutBtn.addEventListener('click', async () => {
       await signOut();
-      window.location.href = '/login/';
+      window.location.href = BASE_PATH + '/login/';
     });
   }
 
@@ -622,7 +628,7 @@ export async function initAdminPage({ activeTab, requiredRole = 'staff', require
       if (!pageContentShown) {
         const handleSignOut = async () => {
           await signOut();
-          window.location.href = '/login/';
+          window.location.href = BASE_PATH + '/login/';
         };
         document.getElementById('signOutBtn')?.addEventListener('click', handleSignOut);
         const userInfoEl = document.getElementById('userInfo') || document.getElementById('aapHeaderAuth');
@@ -654,7 +660,7 @@ export async function initAdminPage({ activeTab, requiredRole = 'staff', require
           console.warn('[admin-shell] Token refresh failed — redirecting to login');
           try { localStorage.removeItem('your-project-cached-auth'); } catch (e) { /* ignore */ }
           transitionBootState('redirecting');
-          window.location.href = '/login/?redirect=' + encodeURIComponent(window.location.pathname);
+          window.location.href = BASE_PATH + '/login/?redirect=' + encodeURIComponent(window.location.pathname);
           return;
         }
         onReady(state);
@@ -673,7 +679,7 @@ export async function initAdminPage({ activeTab, requiredRole = 'staff', require
       // Prevents disruptive redirects when Supabase session expires while
       // cached auth was keeping the page functional.
       transitionBootState('redirecting');
-      window.location.href = '/login/?redirect=' + encodeURIComponent(window.location.pathname);
+      window.location.href = BASE_PATH + '/login/?redirect=' + encodeURIComponent(window.location.pathname);
     }
   }
 

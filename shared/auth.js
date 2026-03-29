@@ -1,6 +1,9 @@
 // Authentication module with Google OAuth and email/password support
 import { supabase } from './supabase.js';
 
+// Base path for GitHub Pages subdirectory hosting
+const AUTH_BASE_PATH = window.location.pathname.replace(/\/(spaces|residents|associates|login|vendor|visiting|events|community|photos|contact|mistiq)\/.*$/, '').replace(/\/$/, '') || '';
+
 // Timeout configuration
 const AUTH_TIMEOUT_MS = 15000; // 15 seconds for auth operations
 const INIT_TIMEOUT_MS = 10000; // 10 seconds for initial auth check
@@ -671,7 +674,7 @@ function notifyListeners() {
  * @param {string} redirectUrl - URL to redirect to if not authenticated
  * @returns {boolean} True if authenticated
  */
-export function requireAuth(redirectUrl = '/login/') {
+export function requireAuth(redirectUrl = AUTH_BASE_PATH + '/login/') {
   const state = getAuthState();
 
   if (!state.isAuthenticated) {
@@ -689,12 +692,12 @@ export function requireAuth(redirectUrl = '/login/') {
  * @param {string} redirectUrl - URL to redirect to if unauthorized
  * @returns {boolean} True if user has required role
  */
-export function requireRole(role, redirectUrl = '/spaces/') {
+export function requireRole(role, redirectUrl = AUTH_BASE_PATH + '/spaces/') {
   const state = getAuthState();
 
   if (!state.isAuthenticated) {
     const currentPath = window.location.pathname;
-    window.location.href = '/login/?redirect=' + encodeURIComponent(currentPath);
+    window.location.href = AUTH_BASE_PATH + '/login/?redirect=' + encodeURIComponent(currentPath);
     return false;
   }
 

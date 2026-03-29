@@ -28,9 +28,9 @@ const IMAGES = {
   heroPropertys: 'https://images.squarespace-cdn.com/content/v1/6213d804273001551ffe5b8c/4e23696e-623b-4621-8f3a-c223a521131b/P1020387.jpeg',
 };
 
-// Base path for links (root on YOUR_DOMAIN)
-// Change this if deploying to a different subdirectory
-const BASE_PATH = '';
+// Base path for links — auto-detect for GitHub Pages subdirectory hosting
+// /my-app/spaces/admin/foo.html → /my-app
+const BASE_PATH = window.location.pathname.replace(/\/(spaces|residents|associates|login|vendor|visiting|events|community|photos|contact|mistiq)\/.*$/, '').replace(/\/$/, '') || '';
 
 // Navigation links - unified across all pages
 // Logo clicks to Home, so Home is not in the nav
@@ -408,7 +408,7 @@ function renderUserMenuHTML(appUser, profileHref) {
  * @param {string} options.signInLinkId - ID of Sign In link to hide when signed in
  * @param {string} [options.profileHref='/residents/profile.html'] - Profile link for dropdown
  */
-export async function initPublicHeaderAuth({ authContainerId, signInLinkId, profileHref = '/residents/profile.html' }) {
+export async function initPublicHeaderAuth({ authContainerId, signInLinkId, profileHref = `${BASE_PATH}/residents/profile.html` }) {
   const authEl = document.getElementById(authContainerId);
   const signInEl = document.getElementById(signInLinkId);
   if (!authEl) return;
@@ -444,7 +444,7 @@ export async function initPublicHeaderAuth({ authContainerId, signInLinkId, prof
         // Bind mobile sign out
         document.getElementById('mobileSignOutBtn')?.addEventListener('click', async () => {
           await signOut();
-          window.location.href = '/login/?redirect=' + encodeURIComponent(window.location.pathname);
+          window.location.href = BASE_PATH + '/login/?redirect=' + encodeURIComponent(window.location.pathname);
         });
       }
     }
@@ -465,7 +465,7 @@ export async function initPublicHeaderAuth({ authContainerId, signInLinkId, prof
     }
     authEl.querySelector('#publicHeaderSignOutBtn')?.addEventListener('click', async () => {
       await signOut();
-      window.location.href = '/login/?redirect=' + encodeURIComponent(window.location.pathname);
+      window.location.href = BASE_PATH + '/login/?redirect=' + encodeURIComponent(window.location.pathname);
     });
   } else {
     authEl.innerHTML = '';
