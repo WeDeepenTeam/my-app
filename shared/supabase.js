@@ -1,6 +1,6 @@
 // Supabase client configuration with auth support
-const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL = 'https://oycfonjaufdihuwjecxu.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_8LKnMjQWMhjC9O9ctxtZVw_eo1pe15G';
 
 // Wait for Supabase to be available (handles race condition with script loading)
 function waitForSupabase(maxAttempts = 50) {
