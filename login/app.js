@@ -4,6 +4,9 @@ import { initAuth, signInWithGoogle, signInWithPassword, signUpWithPassword, sig
 
 const CACHED_AUTH_KEY = 'your-project-cached-auth';
 
+// Detect base path from current URL (e.g. /my-app/ on GitHub Pages)
+const BASE_PATH = window.location.pathname.replace(/\/login\/?.*$/, '') || '';
+
 // DOM elements
 const loginContent = document.getElementById('loginContent');
 const loadingContent = document.getElementById('loadingContent');
@@ -26,7 +29,7 @@ const signUpPane = document.getElementById('signUpPane');
 const urlParams = new URLSearchParams(window.location.search);
 const redirectUrl = urlParams.get('redirect')
   || localStorage.getItem('your-project-login-redirect')
-  || '/spaces/admin/';
+  || BASE_PATH + '/spaces/admin/';
 
 console.log('[LOGIN]', 'Page loaded', { redirectUrl, href: window.location.href });
 
@@ -76,11 +79,11 @@ function getRedirectTarget(role) {
   let target = redirectUrl;
   // Public users always go to consumer spaces view
   if (['public'].includes(role)) {
-    target = '/spaces/';
+    target = BASE_PATH + '/spaces/';
   }
   // Resident/associate users go to resident area by default (not admin)
-  else if (target === '/spaces/admin/' && ['resident', 'associate'].includes(role)) {
-    target = '/residents/cameras.html';
+  else if (target.endsWith('/spaces/admin/') && ['resident', 'associate'].includes(role)) {
+    target = BASE_PATH + '/residents/cameras.html';
   }
   return target;
 }
