@@ -7,8 +7,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "claude-sessions",
-      "database_id": "YOUR_DATABASE_ID_HERE"
+      "database_name": "wedeepen-sessions",
+      "database_id": "18c59225-c730-4809-afec-e700f41d6716"
     }
   ]
 }

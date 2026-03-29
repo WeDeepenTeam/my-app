@@ -9,7 +9,7 @@ import { getAuthState } from '../../shared/auth.js';
 // ═══════════════════════════════════════════════════════════
 // CONFIG — project-specific values
 // ═══════════════════════════════════════════════════════════
-const SESSIONS_API = 'https://claude-sessions.wedeepen.workers.dev';
+const SESSIONS_API = 'https://claude-sessions.team-68a.workers.dev';
 const SESSIONS_TOKEN = 'wedeepen-sessions-2026';
 const PROJECT_FILTER = 'cwdapp'; // Only show this project's sessions
 const GH_OWNER = 'wedeepenteam';

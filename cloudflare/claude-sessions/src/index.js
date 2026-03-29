@@ -2,7 +2,7 @@
 // Stores and retrieves Claude Code session transcripts.
 // Auth: Bearer token — change AUTH_TOKEN below before deploying.
 
-const AUTH_TOKEN = 'CHANGE_ME_TO_A_SECRET';
+const AUTH_TOKEN = 'wedeepen-sessions-2026';
 
 export default {
   async fetch(request, env) {
