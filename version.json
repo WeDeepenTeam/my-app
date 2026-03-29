@@ -1,12 +1,12 @@
 {
-  "version": "v260329.01 4:46p",
-  "release": 1,
-  "sha": "4f08d56",
-  "fullSha": "4f08d564532017b50823b028113c59a3d53917e9",
+  "version": "v260329.02 5:29p",
+  "release": 2,
+  "sha": "3e6c29d",
+  "fullSha": "3e6c29d07b95c4f5bfd4f894b7b22d2dd8ed172e",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-29T11:46:07-05:00",
-  "commits": []
+  "pushedAt": "2026-03-29T12:28:48-05:00",
+  "commits": [{"sha":"3e6c29d","message":"Test page: show Christina on homepage","author":"Christina Weber"}]
 }
