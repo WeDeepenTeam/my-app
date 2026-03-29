@@ -1,12 +1,12 @@
 {
-  "version": "v260329.09 7:53p",
-  "release": 9,
-  "sha": "065044e",
-  "fullSha": "065044e661d77bd99b2c6a4ba19253d69ac23b1f",
+  "version": "v260329.10 9:00p",
+  "release": 10,
+  "sha": "0f24fe3",
+  "fullSha": "0f24fe3de06a0b8752528286ba2a88f8bec13248",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-29T14:53:34-05:00",
-  "commits": [{"sha":"065044e","message":"Fix: auto-detect base path for GitHub Pages subdirectory redirects","author":"Christina Weber"}]
+  "pushedAt": "2026-03-29T16:00:26-05:00",
+  "commits": [{"sha":"0f24fe3","message":"Add BASE_PATH to admin-shell, auth, and site-components for GitHub Pages subdirectory","author":"Christina Weber"}]
 }
