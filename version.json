@@ -1,12 +1,12 @@
 {
-  "version": "v260329.03 7:03p",
-  "release": 3,
-  "sha": "9bc10d9",
-  "fullSha": "9bc10d992827c6ab39bf02ff160a8ebf19278fcc",
+  "version": "v260329.04 7:15p",
+  "release": 4,
+  "sha": "73304c2",
+  "fullSha": "73304c2e92aa33771ee4a68efc6b3e5481baee4e",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-29T14:03:32-05:00",
-  "commits": [{"sha":"9bc10d9","message":"Homepage: WeDeepen design — dark theme, hero, events, podcast, mentorship","author":"Christina Weber"}]
+  "pushedAt": "2026-03-29T14:14:55-05:00",
+  "commits": [{"sha":"73304c2","message":"Login: WeDeepen dark theme + wire real Supabase credentials","author":"Christina Weber"}]
 }
