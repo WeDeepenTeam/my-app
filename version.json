@@ -1,0 +1,12 @@
+{
+  "version": "v260328.05 8:47p",
+  "release": 5,
+  "sha": "2717504",
+  "fullSha": "27175049807bda49276689df69b91199c83db614",
+  "actor": "rsonnad",
+  "source": "github-main-push",
+  "model": "ci",
+  "machine": "runnervmrg6be",
+  "pushedAt": "2026-03-28T15:47:39-05:00",
+  "commits": [{"sha":"2717504","message":"refactor: consolidate upgrade files into /infra/ with infra- prefix","author":"Rahul"}]
+}
