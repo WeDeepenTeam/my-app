@@ -289,11 +289,6 @@ async function renderContextSwitcher(userRole, activeSection = 'staff') {
   const hasAssociatePerms = hasAnyPermission('clock_in_out', 'view_own_hours');
 
   const tabs = [];
-  if (hasDevicePerms) tabs.push({ id: 'devices', label: 'Devices', href: `${BASE_PATH}/residents/devices.html` });
-  tabs.push({ id: 'resident', label: 'Residents', href: `${BASE_PATH}/residents/` });
-  if (hasAssociatePerms || ['staff', 'admin', 'oracle'].includes(userRole)) {
-    tabs.push({ id: 'associate', label: 'Associates', href: `${BASE_PATH}/associates/worktracking.html` });
-  }
   if (hasStaffPerms) tabs.push({ id: 'staff', label: 'Staff', href: staffHref });
   if (hasAdminPerms) tabs.push({ id: 'admin', label: 'Admin', href: adminHref });
   if (hasAdminPerms) tabs.push({ id: 'devcontrol', label: 'DevControl', href: `${BASE_PATH}/spaces/admin/devcontrol.html` });

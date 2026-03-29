@@ -34,14 +34,7 @@ const BASE_PATH = window.location.pathname.replace(/\/(spaces|residents|associat
 
 // Navigation links - unified across all pages
 // Logo clicks to Home, so Home is not in the nav
-const NAV_LINKS = [
-  { text: 'Visiting', href: `${BASE_PATH}/visiting/` },
-  { text: 'Rentals', href: `${BASE_PATH}/spaces/` },
-  { text: 'Events', href: `${BASE_PATH}/events/` },
-  { text: 'Community', href: `${BASE_PATH}/community/` },
-  { text: 'Photos', href: `${BASE_PATH}/photos/` },
-  { text: 'Contact', href: `${BASE_PATH}/contact/` },
-];
+const NAV_LINKS = [];
 
 // Mistiq link - only shown on Mistiq pages
 const MISTIQ_LINK = { text: 'Mistiq', href: `${BASE_PATH}/mistiq/` };
