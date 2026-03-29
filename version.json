@@ -1,12 +1,12 @@
 {
-  "version": "v260329.07 7:38p",
-  "release": 7,
-  "sha": "a89fdd1",
-  "fullSha": "a89fdd1eab21d7ade1084951f1446d04f377145e",
+  "version": "v260329.08 7:42p",
+  "release": 8,
+  "sha": "e74dc48",
+  "fullSha": "e74dc486f3d78f1bbdbd57044e6525b6df409a69",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-29T14:38:27-05:00",
-  "commits": [{"sha":"a89fdd1","message":"Fix login: always show form, add JS fallback for module errors","author":"Christina Weber"}]
+  "pushedAt": "2026-03-29T14:41:59-05:00",
+  "commits": [{"sha":"e74dc48","message":"Fix OAuth redirect: use current URL path instead of origin-only","author":"Christina Weber"}]
 }
