@@ -1,12 +1,12 @@
 {
-  "version": "v260330.10 8:14p",
-  "release": 10,
-  "sha": "1db2ae3",
-  "fullSha": "1db2ae3fbdcedc8c691a3014f527c086845b228d",
+  "version": "v260330.11 8:15p",
+  "release": 11,
+  "sha": "e6c4d76",
+  "fullSha": "e6c4d7694c9bf018d907f10ced586d36c1aad0b0",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-30T15:14:29-05:00",
-  "commits": [{"sha":"1db2ae3","message":"Update about: curated dating experience, collaborates (not trained) with mentors","author":"Christina Weber"}]
+  "pushedAt": "2026-03-30T15:15:37-05:00",
+  "commits": [{"sha":"e6c4d76","message":"Fix: remove duplicate Beyond in conference name","author":"Christina Weber"}]
 }
