@@ -10,7 +10,9 @@ on:
 
 jobs:
   bump:
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: >-
+      github.repository == 'WeDeepenTeam/my-app' &&
+      !contains(github.event.head_commit.message, '[skip ci]')
     runs-on: ubuntu-latest
     concurrency:
       group: version-main-sequence
@@ -33,7 +35,8 @@ jobs:
 
       - name: Bump version
         env:
-          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           RELEASE_COMPARE_FROM_SHA: ${{ github.event.before }}
           RELEASE_COMPARE_TO_SHA: ${{ github.sha }}
           RELEASE_PUSH_SHA: ${{ github.sha }}

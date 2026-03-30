@@ -10,7 +10,6 @@
 set -euo pipefail
 
 # ── helpers ──────────────────────────────────────────────────────────
-sql_esc() { printf "%s" "$1" | sed "s/'/''/g"; }
 json_esc() { printf "%s" "$1" | sed 's/\\/\\\\/g; s/"/\\"/g'; }
 
 # ── parse args / env ─────────────────────────────────────────────────
@@ -31,23 +30,14 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-# ── resolve psql (optional — offline mode if no DB) ──────────────────
-PSQL=""
-DB_URL="${SUPABASE_DB_URL:-}"
+# ── resolve Supabase REST API (optional — offline mode if no URL) ────
+SB_URL="${SUPABASE_URL:-}"
+SB_KEY="${SUPABASE_SERVICE_ROLE_KEY:-}"
 OFFLINE_MODE=false
 
-if [ -z "$DB_URL" ]; then
+if [ -z "$SB_URL" ] || [ -z "$SB_KEY" ]; then
   OFFLINE_MODE=true
-  echo "INFO: SUPABASE_DB_URL not set — running in offline mode (no DB recording)"
-else
-  if [ -x "/opt/homebrew/opt/libpq/bin/psql" ]; then
-    PSQL="/opt/homebrew/opt/libpq/bin/psql"
-  elif command -v psql &>/dev/null; then
-    PSQL="psql"
-  else
-    OFFLINE_MODE=true
-    echo "INFO: psql not found — running in offline mode (no DB recording)"
-  fi
+  echo "INFO: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY not set — running in offline mode (no DB recording)"
 fi
 
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -106,6 +96,31 @@ fi
 
 COMMIT_COUNT=$(echo "$COMMITS_FOR_DB" | python3 -c "import sys,json;print(len(json.loads(sys.stdin.read())))" 2>/dev/null || echo 0)
 
+# ── helper: call Supabase REST API RPC ───────────────────────────────
+sb_rpc() {
+  local func_name="$1"
+  local payload="$2"
+  curl -sf -X POST "${SB_URL}/rest/v1/rpc/${func_name}" \
+    -H "apikey: ${SB_KEY}" \
+    -H "Authorization: Bearer ${SB_KEY}" \
+    -H "Content-Type: application/json" \
+    -H "Prefer: return=representation" \
+    -d "$payload"
+}
+
+# ── helper: PATCH a table via Supabase REST API ──────────────────────
+sb_patch() {
+  local table="$1"
+  local filter="$2"
+  local payload="$3"
+  curl -sf -X PATCH "${SB_URL}/rest/v1/${table}?${filter}" \
+    -H "apikey: ${SB_KEY}" \
+    -H "Authorization: Bearer ${SB_KEY}" \
+    -H "Content-Type: application/json" \
+    -H "Prefer: return=minimal" \
+    -d "$payload"
+}
+
 # ── 1) record release event ──────────────────────────────────────────
 if [ "$OFFLINE_MODE" = true ]; then
   # Offline: generate version locally from date + sequence
@@ -129,41 +144,51 @@ if [ "$OFFLINE_MODE" = true ]; then
   R_ACT="$ACTOR"
   R_SRC="$SOURCE"
 else
-  # Online: record in DB
-  META="{\"workflow\":\"bump-version.sh\",\"commit_count\":$COMMIT_COUNT,\"commit_summaries\":$COMMITS_FOR_DB}"
-  ROW=$($PSQL "$DB_URL" -t -A --no-psqlrc -F $'\t' -c "
-    SELECT seq::text, display_version, pushed_at::text, actor_login, source
-    FROM record_release_event(
-      '$(sql_esc "$PUSH_SHA")',
-      '$(sql_esc "$BRANCH")',
-      NULLIF('$(sql_esc "$FROM_SHA")', ''),
-      NULLIF('$(sql_esc "$TO_SHA")', ''),
-      '$(sql_esc "$PUSHED_AT")'::timestamptz,
-      '$(sql_esc "$ACTOR")',
-      NULL,
-      '$(sql_esc "$SOURCE")',
-      NULLIF('$(sql_esc "$MODEL")', ''),
-      NULLIF('$(sql_esc "$MACHINE")', ''),
-      '$(sql_esc "$META")'::jsonb,
-      '$(sql_esc "$COMMITS_FOR_DB")'::jsonb
-    );
-  " | head -1)
+  # Online: record via Supabase REST API
+  META=$(python3 -c "
+import json, sys
+print(json.dumps({
+  'workflow': 'bump-version.sh',
+  'commit_count': $COMMIT_COUNT,
+  'commit_summaries': json.loads('''$COMMITS_FOR_DB''')
+}))
+" 2>/dev/null || echo '{}')
+
+  RPC_PAYLOAD=$(python3 -c "
+import json
+payload = {
+  'p_push_sha': '''$(json_esc "$PUSH_SHA")''',
+  'p_branch': '''$(json_esc "$BRANCH")''',
+  'p_from_sha': '''$(json_esc "$FROM_SHA")''' or None,
+  'p_to_sha': '''$(json_esc "$TO_SHA")''' or None,
+  'p_pushed_at': '''$(json_esc "$PUSHED_AT")''',
+  'p_actor_login': '''$(json_esc "$ACTOR")''',
+  'p_actor_name': None,
+  'p_source': '''$(json_esc "$SOURCE")''',
+  'p_model_code': '''$(json_esc "$MODEL")''' or None,
+  'p_machine_name': '''$(json_esc "$MACHINE")''' or None,
+  'p_meta': json.loads('''$META''') if '''$META''' != '{}' else {},
+  'p_commits': json.loads('''$COMMITS_FOR_DB''')
+}
+print(json.dumps(payload))
+")
+
+  ROW=$(sb_rpc "record_release_event" "$RPC_PAYLOAD")
 
   [ -z "$ROW" ] && { echo "ERROR: Failed to record release event" >&2; exit 1; }
 
-  SEQ=$(echo "$ROW"  | awk -F $'\t' '{print $1}')
-  VER=$(echo "$ROW"  | awk -F $'\t' '{print $2}')
-  R_AT=$(echo "$ROW" | awk -F $'\t' '{print $3}')
-  R_ACT=$(echo "$ROW"| awk -F $'\t' '{print $4}')
-  R_SRC=$(echo "$ROW"| awk -F $'\t' '{print $5}')
+  # Parse the response — RPC returns a single row or array with one element
+  SEQ=$(echo "$ROW" | python3 -c "import sys,json; r=json.loads(sys.stdin.read()); r=r[0] if isinstance(r,list) else r; print(r.get('seq',''))" 2>/dev/null || echo "")
+  VER=$(echo "$ROW" | python3 -c "import sys,json; r=json.loads(sys.stdin.read()); r=r[0] if isinstance(r,list) else r; print(r.get('display_version',''))" 2>/dev/null || echo "")
+  R_AT=$(echo "$ROW" | python3 -c "import sys,json; r=json.loads(sys.stdin.read()); r=r[0] if isinstance(r,list) else r; print(r.get('pushed_at',''))" 2>/dev/null || echo "")
+  R_ACT=$(echo "$ROW" | python3 -c "import sys,json; r=json.loads(sys.stdin.read()); r=r[0] if isinstance(r,list) else r; print(r.get('actor_login',''))" 2>/dev/null || echo "")
+  R_SRC=$(echo "$ROW" | python3 -c "import sys,json; r=json.loads(sys.stdin.read()); r=r[0] if isinstance(r,list) else r; print(r.get('source',''))" 2>/dev/null || echo "")
   [ -z "$R_AT" ]  && R_AT="$PUSHED_AT"
   [ -z "$R_ACT" ] && R_ACT="$ACTOR"
   [ -z "$R_SRC" ] && R_SRC="$SOURCE"
 
   # Keep legacy site_config in sync
-  $PSQL "$DB_URL" -t -A --no-psqlrc -c "
-    UPDATE site_config SET version = '$(sql_esc "$VER")', updated_at = now() WHERE id = 1;
-  " >/dev/null 2>&1 || true
+  sb_patch "site_config" "id=eq.1" "{\"version\":\"$(json_esc "$VER")\"}" 2>/dev/null || true
 
   # Backfill deployed_version for feature requests whose commit is in this push
   if [ -n "$COMMITS_FOR_DB" ] && [ "$COMMITS_FOR_DB" != "[]" ]; then
@@ -176,13 +201,8 @@ for c in commits:
     if [ -n "$SHAS" ]; then
       while IFS= read -r sha; do
         [ -z "$sha" ] && continue
-        $PSQL "$DB_URL" -t -A --no-psqlrc -c "
-          UPDATE feature_requests
-          SET deployed_version = '$(sql_esc "$VER")',
-              status = CASE WHEN status = 'review' THEN 'completed' ELSE status END
-          WHERE commit_sha = '$(sql_esc "$sha")'
-            AND deployed_version IS NULL;
-        " >/dev/null 2>&1 || true
+        sb_patch "feature_requests" "commit_sha=eq.${sha}&deployed_version=is.null" \
+          "{\"deployed_version\":\"$(json_esc "$VER")\",\"status\":\"completed\"}" 2>/dev/null || true
       done <<< "$SHAS"
     fi
   fi
