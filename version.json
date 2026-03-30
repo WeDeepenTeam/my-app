@@ -1,12 +1,12 @@
 {
-  "version": "v260330.15 8:42p",
-  "release": 15,
-  "sha": "b2511b7",
-  "fullSha": "b2511b7f21b5ffb1869799592a3403314ba60eb9",
+  "version": "v260330.16 9:06p",
+  "release": 16,
+  "sha": "da77207",
+  "fullSha": "da77207d7cfd59adaae947b5c7be710c4e0f14b9",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-30T15:41:43-05:00",
-  "commits": [{"sha":"b2511b7","message":"Change curated dating experience to curated events","author":"Christina Weber"}]
+  "pushedAt": "2026-03-30T16:06:22-05:00",
+  "commits": [{"sha":"da77207","message":"Update services: new activations list, update collaborators","author":"Christina Weber"}]
 }
