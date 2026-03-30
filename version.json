@@ -1,12 +1,12 @@
 {
-  "version": "v260330.03 7:58p",
-  "release": 3,
-  "sha": "cd6478d",
-  "fullSha": "cd6478dbdc83f02bc0e38cd8be5f6e73206ac219",
+  "version": "v260330.04 8:00p",
+  "release": 4,
+  "sha": "56b5fb5",
+  "fullSha": "56b5fb518507bbd18cad2c2717fcb6ad7c61bfd1",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-30T14:58:10-05:00",
-  "commits": [{"sha":"cd6478d","message":"Update eyebrow: remove 'Relationship' from Coach title","author":"Christina Weber"}]
+  "pushedAt": "2026-03-30T15:00:30-05:00",
+  "commits": [{"sha":"56b5fb5","message":"Fix video section: rename to Featured Videos, Beyond Biohacking Conference","author":"Christina Weber"}]
 }
