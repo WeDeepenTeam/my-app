@@ -1,12 +1,12 @@
 {
-  "version": "v260330.01 7:44p",
-  "release": 1,
-  "sha": "ee915ac",
-  "fullSha": "ee915acfeff02c6814b93bf3a37592364be524fe",
+  "version": "v260330.02 7:57p",
+  "release": 2,
+  "sha": "8cecd35",
+  "fullSha": "8cecd3582a51a486e03af6f0f85dad7123ef0b54",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-30T14:44:23-05:00",
-  "commits": [{"sha":"ee915ac","message":"Add CNAME for christinalweber.com custom domain","author":"Christina Weber"}]
+  "pushedAt": "2026-03-30T14:57:39-05:00",
+  "commits": [{"sha":"8cecd35","message":"Fix: Ex-Rated is Peacock, not Bravo","author":"Christina Weber"}]
 }
