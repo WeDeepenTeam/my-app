@@ -1,12 +1,12 @@
 {
-  "version": "v260330.12 8:17p",
-  "release": 12,
-  "sha": "fea6c0d",
-  "fullSha": "fea6c0db8be11a6ca82a8a69aaac42fa7426a98a",
+  "version": "v260330.13 8:18p",
+  "release": 13,
+  "sha": "a236c60",
+  "fullSha": "a236c604873c36a489dd82649d0b32bd0098a506",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-30T15:17:08-05:00",
-  "commits": [{"sha":"fea6c0d","message":"Add favicon, sitemap.xml, robots.txt, theme-color for SEO","author":"Christina Weber"}]
+  "pushedAt": "2026-03-30T15:17:52-05:00",
+  "commits": [{"sha":"a236c60","message":"SEO: compress images, add semantic HTML (header/main/footer), favicon, sitemap, robots.txt","author":"Christina Weber"}]
 }
