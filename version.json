@@ -1,12 +1,12 @@
 {
-  "version": "v260330.07 8:05p",
-  "release": 7,
-  "sha": "b2c7dd0",
-  "fullSha": "b2c7dd04693e31f80b055a7abcfeb5314c364a15",
+  "version": "v260330.08 8:07p",
+  "release": 8,
+  "sha": "8653969",
+  "fullSha": "865396986dca0e49f326fb716fb7a5f0ede89ff6",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-30T15:05:31-05:00",
-  "commits": [{"sha":"b2c7dd0","message":"Add Peacock link for Ex-Rated episode 7","author":"Christina Weber"}]
+  "pushedAt": "2026-03-30T15:06:51-05:00",
+  "commits": [{"sha":"8653969","message":"Add Good Day LA Instagram link to press section","author":"Christina Weber"}]
 }
