@@ -1,12 +1,12 @@
 {
-  "version": "v260330.11 8:15p",
-  "release": 11,
-  "sha": "e6c4d76",
-  "fullSha": "e6c4d7694c9bf018d907f10ced586d36c1aad0b0",
+  "version": "v260330.12 8:17p",
+  "release": 12,
+  "sha": "fea6c0d",
+  "fullSha": "fea6c0db8be11a6ca82a8a69aaac42fa7426a98a",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-30T15:15:37-05:00",
-  "commits": [{"sha":"e6c4d76","message":"Fix: remove duplicate Beyond in conference name","author":"Christina Weber"}]
+  "pushedAt": "2026-03-30T15:17:08-05:00",
+  "commits": [{"sha":"fea6c0d","message":"Add favicon, sitemap.xml, robots.txt, theme-color for SEO","author":"Christina Weber"}]
 }
