@@ -1,12 +1,12 @@
 {
-  "version": "v260330.09 8:12p",
-  "release": 9,
-  "sha": "15f7cb9",
-  "fullSha": "15f7cb92ec05e5ffd3a2d5de821102770804d7ba",
+  "version": "v260330.10 8:14p",
+  "release": 10,
+  "sha": "1db2ae3",
+  "fullSha": "1db2ae3fbdcedc8c691a3014f527c086845b228d",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-30T15:11:47-05:00",
-  "commits": [{"sha":"15f7cb9","message":"Update credentials: ICF, Heart-Coaching (Annie Lalla), Hendricks, Ken Page, John Gray, 30+ years","author":"Christina Weber"}]
+  "pushedAt": "2026-03-30T15:14:29-05:00",
+  "commits": [{"sha":"1db2ae3","message":"Update about: curated dating experience, collaborates (not trained) with mentors","author":"Christina Weber"}]
 }
