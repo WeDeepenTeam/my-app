@@ -1,12 +1,12 @@
 {
-  "version": "v260330.17 9:46p",
-  "release": 17,
-  "sha": "959e289",
-  "fullSha": "959e2896ec9479f8ed815e7a8d47d212058c9905",
+  "version": "v260330.18 10:13p",
+  "release": 18,
+  "sha": "54dde93",
+  "fullSha": "54dde93045ca25b99a530ffdf974d8b90af1cff9",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-30T16:46:37-05:00",
-  "commits": [{"sha":"6a0b912","message":"Update Love Accelerator to 6-month","author":"Christina Weber"},{"sha":"959e289","message":"Merge remote-tracking branch 'origin/claude/dreamy-varahamihira'","author":"Christina Weber"}]
+  "pushedAt": "2026-03-30T17:13:12-05:00",
+  "commits": [{"sha":"54dde93","message":"fix: replace direct psql connections with Supabase REST API, add fork safety guard","author":"Christina Weber"}]
 }
