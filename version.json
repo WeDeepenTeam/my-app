@@ -1,12 +1,12 @@
 {
-  "version": "v260330.02 7:57p",
-  "release": 2,
-  "sha": "8cecd35",
-  "fullSha": "8cecd3582a51a486e03af6f0f85dad7123ef0b54",
+  "version": "v260330.03 7:58p",
+  "release": 3,
+  "sha": "cd6478d",
+  "fullSha": "cd6478dbdc83f02bc0e38cd8be5f6e73206ac219",
   "actor": "WeDeepenTeam",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmrg6be",
-  "pushedAt": "2026-03-30T14:57:39-05:00",
-  "commits": [{"sha":"8cecd35","message":"Fix: Ex-Rated is Peacock, not Bravo","author":"Christina Weber"}]
+  "pushedAt": "2026-03-30T14:58:10-05:00",
+  "commits": [{"sha":"cd6478d","message":"Update eyebrow: remove 'Relationship' from Coach title","author":"Christina Weber"}]
 }
