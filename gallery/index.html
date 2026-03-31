@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christina Weber — Photo Gallery | Speaker, Experience Designer & Event Photos</title>
+  <meta name="description" content="Photo gallery of Christina Weber speaking on stage, facilitating transformational events, and leading experiences at Love Immersion, Beyond Biohacking Conference, Solar Punk Summit, MediDating, and more. Available for keynotes, facilitation, and experience design.">
+  <meta name="keywords" content="Christina Weber photos, Christina Weber speaker, Christina Weber events, Love Immersion photos, WeDeepen events, Beyond Biohacking Conference, Solar Punk Summit, MediDating, experience design, keynote speaker photos, event facilitator, Austin Texas speaker">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://christinalweber.com/gallery/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://christinalweber.com/gallery/">
+  <meta property="og:title" content="Christina Weber — Photo Gallery">
+  <meta property="og:description" content="Photos of Christina Weber speaking, facilitating, and leading transformational experiences. Available for keynotes, facilitation, and experience design.">
+  <meta property="og:image" content="https://christinalweber.com/images/gallery/web/sept25-presenting-branded.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+  <meta property="og:site_name" content="Christina Weber">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Christina Weber — Photo Gallery">
+  <meta name="twitter:description" content="Photos of Christina Weber speaking, facilitating, and leading transformational experiences.">
+  <meta name="twitter:image" content="https://christinalweber.com/images/gallery/web/sept25-presenting-branded.jpg">
+
+  <!-- JSON-LD: ImageGallery -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Christina Weber Photo Gallery",
+    "description": "Professional photos of Christina Weber — love industry pioneer, keynote speaker, and experience designer — at events including Love Immersion, Beyond Biohacking Conference, Solar Punk Summit, and MediDating.",
+    "url": "https://christinalweber.com/gallery/",
+    "author": {
+      "@type": "Person",
+      "name": "Christina Weber",
+      "url": "https://christinalweber.com"
+    },
+    "about": {
+      "@type": "Person",
+      "name": "Christina Weber",
+      "jobTitle": "Founder & Love Industry Pioneer",
+      "worksFor": { "@type": "Organization", "name": "WeDeepen" }
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#d4883a">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/tailwind.out.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--aap-font-body);
+      color: var(--aap-text);
+      background: var(--aap-bg);
+      line-height: var(--aap-leading-normal);
+    }
+    img { max-width: 100%; height: auto; }
+
+    /* ========== NAV ========== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(250, 249, 246, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--aap-border);
+    }
+    .nav__inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 12px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav__name {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.25rem; color: var(--aap-text); text-decoration: none;
+    }
+    .nav__links {
+      display: flex; gap: 28px; align-items: center; list-style: none;
+    }
+    .nav__links a {
+      font-size: 0.8rem; font-weight: 500; color: var(--aap-text-muted);
+      text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 200ms ease;
+    }
+    .nav__links a:hover { color: var(--aap-accent); }
+    .nav__links a.active { color: var(--aap-accent); }
+    .nav__toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav__toggle svg { width: 24px; height: 24px; stroke: var(--aap-text); }
+
+    @media (max-width: 768px) {
+      .nav__toggle { display: block; }
+      .nav__links {
+        display: none; flex-direction: column;
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: rgba(250, 249, 246, 0.98); backdrop-filter: blur(12px);
+        padding: 24px; border-bottom: 1px solid var(--aap-border); gap: 16px;
+      }
+      .nav__links.open { display: flex; }
+    }
+
+    /* ========== BUTTONS ========== */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 32px; border-radius: 9999px; font-weight: 600;
+      font-size: 0.875rem; letter-spacing: 0.04em; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: all 200ms ease;
+    }
+    .btn--primary {
+      background: var(--aap-accent); color: #fff;
+    }
+    .btn--primary:hover { background: var(--aap-accent-hover); transform: translateY(-1px); }
+    .btn--sm { padding: 10px 24px; font-size: 0.8rem; }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212, 136, 58, 0.4); }
+      50% { box-shadow: 0 0 0 12px rgba(212, 136, 58, 0); }
+    }
+    .btn-pulse { animation: pulse-glow 3s ease infinite; }
+
+    /* ========== GALLERY HEADER ========== */
+    .gallery-header {
+      padding: 120px 24px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .gallery-header__eyebrow {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--aap-accent); margin-bottom: 16px;
+    }
+    .gallery-header h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .gallery-header p {
+      font-size: 1.125rem;
+      color: var(--aap-text-muted);
+      max-width: 640px;
+      margin: 0 auto 32px;
+      line-height: 1.75;
+    }
+
+    /* ========== FILTER TABS ========== */
+    .gallery-filters {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 8px; padding: 0 24px 48px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .gallery-filters button {
+      padding: 8px 20px; border-radius: 9999px;
+      font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      border: 1.5px solid var(--aap-border);
+      background: transparent; color: var(--aap-text-muted);
+      cursor: pointer; transition: all 200ms ease;
+    }
+    .gallery-filters button:hover {
+      border-color: var(--aap-accent); color: var(--aap-accent);
+    }
+    .gallery-filters button.active {
+      background: var(--aap-accent); color: #fff;
+      border-color: var(--aap-accent);
+    }
+
+    /* ========== MASONRY GRID ========== */
+    .gallery-grid {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px 96px;
+      columns: 3; column-gap: 16px;
+    }
+    .gallery-item {
+      break-inside: avoid; margin-bottom: 16px;
+      border-radius: 12px; overflow: hidden;
+      position: relative; cursor: pointer;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--aap-shadow-lg);
+    }
+    .gallery-item img {
+      width: 100%; display: block;
+      border-radius: 12px;
+    }
+    .gallery-item__overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 24px 16px 16px;
+      background: linear-gradient(to top, rgba(28, 22, 24, 0.8), transparent);
+      opacity: 0; transition: opacity 200ms ease;
+      border-radius: 0 0 12px 12px;
+    }
+    .gallery-item:hover .gallery-item__overlay { opacity: 1; }
+    .gallery-item__overlay p {
+      color: #fff; font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .gallery-item__overlay span {
+      color: rgba(255,255,255,0.7); font-size: 0.7rem;
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 900px) { .gallery-grid { columns: 2; } }
+    @media (max-width: 520px) { .gallery-grid { columns: 1; column-gap: 12px; } }
+
+    /* ========== LIGHTBOX ========== */
+    .lightbox {
+      display: none; position: fixed; inset: 0;
+      z-index: 500; background: rgba(28, 22, 24, 0.92);
+      backdrop-filter: blur(8px);
+      align-items: center; justify-content: center;
+      padding: 24px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox__inner {
+      position: relative; max-width: 1100px; width: 100%;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .lightbox__img {
+      max-width: 100%; max-height: 80vh;
+      border-radius: 12px; box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+      object-fit: contain;
+    }
+    .lightbox__caption {
+      text-align: center; margin-top: 16px;
+      color: rgba(255,255,255,0.9); font-size: 0.95rem;
+    }
+    .lightbox__caption span {
+      display: block; color: rgba(255,255,255,0.6);
+      font-size: 0.8rem; margin-top: 4px;
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .lightbox__close {
+      position: absolute; top: -48px; right: 0;
+      background: none; border: none; cursor: pointer;
+      color: rgba(255,255,255,0.7); font-size: 2rem; line-height: 1;
+      transition: color 200ms ease;
+    }
+    .lightbox__close:hover { color: #fff; }
+    .lightbox__nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.15); border: none;
+      width: 48px; height: 48px; border-radius: 50%;
+      cursor: pointer; color: #fff; font-size: 1.5rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 200ms ease;
+      backdrop-filter: blur(4px);
+    }
+    .lightbox__nav:hover { background: rgba(255,255,255,0.25); }
+    .lightbox__nav--prev { left: -64px; }
+    .lightbox__nav--next { right: -64px; }
+
+    @media (max-width: 768px) {
+      .lightbox__nav--prev { left: 8px; }
+      .lightbox__nav--next { right: 8px; }
+      .lightbox__close { top: -40px; right: 4px; }
+    }
+
+    /* ========== CTA SECTION ========== */
+    .gallery-cta {
+      text-align: center; padding: 64px 24px 96px;
+      background: var(--aap-bg-muted);
+    }
+    .gallery-cta h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 12px;
+    }
+    .gallery-cta p {
+      color: var(--aap-text-muted); margin-bottom: 24px;
+      font-size: 1rem;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      text-align: center; padding: 48px 24px;
+      border-top: 1px solid var(--aap-border);
+    }
+    .footer__social {
+      display: flex; justify-content: center; gap: 24px;
+      flex-wrap: wrap; margin-bottom: 16px;
+    }
+    .footer__social a {
+      font-size: 0.8rem; font-weight: 500; color: var(--aap-text-muted);
+      text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: color 200ms ease;
+    }
+    .footer__social a:hover { color: var(--aap-accent); }
+    .footer__copy {
+      font-size: 0.75rem; color: var(--aap-text-muted); letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__name">Christina Weber</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#ventures">Ventures</a></li>
+        <li><a href="/#podcast">Podcast</a></li>
+        <li><a href="/#press">Press</a></li>
+        <li><a href="/gallery/" class="active">Gallery</a></li>
+        <li><a href="/#booking" class="btn btn--primary btn--sm btn-pulse">Let's Talk</a></li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+  <!-- ===== GALLERY HEADER ===== -->
+  <section class="gallery-header">
+    <p class="gallery-header__eyebrow">Photo Gallery</p>
+    <h1>Christina Weber on Stage &amp; Leading Experiences</h1>
+    <p>Keynote speaking, facilitation, and transformational event design — from intimate circles to stages of 500+. These photos are available for press and media use.</p>
+  </section>
+
+  <!-- ===== FILTER TABS ===== -->
+  <div class="gallery-filters" role="tablist" aria-label="Filter photos by event">
+    <button class="active" data-filter="all">All Events</button>
+    <button data-filter="bc">Beyond Biohacking</button>
+    <button data-filter="sept25">Sept Love Immersion</button>
+    <button data-filter="june25">June Love Immersion</button>
+    <button data-filter="li5">Love Immersion V</button>
+    <button data-filter="li6">Love Immersion VI</button>
+    <button data-filter="solarpunk">Solar Punk Summit</button>
+    <button data-filter="medidating">MediDating</button>
+  </div>
+
+  <!-- ===== PHOTO GRID ===== -->
+  <div class="gallery-grid" id="galleryGrid">
+
+    <!-- Beyond Biohacking Conference — Indoor Speech -->
+    <figure class="gallery-item" data-category="bc" data-index="0">
+      <img src="/images/gallery/thumbs/bc2-full-room-hero.jpg"
+           data-full="/images/gallery/web/bc2-full-room-hero.jpg"
+           alt="Christina Weber speaking to a packed room at Beyond Biohacking Conference with Hack Your Love Life branded slide"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Hack Your Love Life — Full Room</p>
+        <span>Beyond Biohacking Conference</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="bc" data-index="1">
+      <img src="/images/gallery/thumbs/bc2-mic-branded-slide.jpg"
+           data-full="/images/gallery/web/bc2-mic-branded-slide.jpg"
+           alt="Christina Weber holding microphone with Hack Your Love Life slide at Beyond Biohacking Conference"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Mic in Hand — Branded Keynote</p>
+        <span>Beyond Biohacking Conference</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="bc" data-index="2">
+      <img src="/images/gallery/thumbs/bc2-gesture-explaining.jpg"
+           data-full="/images/gallery/web/bc2-gesture-explaining.jpg"
+           alt="Christina Weber mid-gesture explaining a concept on stage at Beyond Biohacking Conference"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Dynamic Speaking</p>
+        <span>Beyond Biohacking Conference</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="bc" data-index="3">
+      <img src="/images/gallery/thumbs/bc2-confident-closeup.jpg"
+           data-full="/images/gallery/web/bc2-confident-closeup.jpg"
+           alt="Close-up of Christina Weber confidently speaking with microphone at Beyond Biohacking Conference"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Confident Close-Up</p>
+        <span>Beyond Biohacking Conference</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="bc" data-index="4">
+      <img src="/images/gallery/thumbs/bc2-packed-room-wide.jpg"
+           data-full="/images/gallery/web/bc2-packed-room-wide.jpg"
+           alt="Wide shot of Christina Weber addressing a packed audience at Beyond Biohacking Conference"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Packed Room — Wide Shot</p>
+        <span>Beyond Biohacking Conference</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="bc" data-index="5">
+      <img src="/images/gallery/thumbs/bc2-four-pillars-slide.jpg"
+           data-full="/images/gallery/web/bc2-four-pillars-slide.jpg"
+           alt="Christina Weber presenting The Four Pillars of a Conscious Relationship framework at Beyond Biohacking Conference"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>The Four Pillars Framework</p>
+        <span>Beyond Biohacking Conference</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="bc" data-index="6">
+      <img src="/images/gallery/thumbs/bc2-mic-qr-slide.jpg"
+           data-full="/images/gallery/web/bc2-mic-qr-slide.jpg"
+           alt="Christina Weber speaking with microphone and QR code slide at Beyond Biohacking Conference"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Speaking — CTA Slide</p>
+        <span>Beyond Biohacking Conference</span>
+      </figcaption>
+    </figure>
+
+    <!-- Sept 2025 Love Immersion -->
+    <figure class="gallery-item" data-category="sept25" data-index="7">
+      <img src="/images/gallery/thumbs/sept25-presenting-branded.jpg"
+           data-full="/images/gallery/web/sept25-presenting-branded.jpg"
+           alt="Christina Weber presenting at September 2025 WeDeepen Love Immersion in pink dress with branded screen"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Love Immersion — Presenting</p>
+        <span>September 2025 Love Immersion</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="sept25" data-index="8">
+      <img src="/images/gallery/thumbs/sept25-proactive-formula.jpg"
+           data-full="/images/gallery/web/sept25-proactive-formula.jpg"
+           alt="Christina Weber teaching The Proactive Formula at September 2025 Love Immersion"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Teaching The Proactive Formula</p>
+        <span>September 2025 Love Immersion</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="sept25" data-index="9">
+      <img src="/images/gallery/thumbs/sept25-leading-group.jpg"
+           data-full="/images/gallery/web/sept25-leading-group.jpg"
+           alt="Christina Weber leading a group exercise at September 2025 Love Immersion with WeDeepen banners"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Leading Group Experience</p>
+        <span>September 2025 Love Immersion</span>
+      </figcaption>
+    </figure>
+
+    <!-- June 2025 Love Immersion -->
+
+    <figure class="gallery-item" data-category="june25" data-index="12">
+      <img src="/images/gallery/thumbs/june25-loveclub-banner.jpg"
+           data-full="/images/gallery/web/june25-loveclub-banner.jpg"
+           alt="Christina Weber presenting next to Love Club banner at June 2025 Love Immersion"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Love Club Banner</p>
+        <span>June 2025 Love Immersion</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="june25" data-index="13">
+      <img src="/images/gallery/thumbs/june25-cofacilitating-audience.jpg"
+           data-full="/images/gallery/web/june25-cofacilitating-audience.jpg"
+           alt="Christina Weber co-facilitating with audience at June 2025 Love Immersion"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Co-Facilitating</p>
+        <span>June 2025 Love Immersion</span>
+      </figcaption>
+    </figure>
+
+
+    <figure class="gallery-item" data-category="june25" data-index="15">
+      <img src="/images/gallery/thumbs/june25-profile-elegant.jpg"
+           data-full="/images/gallery/web/june25-profile-elegant.jpg"
+           alt="Elegant profile shot of Christina Weber at June 2025 Love Immersion"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Profile — Elegant Moment</p>
+        <span>June 2025 Love Immersion</span>
+      </figcaption>
+    </figure>
+
+
+    <!-- Love Immersion V -->
+
+    <figure class="gallery-item" data-category="li5" data-index="18">
+      <img src="/images/gallery/thumbs/li5-arms-raised-group.jpg"
+           data-full="/images/gallery/web/li5-arms-raised-group.jpg"
+           alt="Christina Weber with arms raised leading a group at Love Immersion V"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Arms Raised — Group Energy</p>
+        <span>Love Immersion V</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="li5" data-index="19">
+      <img src="/images/gallery/thumbs/li5-co-presenting.jpg"
+           data-full="/images/gallery/web/li5-co-presenting.jpg"
+           alt="Christina Weber co-presenting at Love Immersion V"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Co-Presenting</p>
+        <span>Love Immersion V</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="li5" data-index="20">
+      <img src="/images/gallery/thumbs/li5-facilitating-group.jpg"
+           data-full="/images/gallery/web/li5-facilitating-group.jpg"
+           alt="Christina Weber facilitating a group exercise at Love Immersion V"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Facilitating Group Exercise</p>
+        <span>Love Immersion V</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="li5" data-index="21">
+      <img src="/images/gallery/thumbs/li5-walking-front.jpg"
+           data-full="/images/gallery/web/li5-walking-front.jpg"
+           alt="Christina Weber walking in front of the room at Love Immersion V"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Walking the Room</p>
+        <span>Love Immersion V</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="li5" data-index="22">
+      <img src="/images/gallery/thumbs/li5-group-photo.jpg"
+           data-full="/images/gallery/web/li5-group-photo.jpg"
+           alt="Group photo from Love Immersion V with Christina Weber"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Love Immersion V Group</p>
+        <span>Love Immersion V</span>
+      </figcaption>
+    </figure>
+
+    <!-- Love Immersion VI -->
+    <figure class="gallery-item" data-category="li6" data-index="23">
+      <img src="/images/gallery/thumbs/li6-leading-room.jpg"
+           data-full="/images/gallery/web/li6-leading-room.jpg"
+           alt="Christina Weber leading the room at Love Immersion VI"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Leading the Room</p>
+        <span>Love Immersion VI</span>
+      </figcaption>
+    </figure>
+
+
+    <figure class="gallery-item" data-category="li6" data-index="25">
+      <img src="/images/gallery/thumbs/li6-group-circle.jpg"
+           data-full="/images/gallery/web/li6-group-circle.jpg"
+           alt="Christina Weber with group in a circle at Love Immersion VI"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Group Circle</p>
+        <span>Love Immersion VI</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="li6" data-index="26">
+      <img src="/images/gallery/thumbs/li6-facilitator-chair.jpg"
+           data-full="/images/gallery/web/li6-facilitator-chair.jpg"
+           alt="Christina Weber in facilitator chair at Love Immersion VI"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Facilitator's Chair</p>
+        <span>Love Immersion VI</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="li6" data-index="27">
+      <img src="/images/gallery/thumbs/li6-singing-bowl.jpg"
+           data-full="/images/gallery/web/li6-singing-bowl.jpg"
+           alt="Christina Weber with singing bowl at Love Immersion VI ceremony"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Singing Bowl Ceremony</p>
+        <span>Love Immersion VI</span>
+      </figcaption>
+    </figure>
+
+    <!-- Solar Punk Summit -->
+    <figure class="gallery-item" data-category="solarpunk" data-index="28">
+      <img src="/images/gallery/thumbs/solarpunk-stage-mic-hero.jpg"
+           data-full="/images/gallery/web/solarpunk-stage-mic-hero.jpg"
+           alt="Christina Weber on stage with microphone at Solar Punk Summit"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>On Stage with Mic</p>
+        <span>Solar Punk Summit</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="solarpunk" data-index="29">
+      <img src="/images/gallery/thumbs/solarpunk-stage-speaking.jpg"
+           data-full="/images/gallery/web/solarpunk-stage-speaking.jpg"
+           alt="Christina Weber speaking on stage at Solar Punk Summit"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Stage Speaking</p>
+        <span>Solar Punk Summit</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="solarpunk" data-index="30">
+      <img src="/images/gallery/thumbs/solarpunk-branded-stage.jpg"
+           data-full="/images/gallery/web/solarpunk-branded-stage.jpg"
+           alt="Christina Weber on the branded stage at Solar Punk Summit"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Branded Stage</p>
+        <span>Solar Punk Summit</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="solarpunk" data-index="31">
+      <img src="/images/gallery/thumbs/solarpunk-walking-mic.jpg"
+           data-full="/images/gallery/web/solarpunk-walking-mic.jpg"
+           alt="Christina Weber walking with microphone at Solar Punk Summit"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Walking with Mic</p>
+        <span>Solar Punk Summit</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="solarpunk" data-index="32">
+      <img src="/images/gallery/thumbs/solarpunk-facilitating-circle.jpg"
+           data-full="/images/gallery/web/solarpunk-facilitating-circle.jpg"
+           alt="Christina Weber facilitating a circle at Solar Punk Summit"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Facilitating Circle</p>
+        <span>Solar Punk Summit</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="solarpunk" data-index="33">
+      <img src="/images/gallery/thumbs/solarpunk-community-circle.jpg"
+           data-full="/images/gallery/web/solarpunk-community-circle.jpg"
+           alt="Christina Weber leading a community circle at Solar Punk Summit"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Community Circle</p>
+        <span>Solar Punk Summit</span>
+      </figcaption>
+    </figure>
+
+
+    <!-- MediDating -->
+    <figure class="gallery-item" data-category="medidating" data-index="35">
+      <img src="/images/gallery/thumbs/medidating-speaking.jpg"
+           data-full="/images/gallery/web/medidating-speaking.jpg"
+           alt="Christina Weber speaking at a MediDating event"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Speaking</p>
+        <span>MediDating</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="medidating" data-index="36">
+      <img src="/images/gallery/thumbs/medidating-mic-circle.jpg"
+           data-full="/images/gallery/web/medidating-mic-circle.jpg"
+           alt="Christina Weber with microphone facilitating an intimate circle at MediDating"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Mic Circle — Intimate Facilitation</p>
+        <span>MediDating</span>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-category="medidating" data-index="37">
+      <img src="/images/gallery/thumbs/medidating-facilitating.jpg"
+           data-full="/images/gallery/web/medidating-facilitating.jpg"
+           alt="Christina Weber facilitating a MediDating experience"
+           loading="lazy" width="400" height="300">
+      <figcaption class="gallery-item__overlay">
+        <p>Facilitating Experience</p>
+        <span>MediDating</span>
+      </figcaption>
+    </figure>
+
+  </div>
+  </main>
+
+  <!-- ===== CTA ===== -->
+  <section class="gallery-cta">
+    <h2>Want Christina at Your Next Event?</h2>
+    <p>Keynotes, facilitation, and transformational experience design for conferences, retreats, and corporate events.</p>
+    <a href="https://wedeepen.com/book-session-with-christina" class="btn btn--primary btn-pulse" target="_blank" rel="noopener">Book Christina</a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__social">
+      <a href="https://www.instagram.com/christinaweber/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/christinalweber/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.facebook.com/christinalweber/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://open.spotify.com/show/1Aq7R8l77roUrzY9q4DO1l" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://podcasts.apple.com/us/podcast/deepen-with-christina-by-christina-weber/id1267527313" target="_blank" rel="noopener">Apple Podcasts</a>
+    </div>
+    <p class="footer__copy">&copy; 2026 Christina Weber. All rights reserved. &bull; Austin, TX</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Nav toggle
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav__links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+
+    // Filter tabs
+    const filters = document.querySelectorAll('.gallery-filters button');
+    const items = document.querySelectorAll('.gallery-item');
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+
+        items.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbEvent = document.getElementById('lbEvent');
+    let currentIndex = 0;
+
+    function getVisibleItems() {
+      return Array.from(items).filter(i => i.style.display !== 'none');
+    }
+
+    function openLightbox(index) {
+      const visible = getVisibleItems();
+      currentIndex = index;
+      const item = visible[currentIndex];
+      const img = item.querySelector('img');
+      const caption = item.querySelector('.gallery-item__overlay p');
+      const event = item.querySelector('.gallery-item__overlay span');
+
+      lbImg.src = img.dataset.full;
+      lbImg.alt = img.alt;
+      lbCaption.textContent = caption ? caption.textContent : '';
+      lbEvent.textContent = event ? event.textContent : '';
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    function navigate(direction) {
+      const visible = getVisibleItems();
+      currentIndex = (currentIndex + direction + visible.length) % visible.length;
+      const item = visible[currentIndex];
+      const img = item.querySelector('img');
+      const caption = item.querySelector('.gallery-item__overlay p');
+      const event = item.querySelector('.gallery-item__overlay span');
+
+      lbImg.src = img.dataset.full;
+      lbImg.alt = img.alt;
+      lbCaption.textContent = caption ? caption.textContent : '';
+      lbEvent.textContent = event ? event.textContent : '';
+    }
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const visible = getVisibleItems();
+        const idx = visible.indexOf(item);
+        if (idx !== -1) openLightbox(idx);
+      });
+    });
+
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', () => navigate(-1));
+    document.getElementById('lbNext').addEventListener('click', () => navigate(1));
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+    }); // end DOMContentLoaded
+  </script>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox__inner">
+      <button class="lightbox__close" id="lbClose" aria-label="Close lightbox">&times;</button>
+      <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous photo">&#8249;</button>
+      <img class="lightbox__img" id="lbImg" src="" alt="">
+      <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next photo">&#8250;</button>
+      <div class="lightbox__caption">
+        <span id="lbCaption"></span>
+        <span id="lbEvent"></span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
