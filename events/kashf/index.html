@@ -1332,7 +1332,7 @@
             <li>Overnight stay with morning closing circle</li>
           </ul>
           <div class="tier__limit">Under 20 guests</div>
-          <button class="tier__btn" data-tier="witness" onclick="handleCheckout('witness')">Enter as Witness</button>
+          <a class="tier__btn" href="https://wedeepen.ticketspice.com/the-kashf-reveal-a-living-goddess-exhibit-may-30-2026" target="_blank" rel="noopener">Enter as Witness</a>
         </div>
 
         <!-- The Devotion -->
@@ -1349,7 +1349,7 @@
             <li>30-min post-event integration session via Zoom (within 14 days)</li>
           </ul>
           <div class="tier__limit">Limited availability</div>
-          <button class="tier__btn" data-tier="devotion" onclick="handleCheckout('devotion')">Enter as Devoted</button>
+          <a class="tier__btn" href="https://wedeepen.ticketspice.com/kashf-eden-exposed-devotion-tier-2-may-30-2026" target="_blank" rel="noopener">Enter as Devoted</a>
         </div>
 
         <!-- The Inner Sanctum -->
@@ -1369,7 +1369,7 @@
             <li>Two expanded integration sessions (within 30 days)</li>
           </ul>
           <div class="tier__limit">Limited to 4 guests</div>
-          <button class="tier__btn" data-tier="sanctum" onclick="handleCheckout('sanctum')">Enter the Inner Sanctum</button>
+          <a class="tier__btn" href="https://wedeepen.ticketspice.com/kashf-eden-exposed-inner-sanctum-tier-3-may-30-2026" target="_blank" rel="noopener">Enter the Inner Sanctum</a>
         </div>
       </div>
     </div>
@@ -1530,82 +1530,13 @@
     })();
   </script>
 
-  <!-- ═══ Stripe Checkout ═══ -->
-  <script type="module">
-    import { supabase, SUPABASE_URL, SUPABASE_ANON_KEY } from '../../shared/supabase.js';
-
-    const TIERS = {
-      witness:  { name: 'The Witness',       price: 150000, label: 'KASHF — The Witness ($1,500)' },
-      devotion: { name: 'The Devotion',       price: 250000, label: 'KASHF — The Devotion ($2,500)' },
-      sanctum:  { name: 'The Inner Sanctum',  price: 500000, label: 'KASHF — The Inner Sanctum ($5,000)' }
-    };
-
-    const ORIGINAL_LABELS = {
-      witness: 'Enter as Witness',
-      devotion: 'Enter as Devoted',
-      sanctum: 'Enter the Inner Sanctum'
-    };
-
+  <!-- ═══ Toast helper ═══ -->
+  <script>
     function showToast(msg) {
       const el = document.getElementById('toast');
       el.textContent = msg;
       el.classList.add('show');
       setTimeout(() => el.classList.remove('show'), 4500);
-    }
-
-    async function handleCheckout(tierKey) {
-      const tier = TIERS[tierKey];
-      if (!tier) return;
-
-      const btn = document.querySelector(`[data-tier="${tierKey}"]`);
-      btn.classList.add('tier__btn--loading');
-      btn.textContent = 'Preparing...';
-
-      try {
-        const res = await fetch(`${SUPABASE_URL}/functions/v1/create-kashf-checkout`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'apikey': SUPABASE_ANON_KEY,
-            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
-          },
-          body: JSON.stringify({
-            tier: tierKey,
-            success_url: window.location.origin + '/events/kashf/?status=success',
-            cancel_url:  window.location.origin + '/events/kashf/?status=cancelled'
-          })
-        });
-
-        if (!res.ok) {
-          const err = await res.json().catch(() => ({}));
-          throw new Error(err.error || 'Failed to create checkout session');
-        }
-
-        const { url } = await res.json();
-        if (url) window.location.href = url;
-        else throw new Error('No checkout URL returned');
-      } catch (err) {
-        console.error('Checkout error:', err);
-        showToast('Something went wrong. Please try again or contact us directly.');
-        btn.classList.remove('tier__btn--loading');
-        btn.textContent = ORIGINAL_LABELS[tierKey];
-      }
-    }
-
-    window.handleCheckout = handleCheckout;
-
-    // Handle return from Stripe
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('status') === 'success') {
-      window.scrollTo(0, 0);
-      setTimeout(() => showToast('Your place is reserved. Check your email for ceremony details.'), 600);
-      window.history.replaceState({}, '', window.location.pathname);
-    } else if (params.get('status') === 'cancelled') {
-      setTimeout(() => {
-        showToast('Checkout cancelled. Your offering awaits when you are ready.');
-        document.getElementById('offerings')?.scrollIntoView({ behavior: 'smooth' });
-      }, 600);
-      window.history.replaceState({}, '', window.location.pathname);
     }
   </script>
 </body>
