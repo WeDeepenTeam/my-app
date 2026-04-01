@@ -231,37 +231,114 @@
     /* ── Hero ─────────────────────────────────────── */
     .hero {
       min-height: 100svh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-    }
-    .hero__text {
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
-      padding: 6rem 3rem 3rem;
-      background: var(--bg-card);
+      position: relative;
+      background: #050505;
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero__bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.18;
+      filter: blur(2px);
+    }
+    .hero__content {
       position: relative;
       z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3.5rem;
+      padding: 6rem 2rem 3rem;
+      max-width: 900px;
+    }
+    .hero__candle {
+      flex-shrink: 0;
+      width: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero__flame {
+      width: 40px;
+      height: 70px;
+      position: relative;
+      margin-bottom: -8px;
+    }
+    .hero__flame::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 22px; height: 56px;
+      background: radial-gradient(ellipse at 50% 80%, #f5c842 0%, #e8a020 30%, #c9a96e 55%, transparent 75%);
+      border-radius: 50% 50% 40% 40% / 80% 80% 40% 40%;
+      animation: flicker 3s ease-in-out infinite alternate;
+      filter: blur(0.5px);
+    }
+    .hero__flame::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 50%;
+      transform: translateX(-50%);
+      width: 60px; height: 60px;
+      background: radial-gradient(circle, rgba(245, 200, 66, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    @keyframes flicker {
+      0% { height: 56px; opacity: 1; }
+      25% { height: 52px; opacity: 0.9; }
+      50% { height: 58px; opacity: 1; }
+      75% { height: 50px; opacity: 0.85; }
+      100% { height: 55px; opacity: 0.95; }
+    }
+    .hero__candle-body {
+      width: 28px;
+      height: 140px;
+      background: linear-gradient(180deg, #e8dcc8 0%, #d4c4a8 50%, #bfad8e 100%);
+      border-radius: 3px 3px 4px 4px;
+      position: relative;
+    }
+    .hero__candle-body::before {
+      content: '';
+      position: absolute;
+      top: -2px; left: 50%;
+      transform: translateX(-50%);
+      width: 32px; height: 6px;
+      background: linear-gradient(180deg, #f0e6d3 0%, #d4c4a8 100%);
+      border-radius: 50%;
+    }
+    .hero__card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
     .hero__badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--divider);
-      padding: 0.5rem 1.2rem;
+      color: var(--gold-dim);
+      border: 1px solid rgba(201, 169, 110, 0.15);
+      padding: 0.45rem 1.1rem;
       border-radius: 100px;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
       width: fit-content;
-      backdrop-filter: blur(8px);
     }
     .hero__badge::before {
       content: '';
-      width: 6px; height: 6px;
+      width: 5px; height: 5px;
       border-radius: 50%;
       background: var(--gold);
       animation: pulse-dot 2s infinite;
@@ -270,23 +347,52 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0.3; }
     }
-    .hero h1 {
-      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    .hero__title-word {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 6vw, 5rem);
+      font-weight: 300;
       color: var(--gold-light);
-      margin-bottom: 1.5rem;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      margin-bottom: 0.3rem;
     }
-    .hero__divider {
-      width: 50%;
+    .hero__arabic {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--gold);
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+      direction: rtl;
+    }
+    .hero__sufi-label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 1.8rem;
+    }
+    .hero__sufi-label::before,
+    .hero__sufi-label::after {
+      content: '\25C7';
+      font-size: 0.5rem;
+      opacity: 0.5;
+    }
+    .hero__rule {
+      width: 80px;
       height: 1px;
-      background: linear-gradient(to right, var(--gold-dim), transparent);
-      margin: 1.5rem 0;
+      background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+      margin: 0 auto 1.8rem;
     }
     .hero__definition {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-style: italic;
       color: var(--cream);
-      line-height: 1.9;
+      line-height: 2;
       text-align: center;
       max-width: 440px;
       margin-bottom: 2rem;
@@ -301,12 +407,12 @@
     }
     .hero__poetry {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--cream-muted);
       line-height: 2;
       text-align: center;
       max-width: 440px;
-      border-top: 1px solid var(--divider);
+      border-top: 1px solid rgba(201, 169, 110, 0.15);
       padding-top: 1.5rem;
     }
     .hero__poetry strong {
@@ -314,19 +420,13 @@
       color: var(--cream);
       font-style: normal;
     }
-    .hero__image {
-      position: relative;
-      overflow: hidden;
-    }
-    .hero__image img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      opacity: 0.8;
-    }
-    .hero__image::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(90deg, var(--bg-card) 0%, transparent 35%);
+    .hero__subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: 300;
+      color: var(--cream-muted);
+      letter-spacing: 0.04em;
+      margin-top: 2rem;
     }
     .hero__scroll-hint {
       position: absolute;
@@ -797,21 +897,22 @@
       .hamburger { display: block; }
       .drawer { display: block; }
 
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-      .hero__text {
+      .hero__content {
+        flex-direction: column;
+        gap: 2rem;
         padding: 5rem 1.5rem 2.5rem;
-        order: 1;
       }
-      .hero__image {
-        order: 2;
-        height: 45vh;
-        min-height: 280px;
+      .hero__candle {
+        width: 80px;
       }
-      .hero__image::after {
-        background: linear-gradient(180deg, var(--bg-card) 0%, transparent 40%);
+      .hero__flame::before {
+        width: 18px; height: 44px;
+      }
+      .hero__candle-body {
+        width: 22px; height: 100px;
+      }
+      .hero__candle-body::before {
+        width: 26px;
       }
       .hero__scroll-hint { display: none; }
       .hero__poetry { max-width: 100%; font-size: 0.9rem; }
@@ -851,12 +952,16 @@
     @media (max-width: 520px) {
       .section { padding: 2.5rem 1rem; }
 
-      .hero__text { padding: 4.5rem 1.25rem 2rem; }
-      .hero h1 { font-size: 2rem; }
-      .hero__definition { font-size: 1.1rem; }
-      .hero__definition strong { font-size: 1.25rem; }
-      .hero__poetry { font-size: 1rem; }
-      .hero__image { height: 35vh; min-height: 220px; }
+      .hero__content { padding: 4.5rem 1.25rem 2rem; gap: 1.5rem; }
+      .hero__title-word { font-size: 2.8rem; }
+      .hero__arabic { font-size: 1.8rem; }
+      .hero__definition { font-size: 1.05rem; }
+      .hero__definition strong { font-size: 1.2rem; }
+      .hero__poetry { font-size: 0.95rem; }
+      .hero__candle { width: 60px; }
+      .hero__flame::before { width: 16px; height: 38px; }
+      .hero__candle-body { width: 20px; height: 80px; }
+      .hero__candle-body::before { width: 24px; }
 
       .exp { padding: 2.5rem 1.25rem; }
       .exp h2 { font-size: 1.5rem; }
@@ -923,35 +1028,51 @@
 
   <!-- ═══ HERO ═══ -->
   <section class="hero" id="top">
-    <div class="hero__text">
-      <div class="hero__badge">Limited to 20 Guests</div>
-      <h1>The Kashf Reveal:<br>The Living Goddess Exhibit</h1>
-      <div class="hero__divider"></div>
+    <div class="hero__bg">
+      <img src="https://cdn.gamma.app/s8fhclc6y8p6m5i/bde8443c409c4614a40bda4bd4ac1476/original/kashf-statue-austin-site.jpg" alt="" loading="eager">
+    </div>
 
-      <!-- Definition — what is Kashf -->
-      <div class="hero__definition">
-        <strong>Kashf</strong>
-        <em>The Removal of Veils<br>
-        between us and the Divine.</em><br><br>
-        <em>Truths, deep and subtle,<br>
-        are revealed &amp; remembered.</em>
+    <div class="hero__content">
+      <!-- Candle element -->
+      <div class="hero__candle">
+        <div class="hero__flame"></div>
+        <div class="hero__candle-body"></div>
       </div>
 
-      <!-- Poem — its own piece of art -->
-      <div class="hero__poetry">
-        Divine Exhibition &middot; Beyond the Veils<br>
-        Sacred Expression &middot; Truth Beyond Tales<br>
-        Highness Unyielding &middot; Glory Ever After<br>
-        Fellowship in Levity, Laud &amp; Laughter<br><br>
-        <strong>Exhibited by devoted representatives<br>
-        of The Mother &amp; Her Majesty.</strong><br>
-        <strong>Celebrate with the Female &amp; Her Flame<br>
-        &mdash; in Your Name.</strong>
+      <!-- Definition card -->
+      <div class="hero__card">
+        <div class="hero__badge">Limited to 20 Guests</div>
+
+        <div class="hero__title-word">Kashf</div>
+        <div class="hero__arabic">&#1603;&#1614;&#1588;&#1618;&#1601;</div>
+
+        <div class="hero__sufi-label">A Sufi Term</div>
+        <div class="hero__rule"></div>
+
+        <!-- Definition -->
+        <div class="hero__definition">
+          <em>The Removal of Veils<br>
+          between us and the Divine.</em><br><br>
+          <em>Truths, deep and subtle,<br>
+          are revealed &amp; remembered.</em>
+        </div>
+
+        <!-- Poem -->
+        <div class="hero__poetry">
+          Divine Exhibition &middot; Beyond the Veils<br>
+          Sacred Expression &middot; Truth Beyond Tales<br>
+          Highness Unyielding &middot; Glory Ever After<br>
+          Fellowship in Levity, Laud &amp; Laughter<br><br>
+          <strong>Exhibited by devoted representatives<br>
+          of The Mother &amp; Her Majesty.</strong><br>
+          <strong>Celebrate with the Female &amp; Her Flame<br>
+          &mdash; in Your Name.</strong>
+        </div>
+
+        <div class="hero__subtitle">The Living Goddess Exhibit</div>
       </div>
     </div>
-    <div class="hero__image">
-      <img src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=800&q=80" alt="Ethereal goddess figure" loading="eager">
-    </div>
+
     <div class="hero__scroll-hint">
       <span>Scroll</span>
       <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -1019,7 +1140,7 @@
           </p>
         </div>
         <div class="women__image">
-          <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&q=80" alt="Women in ceremony" loading="lazy">
+          <img src="https://cdn.gamma.app/s8fhclc6y8p6m5i/5a7eb7ac15844f4d9a4b04a4cff1df86/optimized/tempImageXhvZBz.jpg" alt="Women of Kashf in ceremony" loading="lazy">
         </div>
       </div>
     </div>
@@ -1093,7 +1214,7 @@
     <div class="hostess fade-up">
       <div class="hostess__inner">
         <div class="hostess__image">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80" alt="Christina Weber" loading="lazy">
+          <img src="https://cdn.gamma.app/s8fhclc6y8p6m5i/fe3475b9b9ad47bc99290eda1e727210/original/Christina-Crop.jpg" alt="Christina Weber" loading="lazy">
         </div>
         <div class="hostess__text">
           <div class="hostess__heart">&hearts;</div>
@@ -1122,7 +1243,7 @@
   <!-- ═══ GALLERY ═══ -->
   <div class="section">
     <div class="gallery-full fade-up">
-      <img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76cb?w=1200&q=80" alt="Woman in sacred repose surrounded by petals" loading="lazy">
+      <img src="https://cdn.gamma.app/s8fhclc6y8p6m5i/130d26fc97154cebb25f0037cb973e89/optimized/Sarah-Solstice-Body-Rose.png" alt="Sacred repose surrounded by roses" loading="lazy">
     </div>
   </div>
 
