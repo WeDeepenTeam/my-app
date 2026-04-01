@@ -795,12 +795,14 @@
     .hostess__quote {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1.5rem;
-      color: var(--gold-light);
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      color: var(--cream-muted);
       margin-bottom: 1.2rem;
+      line-height: 1.7;
+      max-width: 700px;
     }
-    .hostess__name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--cream); }
-    .hostess__role { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .hostess__name { font-size: 0.85rem; color: var(--gold-dim); }
+    .hostess__role { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem; }
 
     /* ── Testimonial ──────────────────────────────── */
     .quote-card {
@@ -1381,8 +1383,8 @@
           <img src="christina.jpg" alt="Christina Weber" loading="lazy">
         </div>
         <div class="hostess__text">
-          <div class="hostess__quote" style="font-size: 1.05rem; line-height: 1.8;">&ldquo;KASHF is the conscious strip club people have been imagining&mdash;but never actually experienced, or at least not like this. Powerful, alive, and deeply connective. I still hear Sarah&rsquo;s words in my head: we&rsquo;re not here to heal you, we&rsquo;re here to party with the real you.&rdquo;</div>
-          <p class="hostess__name" style="margin-top: 1.2rem;">&mdash; Christina Weber</p>
+          <div class="hostess__quote">&ldquo;KASHF is the conscious strip club people have been imagining&mdash;but never actually experienced, or at least not like this. Powerful, alive, and deeply connective. I still hear Sarah&rsquo;s words in my head: we&rsquo;re not here to heal you, we&rsquo;re here to party with the real you.&rdquo;</div>
+          <p class="hostess__name">&mdash; Christina Weber</p>
           <p class="hostess__role">WeDeepen &amp; Love Industry Pioneer</p>
         </div>
       </div>
