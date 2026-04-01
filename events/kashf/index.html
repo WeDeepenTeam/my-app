@@ -854,6 +854,41 @@
     .faq__a { font-size: 0.84rem; color: var(--text-muted); line-height: 1.65; }
 
     /* ── Gallery ──────────────────────────────────── */
+    /* ── Sarah Feature ────────────────────────────── */
+    .sarah-feature {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+    .sarah-feature__image {
+      width: 100%;
+      max-height: 500px;
+      overflow: hidden;
+    }
+    .sarah-feature__image img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      object-position: center 15%;
+    }
+    .sarah-feature__caption {
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    .sarah-feature__caption h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .sarah-feature__caption p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
     .gallery-full {
       border-radius: var(--radius-lg);
       overflow: hidden;
@@ -1065,6 +1100,7 @@
 
       .quote-card { padding: 2.5rem 1.25rem; }
 
+      .sarah-feature__image, .sarah-feature__image img { max-height: 350px; height: 350px; }
       .gallery-full, .gallery-full img { max-height: 250px; height: 250px; }
     }
   </style>
@@ -1202,6 +1238,19 @@
     </div>
   </div>
 
+  <!-- ═══ SARAH SOLSTICE ═══ -->
+  <div class="section">
+    <div class="sarah-feature fade-up">
+      <div class="sarah-feature__image">
+        <img src="sarah-mic.jpg" alt="Sarah Solstice performing at KASHF" loading="lazy">
+      </div>
+      <div class="sarah-feature__caption">
+        <h3>Sarah Solstice</h3>
+        <p>Lead Performer &amp; Ceremonial Guide</p>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══ WOMEN OF KASHF ═══ -->
   <div class="section" id="women">
     <div class="women fade-up">
@@ -1317,12 +1366,6 @@
   </div>
 
   <!-- ═══ GALLERY ═══ -->
-  <div class="section">
-    <div class="gallery-full fade-up">
-      <img src="sarah-mic.jpg" alt="Sarah performing at KASHF" loading="lazy">
-    </div>
-  </div>
-
   <div class="section">
     <div class="gallery-full fade-up">
       <img src="sarah-rose.jpg" alt="Sacred repose surrounded by roses" loading="lazy">
