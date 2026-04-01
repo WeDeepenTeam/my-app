@@ -389,12 +389,12 @@
     }
     .hero__definition {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
+      font-size: clamp(1.3rem, 2.2vw, 1.6rem);
       font-style: italic;
       color: var(--cream);
-      line-height: 2;
+      line-height: 1.8;
       text-align: center;
-      max-width: 440px;
+      max-width: 480px;
       margin-bottom: 2rem;
     }
     .hero__definition strong {
@@ -407,11 +407,11 @@
     }
     .hero__poetry {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
       color: var(--cream-muted);
-      line-height: 2;
+      line-height: 1.9;
       text-align: center;
-      max-width: 440px;
+      max-width: 480px;
       border-top: 1px solid rgba(201, 169, 110, 0.15);
       padding-top: 1.5rem;
     }
@@ -427,6 +427,7 @@
       color: var(--cream-muted);
       letter-spacing: 0.04em;
       margin-top: 2rem;
+      margin-bottom: 3rem;
     }
     .hero__scroll-hint {
       position: absolute;
@@ -1052,7 +1053,7 @@
         <!-- Definition -->
         <div class="hero__definition">
           <em>The Removal of Veils<br>
-          between us and the Divine.</em><br><br>
+          between us and the Divine.</em><br>
           <em>Truths, deep and subtle,<br>
           are revealed &amp; remembered.</em>
         </div>
