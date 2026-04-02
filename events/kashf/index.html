@@ -366,22 +366,8 @@
       75% { height: 50px; opacity: 0.85; }
       100% { height: 55px; opacity: 0.95; }
     }
-    .hero__candle-body {
-      width: 28px;
-      height: 140px;
-      background: linear-gradient(180deg, #e8dcc8 0%, #d4c4a8 50%, #bfad8e 100%);
-      border-radius: 3px 3px 4px 4px;
-      position: relative;
-    }
-    .hero__candle-body::before {
-      content: '';
-      position: absolute;
-      top: -2px; left: 50%;
-      transform: translateX(-50%);
-      width: 32px; height: 6px;
-      background: linear-gradient(180deg, #f0e6d3 0%, #d4c4a8 100%);
-      border-radius: 50%;
-    }
+    .hero__candle-body { display: none; }
+    .hero__candle-body::before { display: none; }
     .hero__card {
       display: flex;
       flex-direction: column;
@@ -1188,7 +1174,6 @@
       <!-- Candle element -->
       <div class="hero__candle">
         <div class="hero__flame"></div>
-        <div class="hero__candle-body"></div>
       </div>
 
       <!-- Definition card -->
@@ -1356,8 +1341,7 @@
           <div class="tier__sep"></div>
           <ul class="tier__list">
             <li>Everything in The Devotion</li>
-            <li>Custom poem/song transmission by Sarah</li>
-            <li>Live devotional performance &amp; recorded audio gift</li>
+            <li>Live devotional performance</li>
             <li>Premium sanctuary seating</li>
             <li>8-hand touch activation</li>
             <li>Sacred holding under the stars</li>
