@@ -486,14 +486,22 @@
       color: var(--cream);
       font-style: normal;
     }
-    .hero__subtitle {
+    .hero__reveal-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.3rem;
+    }
+    .hero__subtitle-top {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
       font-weight: 300;
       color: var(--cream-muted);
-      letter-spacing: 0.04em;
-      margin-top: 2rem;
-      margin-bottom: 3rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
     }
     .hero__scroll-hint {
       position: absolute;
@@ -528,7 +536,7 @@
     .exp p { max-width: 650px; margin: 0 auto 0.8rem; font-size: 0.95rem; }
     .exp__accent {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
       color: var(--gold-dim);
       margin: 2rem 0 0.5rem;
     }
@@ -1187,6 +1195,10 @@
       <div class="hero__card">
         <div class="hero__badge">Limited to 20 Guests</div>
 
+        <div class="hero__reveal-title">A Kashf Reveal</div>
+        <div class="hero__subtitle-top">The Living Goddess Exhibit</div>
+        <div class="hero__rule"></div>
+
         <div class="hero__title-word">Kashf</div>
         <div class="hero__arabic">&#1603;&#1614;&#1588;&#1618;&#1601;</div>
 
@@ -1213,7 +1225,7 @@
           &mdash; in Your Name.</strong>
         </div>
 
-        <div class="hero__subtitle">The Living Goddess Exhibit</div>
+        <div class="hero__rule"></div>
       </div>
     </div>
 
@@ -1237,34 +1249,19 @@
 
       <div class="timeline">
         <div class="tl">
-          <div class="tl__time">7:00 PM</div>
-          <div class="tl__title">Arrival</div>
-          <div class="tl__desc">Step across the threshold into sacred space. Receive a greeting, a light anointing, and settle into the field.</div>
+          <div class="tl__title">Arrive</div>
         </div>
         <div class="tl">
-          <div class="tl__time">7:30 PM</div>
-          <div class="tl__title">Light Q&amp;A</div>
-          <div class="tl__desc">We gather in circle, walk through the evening together, and open the floor for questions.</div>
+          <div class="tl__title">Circle</div>
         </div>
         <div class="tl">
-          <div class="tl__time">8:00 PM</div>
-          <div class="tl__title">Ceremonial Opening</div>
-          <div class="tl__desc">We receive together. Sound transmission and group connection ignite collective devotion to the Diosa.</div>
+          <div class="tl__title">The Experience</div>
         </div>
         <div class="tl">
-          <div class="tl__time">Evening</div>
-          <div class="tl__title">The Experience Continues</div>
-          <div class="tl__desc">Immerse in live performance, sacred expression, and the full Kashf reveal as the living goddess exhibit unfolds.</div>
+          <div class="tl__title">Approx Closing</div>
         </div>
         <div class="tl">
-          <div class="tl__time">~2:00 AM</div>
-          <div class="tl__title">Evening Program Closes</div>
-          <div class="tl__desc">The program closes. Guests may depart or stay overnight.</div>
-        </div>
-        <div class="tl">
-          <div class="tl__time">9&ndash;11 AM</div>
-          <div class="tl__title">Morning Closing Circle</div>
-          <div class="tl__desc">We close the circle together in the morning light. Stay the night or return to join us.</div>
+          <div class="tl__title">Morning Aloha &amp; Departure</div>
         </div>
       </div>
     </div>
@@ -1278,7 +1275,7 @@
       </div>
       <div class="sarah-feature__bio">
         <h3>Sarah Solstice</h3>
-        <p class="sarah-feature__role">Lead Performer &amp; Ceremonial Guide</p>
+        <p class="sarah-feature__role">Torch of Truth for our End Times</p>
         <div class="sarah-feature__divider"></div>
         <p>Sarah entered human living through Mennonite and Apostolic influence in the midwest. No outside media. Expression about religion in the form of music, art, and comedy was allowed. Amplified praise music and Gregorian hymns blasted across the property. She began hearing and writing songs about love &amp; heaven.</p>
         <p>Around age 8, Sarah and her pet squirrel discovered MTV. The question arose: <em>&ldquo;Where are these dance parties taking place?&rdquo;</em> She made it her main goal to find these gatherings, with plans to sing and dance on the perpetual. <em>&ldquo;Just like in real life,&rdquo;</em> she&rsquo;d say.</p>
@@ -1302,7 +1299,7 @@
           <p class="women__poetic">
             Temple Tending &amp; light touch invites us Home<br><br>
             Home to the Fire in our Form<br><br>
-            We Notice 'Her' in us &amp; All:
+            We Notice 'Her' in us &amp; All
           </p>
         </div>
         <div class="women__image">
@@ -1327,7 +1324,6 @@
           <div class="tier__sep"></div>
           <ul class="tier__list">
             <li>The full experience from 7pm to 11am</li>
-            <li>Sacred opening ceremony</li>
             <li>Access to shared field of devotion &amp; performance</li>
             <li>Overnight stay with morning closing circle</li>
           </ul>
@@ -1396,7 +1392,7 @@
     <div class="quote-card fade-up">
       <blockquote>&ldquo;Unlike other performances, KASHF envelopes people in an immersive and deeply intimate experience for the exploration and embodiment of the full and complete expression of the self. I witnessed so many people transformed from part to whole and from limited to unlimited during the experience. This is not just a show, it&rsquo;s a divine container to embody the codes of the future.&rdquo;</blockquote>
       <div class="quote-card__author">&mdash; Dr. Steven Young</div>
-      <div class="quote-card__role">Ammortal Chamber Inventor</div>
+      <div class="quote-card__role">Inventor, Ammortal Chamber</div>
     </div>
     <div class="quote-card fade-up">
       <blockquote>&ldquo;This is Heaven. No Faith needed.&rdquo;</blockquote>
@@ -1423,7 +1419,7 @@
         </div>
         <div class="faq__item">
           <div class="faq__q">What about the sacrament?</div>
-          <div class="faq__a">Sacrament is available for those who are interested. Please complete the <a href="https://form.jotform.com/232305563487156" target="_blank" rel="noopener" style="color: var(--gold);">intake form</a> following registration. This is required and important to do.</div>
+          <div class="faq__a">Sacrament is available for those who are interested. Please complete the <a href="https://form.jotform.com/232305563487156" target="_blank" rel="noopener" style="color: var(--gold);">intake form</a> following registration if you are called to partake.</div>
         </div>
         <div class="faq__item">
           <div class="faq__q">Where is the event held?</div>
@@ -1452,7 +1448,7 @@
   </div>
 
   <footer class="footer">
-    WeDeepen Love Club Presents &middot; KASHF: Eden Exposed &middot; The Living Goddess Exhibit
+    WeDeepen Love Club Presents &middot; KASHF: Eden Exposed
   </footer>
 
   <!-- Floating Mobile CTA -->
