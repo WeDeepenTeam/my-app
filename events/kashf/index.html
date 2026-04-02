@@ -328,46 +328,85 @@
     }
     .hero__candle {
       flex-shrink: 0;
-      width: 120px;
+      width: 80px;
+      height: 80px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-    }
-    .hero__flame {
-      width: 40px;
-      height: 70px;
+      justify-content: center;
       position: relative;
-      margin-bottom: -8px;
+      margin-bottom: 1rem;
     }
+    /* Outer aura glow */
+    .hero__flame {
+      width: 60px;
+      height: 60px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Sacred flame — outer layer */
     .hero__flame::before {
       content: '';
       position: absolute;
-      bottom: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 22px; height: 56px;
-      background: radial-gradient(ellipse at 50% 80%, #f5c842 0%, #e8a020 30%, #c9a96e 55%, transparent 75%);
-      border-radius: 50% 50% 40% 40% / 80% 80% 40% 40%;
-      animation: flicker 3s ease-in-out infinite alternate;
-      filter: blur(0.5px);
+      width: 28px;
+      height: 52px;
+      background: radial-gradient(ellipse at 50% 70%,
+        rgba(245, 200, 66, 0.9) 0%,
+        rgba(232, 160, 32, 0.6) 25%,
+        rgba(201, 169, 110, 0.3) 50%,
+        transparent 70%);
+      border-radius: 50% 50% 50% 50% / 70% 70% 40% 40%;
+      animation: sacred-flame 4s ease-in-out infinite;
+      filter: blur(1px);
     }
+    /* Inner bright core */
     .hero__flame::after {
       content: '';
       position: absolute;
-      bottom: -4px; left: 50%;
-      transform: translateX(-50%);
-      width: 60px; height: 60px;
-      background: radial-gradient(circle, rgba(245, 200, 66, 0.15) 0%, transparent 70%);
+      width: 12px;
+      height: 30px;
+      background: radial-gradient(ellipse at 50% 65%,
+        rgba(255, 245, 220, 0.95) 0%,
+        rgba(245, 210, 100, 0.8) 30%,
+        rgba(232, 175, 50, 0.4) 60%,
+        transparent 80%);
+      border-radius: 50% 50% 50% 50% / 65% 65% 40% 40%;
+      animation: sacred-core 3s ease-in-out infinite alternate;
+      filter: blur(0.5px);
+    }
+    /* Ambient glow around the flame */
+    .hero__candle::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle,
+        rgba(201, 169, 110, 0.12) 0%,
+        rgba(201, 169, 110, 0.05) 40%,
+        transparent 70%);
       border-radius: 50%;
+      animation: glow-pulse 5s ease-in-out infinite alternate;
     }
-    @keyframes flicker {
-      0% { height: 56px; opacity: 1; }
-      25% { height: 52px; opacity: 0.9; }
-      50% { height: 58px; opacity: 1; }
-      75% { height: 50px; opacity: 0.85; }
-      100% { height: 55px; opacity: 0.95; }
+    @keyframes sacred-flame {
+      0% { height: 52px; width: 28px; opacity: 1; transform: translateY(0); }
+      20% { height: 48px; width: 26px; opacity: 0.9; transform: translateY(1px); }
+      40% { height: 55px; width: 30px; opacity: 1; transform: translateY(-1px); }
+      60% { height: 46px; width: 25px; opacity: 0.85; transform: translateY(2px); }
+      80% { height: 53px; width: 29px; opacity: 0.95; transform: translateY(-1px); }
+      100% { height: 52px; width: 28px; opacity: 1; transform: translateY(0); }
     }
-    .hero__candle-body { display: none; }
-    .hero__candle-body::before { display: none; }
+    @keyframes sacred-core {
+      0% { height: 30px; opacity: 0.95; }
+      33% { height: 26px; opacity: 0.8; }
+      66% { height: 32px; opacity: 1; }
+      100% { height: 28px; opacity: 0.9; }
+    }
+    @keyframes glow-pulse {
+      0% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.08); }
+      100% { opacity: 0.7; transform: scale(0.95); }
+    }
     .hero__card {
       display: flex;
       flex-direction: column;
@@ -1039,13 +1078,10 @@
         width: 80px;
       }
       .hero__flame::before {
-        width: 18px; height: 44px;
+        width: 22px; height: 42px;
       }
-      .hero__candle-body {
-        width: 22px; height: 100px;
-      }
-      .hero__candle-body::before {
-        width: 26px;
+      .hero__flame::after {
+        width: 10px; height: 24px;
       }
       .hero__scroll-hint { display: none; }
       .hero__poetry { max-width: 100%; font-size: 0.9rem; }
@@ -1092,10 +1128,10 @@
       .hero__definition { font-size: 1.05rem; }
       .hero__definition strong { font-size: 1.2rem; }
       .hero__poetry { font-size: 0.95rem; }
-      .hero__candle { width: 60px; }
-      .hero__flame::before { width: 16px; height: 38px; }
-      .hero__candle-body { width: 20px; height: 80px; }
-      .hero__candle-body::before { width: 24px; }
+      .hero__candle { width: 60px; height: 60px; }
+      .hero__flame::before { width: 20px; height: 38px; }
+      .hero__flame::after { width: 9px; height: 22px; }
+      .hero__candle::before { width: 90px; height: 90px; }
 
       .exp { padding: 2.5rem 1.25rem; }
       .exp h2 { font-size: 1.5rem; }
