@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events Calendar — WeDeepen | Upcoming Love Retreats & Workshops</title>
+  <meta name="description" content="Join WeDeepen in Austin or online for transformative experiences that deepen your capacity for love and connection.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wedeepen.com/events/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wedeepen.com/events/">
+  <meta property="og:title" content="Events Calendar — WeDeepen">
+  <meta property="og:description" content="Upcoming love retreats, coaching events, and workshops — in Austin and online.">
+  <meta property="og:site_name" content="WeDeepen">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rose:    { deep: '#9B2335', light: '#c4567a' },
+            pink:    { hot: '#E91E63', bright: '#FF2D78', glow: 'rgba(233,30,99,0.25)' },
+            gold:    { DEFAULT: '#C9A96E', light: '#e0d0a8', dark: '#a88c4f' },
+            charcoal: '#2D2D2D',
+            cream:   '#FDF8F4',
+            ink:     '#1A1A1A',
+            softgray: '#F5F5F5',
+          },
+          fontFamily: {
+            heading: ['"Playfair Display"', 'Georgia', 'serif'],
+            body:    ['"DM Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          maxWidth: { site: '1200px' },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', 'Inter', system-ui, sans-serif; }
+
+    /* Hero gradient */
+    .events-hero {
+      background: linear-gradient(180deg, #1A1A1A 0%, #2a1820 50%, #FDF8F4 100%);
+    }
+
+    /* Sticky header */
+    .wd-header {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .wd-header.scrolled {
+      background-color: rgba(26,26,26,0.95);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Filter buttons */
+    .filter-btn {
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      background: rgba(26,26,26,0.04);
+      color: #1A1A1A;
+      border: 1px solid rgba(26,26,26,0.1);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .filter-btn:hover { background: rgba(26,26,26,0.08); }
+    .filter-btn.active {
+      background: #E91E63;
+      color: #fff;
+      border-color: #E91E63;
+    }
+
+    /* Event card */
+    .event-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(26,26,26,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(26,26,26,0.12);
+    }
+    .event-card__image {
+      aspect-ratio: 16/9;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .event-card__image::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
+    }
+    .event-card__image-label {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.75rem;
+      color: #fff;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      position: relative; z-index: 1;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .event-card__deepen-mark {
+      position: absolute;
+      top: 14px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      height: 18px;
+      opacity: 0.9;
+    }
+    .event-card__body { padding: 18px 22px 22px; flex: 1; display: flex; flex-direction: column; }
+    .event-card__chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      background: rgba(26,26,26,0.05);
+      color: #1A1A1A;
+    }
+    .chip svg { width: 12px; height: 12px; }
+    .event-card__title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #1A1A1A;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .event-card__meta {
+      display: flex; gap: 14px;
+      font-size: 0.8rem; color: #7d6f74;
+      margin-bottom: 10px;
+    }
+    .event-card__meta svg { width: 13px; height: 13px; display: inline-block; margin-right: 4px; vertical-align: -1px; }
+    .event-card__desc {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .event-card__cta {
+      color: #E91E63;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      align-self: flex-end;
+    }
+
+    /* Search input */
+    .search-input {
+      width: 100%;
+      padding: 14px 18px 14px 46px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    .search-input::placeholder { color: rgba(255,255,255,0.4); }
+    .search-input:focus {
+      outline: none;
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(201,169,110,0.5);
+    }
+
+    /* Loading/empty states */
+    .events-status { text-align: center; padding: 60px 20px; color: #7d6f74; }
+
+    /* Buttons */
+    .btn-pink {
+      background: #E91E63; color: #fff;
+      padding: 14px 32px; border-radius: 12px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      display: inline-block; text-decoration: none;
+    }
+    .btn-pink:hover { background: #D81B60; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(233,30,99,0.35); }
+
+    /* Mobile nav */
+    .mobile-nav { transform: translateX(100%); transition: transform 0.35s ease; }
+    .mobile-nav.open { transform: translateX(0); }
+  </style>
+</head>
+<body class="bg-cream text-ink">
+
+  <!-- ============================
+       STICKY HEADER
+       ============================ -->
+  <header id="wd-header" class="wd-header fixed top-0 left-0 right-0 z-50" style="background: rgba(20,16,18,0.92); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-site mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/wedeepen/" class="flex items-center">
+        <img src="/wedeepen/images/deepen-logo-white.png" alt="DeePeN" class="h-7 w-auto">
+      </a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium">
+        <a href="/wedeepen/" class="text-white/80 hover:text-white transition">Home</a>
+        <a href="/wedeepen/love-club/" class="text-white/80 hover:text-white transition">Love Club</a>
+        <a href="/wedeepen/love-immersion/" class="text-white/80 hover:text-white transition">Love Immersion</a>
+        <a href="/wedeepen/love-guides/" class="text-white/80 hover:text-white transition">Love Guides</a>
+        <a href="/wedeepen/events/" class="text-white hover:text-white transition">Events</a>
+        <a href="/wedeepen/reviews/" class="text-white/80 hover:text-white transition">Reviews</a>
+        <a href="/wedeepen/about/" class="text-white/80 hover:text-white transition">About</a>
+        <a href="/wedeepen/podcast/" class="text-white/80 hover:text-white transition">Podcast</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="https://login.circle.so/sign_in?request_host=circle.wedeepenloveclub.com#email" class="btn-pink text-sm !py-2.5 !px-6 hidden sm:inline-block">Login to Love Club</a>
+        <button id="mobile-toggle" class="lg:hidden text-white p-2" aria-label="Open menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div id="mobile-nav" class="mobile-nav fixed inset-0 z-[60] bg-ink/98 flex flex-col pt-20 px-8">
+    <button id="mobile-close" class="absolute top-5 right-5 text-white p-2" aria-label="Close menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav class="flex flex-col gap-6 text-lg font-medium">
+      <a href="/wedeepen/" class="text-white hover:text-gold transition">Home</a>
+      <a href="/wedeepen/love-club/" class="text-white hover:text-gold transition">Love Club</a>
+      <a href="/wedeepen/love-immersion/" class="text-white hover:text-gold transition">Love Immersion</a>
+      <a href="/wedeepen/love-guides/" class="text-white hover:text-gold transition">Love Guides</a>
+      <a href="/wedeepen/events/" class="text-white hover:text-gold transition">Events</a>
+      <a href="/wedeepen/reviews/" class="text-white hover:text-gold transition">Reviews</a>
+      <a href="/wedeepen/about/" class="text-white hover:text-gold transition">About</a>
+      <a href="/wedeepen/podcast/" class="text-white hover:text-gold transition">Podcast</a>
+      <a href="https://login.circle.so/sign_in?request_host=circle.wedeepenloveclub.com#email" class="btn-pink text-center mt-4">Login to Love Club</a>
+    </nav>
+  </div>
+
+
+  <!-- ============================
+       HERO — Events Calendar
+       ============================ -->
+  <section class="events-hero pt-32 md:pt-40 pb-20 md:pb-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-pink-hot text-xs tracking-[0.22em] uppercase font-semibold mb-5">Events Calendar</p>
+      <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-normal text-white mb-6 leading-[1.05]">
+        Upcoming Events
+      </h1>
+      <p class="text-white/65 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+        Join us in Austin or online for transformative experiences that deepen your capacity for love and connection.
+      </p>
+
+      <!-- Search -->
+      <div class="relative max-w-xl mx-auto">
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input id="event-search" type="text" placeholder="Search events..." class="search-input" aria-label="Search events">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       FILTERS + GRID
+       ============================ -->
+  <section class="bg-cream py-16 md:py-20">
+    <div class="max-w-site mx-auto px-6">
+
+      <!-- Filter row -->
+      <div class="flex items-center justify-between flex-wrap gap-4 mb-10">
+        <div class="flex flex-wrap gap-3" id="filter-bar">
+          <button class="filter-btn active" data-filter="all">All Events</button>
+          <button class="filter-btn" data-filter="austin">Austin</button>
+          <button class="filter-btn" data-filter="online">Online</button>
+        </div>
+        <div class="text-sm text-charcoal/60" id="event-count">Loading events…</div>
+      </div>
+
+      <!-- Events grid -->
+      <div id="events-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div class="events-status col-span-full" id="events-status">Loading events…</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================
+       CTA
+       ============================ -->
+  <section class="bg-ink py-20 md:py-24 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="font-heading text-3xl md:text-4xl text-white font-normal mb-5 leading-tight">
+        Want events <span class="italic" style="color:#E91E63;">included</span>?
+      </h2>
+      <p class="text-white/60 mb-8 leading-relaxed">
+        Love Club members get free access to most WeDeepen events, plus the private community and monthly group calls.
+      </p>
+      <a href="/wedeepen/love-club/" class="btn-pink">Join Love Club</a>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer class="bg-ink border-t border-white/10 py-16">
+    <div class="max-w-site mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <div class="md:col-span-1">
+          <img src="/wedeepen/images/deepen-logo-white.png" alt="DeePeN" class="h-7 w-auto">
+          <p class="text-white/40 text-sm mt-3 leading-relaxed">Your intimacy journey is your life story.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4">Explore</h4>
+          <ul class="space-y-2 text-white/40 text-sm">
+            <li><a href="/wedeepen/love-club/" class="hover:text-gold transition">Love Club</a></li>
+            <li><a href="/wedeepen/love-immersion/" class="hover:text-gold transition">Love Immersion</a></li>
+            <li><a href="/wedeepen/love-guides/" class="hover:text-gold transition">Love Guides</a></li>
+            <li><a href="/wedeepen/events/" class="hover:text-gold transition">Events</a></li>
+            <li><a href="/wedeepen/reviews/" class="hover:text-gold transition">Reviews</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4">Learn More</h4>
+          <ul class="space-y-2 text-white/40 text-sm">
+            <li><a href="/wedeepen/about/" class="hover:text-gold transition">About Christina</a></li>
+            <li><a href="/wedeepen/podcast/" class="hover:text-gold transition">Podcast</a></li>
+            <li><a href="https://christinalweber.com" class="hover:text-gold transition">ChristinaLWeber.com</a></li>
+            <li><a href="mailto:team@wedeepen.com" class="hover:text-gold transition">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4">Members</h4>
+          <ul class="space-y-2 text-white/40 text-sm">
+            <li><a href="https://login.circle.so/sign_in?request_host=circle.wedeepenloveclub.com#email" class="hover:text-gold transition">Member Login</a></li>
+            <li><a href="https://circle.wedeepenloveclub.com" class="hover:text-gold transition">Community</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+        <p class="text-white/30 text-xs">&copy; 2026 WeDeepen. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================
+       JAVASCRIPT — Events Loader
+       ============================ -->
+  <script>
+    // Sticky header
+    const header = document.getElementById('wd-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile nav
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileClose = document.getElementById('mobile-close');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileToggle.addEventListener('click', () => mobileNav.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+    mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+    // ============================================
+    // EVENTS DATA LAYER
+    // ============================================
+    // Priority order:
+    //   1. Supabase Edge Function proxy (if WD_EVENTS_API env is set at build time)
+    //   2. Local events.json (seeded + updated by GitHub Action calling Circle API)
+    //
+    // To wire up live Circle API sync (option 1):
+    //   - Deploy Supabase edge function: /functions/v1/circle-events
+    //   - Function holds CIRCLE_API_TOKEN server-side, calls https://app.circle.so/api/headless/v1/events
+    //   - Set WD_EVENTS_API below to the function URL
+    //
+    // To wire up scheduled JSON sync (option 2 — current default):
+    //   - GitHub Action runs on schedule, calls Circle API with secret token
+    //   - Writes wedeepen/events/events.json, commits to main
+    // ============================================
+    const WD_EVENTS_API = null; // e.g. 'https://YOUR-PROJECT.supabase.co/functions/v1/circle-events'
+    const WD_EVENTS_JSON = '/wedeepen/events/events.json';
+
+    let allEvents = [];
+    let activeFilter = 'all';
+    let searchQuery = '';
+
+    async function loadEvents() {
+      try {
+        const source = WD_EVENTS_API || WD_EVENTS_JSON;
+        const res = await fetch(source);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        allEvents = (data.events || data || [])
+          .filter(e => {
+            // Only show future events (or today)
+            const eventDate = new Date(e.end_date || e.date);
+            eventDate.setHours(23,59,59,999);
+            return eventDate >= new Date();
+          })
+          .sort((a, b) => new Date(a.date) - new Date(b.date));
+        renderEvents();
+      } catch (err) {
+        console.error('Failed to load events:', err);
+        document.getElementById('events-status').textContent = 'Could not load events. Please try again later.';
+        document.getElementById('event-count').textContent = '';
+      }
+    }
+
+    function renderEvents() {
+      const grid = document.getElementById('events-grid');
+      const countEl = document.getElementById('event-count');
+
+      const filtered = allEvents.filter(e => {
+        const matchesFilter = activeFilter === 'all' || e.location_type === activeFilter;
+        const q = searchQuery.toLowerCase().trim();
+        const matchesSearch = !q
+          || e.title.toLowerCase().includes(q)
+          || (e.description || '').toLowerCase().includes(q)
+          || (e.location_label || '').toLowerCase().includes(q);
+        return matchesFilter && matchesSearch;
+      });
+
+      countEl.textContent = `${filtered.length} event${filtered.length === 1 ? '' : 's'}`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="events-status col-span-full">No events match your filters.</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(e => {
+        const dateLabel = formatDate(e.date);
+        const locIcon = e.location_type === 'online'
+          ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>'
+          : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+        const locChip = `<span class="chip">${locIcon}${e.location_type === 'online' ? 'Online' : 'Austin'}</span>`;
+        const labelChip = e.location_label && e.location_label !== (e.location_type === 'online' ? 'Online' : 'Austin, TX') && e.location_label !== 'Online'
+          ? `<span class="chip">${e.location_label}</span>`
+          : '';
+        const tagChip = e.tag ? `<span class="chip">${e.tag}</span>` : '';
+
+        // Use real Circle image, with gradient fallback
+        const hasImage = e.image_url && e.image_url.startsWith('http');
+        const imageBg = hasImage
+          ? `background-image: url('${e.image_url}'); background-size: cover; background-position: center;`
+          : `background: linear-gradient(135deg, #9B2335 0%, #3a0818 100%);`;
+
+        return `
+          <a href="${e.url}" class="event-card" ${e.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>
+            <div class="event-card__image" style="${imageBg}">
+              <img src="/wedeepen/images/deepen-logo-white-sm.png" alt="" class="event-card__deepen-mark" onerror="this.style.display='none'">
+            </div>
+            <div class="event-card__body">
+              <div class="event-card__chips">${locChip}${labelChip}${tagChip}</div>
+              <h3 class="event-card__title">${e.title}</h3>
+              <div class="event-card__meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>${dateLabel}</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>${e.time}</span>
+              </div>
+              <p class="event-card__desc">${e.description || ''}</p>
+              <span class="event-card__cta">Learn more →</span>
+            </div>
+          </a>
+        `;
+      }).join('');
+    }
+
+    function formatDate(iso) {
+      const d = new Date(iso + 'T00:00:00');
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+
+    // Filter button handlers
+    document.getElementById('filter-bar').addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      renderEvents();
+    });
+
+    // Search handler
+    document.getElementById('event-search').addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderEvents();
+    });
+
+    loadEvents();
+  </script>
+
+</body>
+</html>
