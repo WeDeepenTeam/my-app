@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christina Weber — Love Industry Pioneer, Speaker, Experience Designer & Relationship Coach</title>
-  <meta name="description" content="Christina Weber is the founder of WeDeepen, a love industry pioneer, keynote speaker, experience designer, and relationship coach. She created Love Immersion, Love Club, Shop & Shag, Dating Dojo, Feminine Weapon, and the Deepen with Christina podcast. Book Christina for speaking, facilitation, coaching, and transformational experience design. As seen on Bravo, LA Magazine, and Bill Maher.">
+  <title>Christina Weber — Love Industry Pioneer, Speaker, Experience Designer & Coach</title>
+  <meta name="description" content="Christina Weber is the founder of WeDeepen, a love industry pioneer, keynote speaker, experience designer, and relationship coach. She created Love Immersion, Love Club, Shop & Shag, Dating Dojo, Feminine Weapon, and the Deepen with Christina podcast. Book Christina for speaking, facilitation, coaching, and transformational experience design. As seen on Peacock, LA Magazine, and Bill Maher.">
   <meta name="keywords" content="Christina Weber, WeDeepen, relationship coach, love coach, experience designer, keynote speaker, Love Immersion, Love Club, Dating Dojo, Shop and Shag, Feminine Weapon, Playful Portal, RelateFest, conscious relationships, four pillars, Deepen with Christina podcast, love industry, transformational events, Austin Texas">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://christinalweber.com/">
@@ -12,8 +12,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://christinalweber.com/">
-  <meta property="og:title" content="Christina Weber — Love Industry Pioneer, Speaker & Relationship Coach">
-  <meta property="og:description" content="Founder of WeDeepen. Keynote speaker, experience designer, and relationship coach helping people drop the armor and build something real. As seen on Bravo, LA Magazine, and Bill Maher.">
+  <meta property="og:title" content="Christina Weber — Love Industry Pioneer, Speaker & Coach">
+  <meta property="og:description" content="Founder of WeDeepen. Keynote speaker, experience designer, and relationship coach helping people drop the armor and build something real. As seen on Peacock, LA Magazine, and Bill Maher.">
   <meta property="og:image" content="https://christinalweber.com/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -21,8 +21,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Christina Weber — Love Industry Pioneer, Speaker & Relationship Coach">
-  <meta name="twitter:description" content="Founder of WeDeepen. Keynote speaker, experience designer, and relationship coach. As seen on Bravo, LA Magazine, and Bill Maher.">
+  <meta name="twitter:title" content="Christina Weber — Love Industry Pioneer, Speaker & Coach">
+  <meta name="twitter:description" content="Founder of WeDeepen. Keynote speaker, experience designer, and relationship coach. As seen on Peacock, LA Magazine, and Bill Maher.">
   <meta name="twitter:image" content="https://christinalweber.com/images/og-image.jpg">
 
   <!-- JSON-LD: Person -->
@@ -37,7 +37,7 @@
     "image": "https://christinalweber.com/images/og-image.jpg",
     "worksFor": { "@type": "Organization", "name": "WeDeepen", "url": "https://wedeepen.com" },
     "alumniOf": { "@type": "EducationalOrganization", "name": "Towson University" },
-    "knowsAbout": ["Experience Design", "Facilitation", "Public Speaking", "Relationship Coaching", "Transformational Events", "Love Industry", "Conscious Relationships", "Dating Coaching", "Human Design", "Four Pillars of a Conscious Relationship"],
+    "knowsAbout": ["Experience Design", "Facilitation", "Public Speaking", "Coaching", "Transformational Events", "Love Industry", "Conscious Relationships", "Dating Coaching", "Human Design", "Four Pillars of a Conscious Relationship"],
     "sameAs": [
       "https://www.linkedin.com/in/christinalweber/",
       "https://www.instagram.com/christinaweber/",
@@ -47,6 +47,13 @@
     ]
   }
   </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#d4883a">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -138,9 +145,10 @@
       max-width: 1200px; margin: 0 auto;
     }
     .hero__grid {
-      display: grid; grid-template-columns: 1fr 1fr;
+      display: grid; grid-template-columns: 1fr 1.15fr;
       gap: 64px; align-items: center; width: 100%;
     }
+    .hero__image-col { position: relative; z-index: 2; }
     .hero__eyebrow {
       font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--aap-accent); margin-bottom: 16px;
@@ -159,6 +167,7 @@
       width: 100%; aspect-ratio: 3/4; object-fit: cover;
       border-radius: 16px; box-shadow: var(--aap-shadow-xl);
       background: var(--aap-bg-muted);
+      transform: scale(1.08); transform-origin: center center;
     }
     .hero__photo-placeholder {
       width: 100%; aspect-ratio: 3/4; border-radius: 16px;
@@ -172,8 +181,8 @@
       .hero__grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
       .hero__sub { margin-left: auto; margin-right: auto; }
       .hero__ctas { justify-content: center; }
-      .hero__photo-placeholder { aspect-ratio: 1/1; max-width: 320px; margin: 0 auto; }
-      .hero__photo { aspect-ratio: 1/1; max-width: 320px; margin: 0 auto; }
+      .hero__photo-placeholder { aspect-ratio: 3/4; max-width: 320px; margin: 0 auto; }
+      .hero__photo { aspect-ratio: 3/4; max-width: 320px; margin: 0 auto; transform: none; object-position: center top; }
       .hero { order: 0; }
       .hero__image-col { order: -1; }
     }
@@ -416,6 +425,7 @@
 <body>
 
   <!-- ===== NAV ===== -->
+  <header>
   <nav class="nav">
     <div class="nav__inner">
       <a href="#" class="nav__name">Christina Weber</a>
@@ -434,12 +444,14 @@
       </ul>
     </div>
   </nav>
+  </header>
 
+  <main>
   <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="hero__grid">
       <div>
-        <p class="hero__eyebrow">Love Industry Pioneer &bull; Speaker &bull; Experience Designer &bull; Relationship Coach</p>
+        <p class="hero__eyebrow">Love Industry Pioneer &bull; Speaker &bull; Experience Designer &bull; Coach</p>
         <h1 class="hero__heading">
           What does it look like to <span class="gradient-text">authentically connect?</span>
         </h1>
@@ -452,7 +464,7 @@
         </div>
       </div>
       <div class="hero__image-col">
-        <img src="/images/christina-hero.jpg" alt="Christina Weber — Love Industry Pioneer, Speaker, Experience Designer & Relationship Coach" class="hero__photo">
+        <img src="/images/christina-hero.jpg" alt="Christina Weber — Love Industry Pioneer, Speaker, Experience Designer & Coach" class="hero__photo">
       </div>
     </div>
   </section>
@@ -461,12 +473,12 @@
   <div style="padding:32px 24px;border-top:1px solid var(--aap-border);border-bottom:1px solid var(--aap-border);">
     <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:24px 48px;">
       <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--aap-text-muted);">As Seen In</span>
-      <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">Bravo</span>
+      <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">Peacock</span>
       <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">LA Magazine</span>
       <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">Bill Maher</span>
       <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">Good Day LA</span>
       <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">Omega Institute</span>
-      <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">Biohacking Conference</span>
+      <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">Beyond Biohacking Conference</span>
     </div>
   </div>
 
@@ -480,18 +492,18 @@
         <p class="section__eyebrow">About Christina</p>
         <h2 class="section__heading">A decade dedicated to deeper human connection</h2>
         <p>
-          Christina Weber is a social entrepreneur, ICF-certified coach, and a leading authority in the relationship industry with more than a decade of experience helping individuals, couples, and professionals forge meaningful connections.
+          Christina Weber is a social entrepreneur and a leading authority in the relationship industry with 30+ years of personal experience and more than a decade of professional work helping individuals, couples, and professionals forge meaningful connections.
         </p>
         <p>
-          Originally from Annapolis, Maryland, Christina has lived in Los Angeles, New York City, and Bali before settling in Austin, Texas. Her journey began in 2014 hosting "Underground Unattached" in NYC, which led to founding WeDeepen.
+          Originally from Annapolis, Maryland, Christina has lived in Los Angeles, New York City, and Bali before settling in Austin, Texas. Her journey into the love industry began in 2014 hosting the "Underground Unattached" curated events in NYC, which led to founding WeDeepen.
         </p>
         <p>
           Through innovative concepts like "Shop &amp; Shag" at Erewhon (featured on the cover of LA Magazine and the Bill Maher Show), Christina has redefined what it means to bring people together.
         </p>
         <div class="about__credentials">
           <span class="credential">ICF Certified Coach</span>
-          <span class="credential">iPEC Coaching</span>
-          <span class="credential">Towson University</span>
+          <span class="credential">Heart-Coaching Certification (Annie Lalla)</span>
+          <span class="credential">Collaborates with Rod Hairston, Annie Lalla, Ken Page, Dave Asprey, Ariana Hall &amp; more</span>
           <span class="credential">Omega Institute Speaker</span>
         </div>
       </div>
@@ -512,8 +524,8 @@
           <ul class="service-card__list">
             <li>Keynotes on connection, dating, and relationships</li>
             <li>Conference talks and panels</li>
-            <li>Omega Institute, Wonderland, Biohacking Conference</li>
-            <li>Media: Ex-Rated (Bravo), Bill Maher, Good Day LA</li>
+            <li>Omega Institute, Wonderland, Beyond Biohacking Conference</li>
+            <li>Media: Ex-Rated (Peacock), Bill Maher, Good Day LA</li>
           </ul>
           <a href="#booking" class="btn btn--outline btn--sm">Inquire</a>
         </div>
@@ -523,7 +535,7 @@
           <ul class="service-card__list">
             <li>Transformational event creation</li>
             <li>Workshop and retreat facilitation</li>
-            <li>The Dating Dojo, RelateFest, Relate Week</li>
+            <li>Dating Dojo, Playful Portal, Connect &amp; Conquer, Love Masterminds</li>
             <li>Research-backed relational skill building</li>
           </ul>
           <a href="#booking" class="btn btn--outline btn--sm">Inquire</a>
@@ -535,7 +547,7 @@
             <li>Master your love life: dating, deepening, or crossroads</li>
             <li>6-month Love Accelerator mentorship</li>
             <li>Human Design, Erotic Blueprints, Four Pillars framework</li>
-            <li>Trained with Hendricks, Annie Lalla, Ken Page, John Gray</li>
+            <li>Collaborates with Rod Hairston, Annie Lalla, Ken Page, Dave Asprey, Ariana Hall and more</li>
           </ul>
           <a href="https://wedeepen.com/schedule-with-christina" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Book a Free 15-Min Chat</a>
         </div>
@@ -602,7 +614,7 @@
       </div>
       <div class="venture">
         <h3 class="venture__name">The Dating Dojo</h3>
-        <p class="venture__desc">Research-backed relational skills workshops co-led with psychotherapist Ken Page, LCSW. Featured at the Biohacking Conference and Wonderland.</p>
+        <p class="venture__desc">Research-backed relational skills workshops co-led with psychotherapist Ken Page, LCSW. Featured at the Beyond Biohacking Conference and Wonderland.</p>
         <a href="https://wedeepen.com/dating-dojo" target="_blank" rel="noopener" class="venture__link">Learn more &rarr;</a>
       </div>
       <div class="venture">
@@ -611,7 +623,7 @@
       </div>
       <div class="venture">
         <h3 class="venture__name">Playful Portal</h3>
-        <p class="venture__desc">An immersive activation drawing on improvisation and Taoist philosophy to spark joy and foster deep connection. Featured at the Biohacking Conference and Wonderland Conference. 4.8 stars.</p>
+        <p class="venture__desc">An immersive activation drawing on improvisation and Taoist philosophy to spark joy and foster deep connection. Featured at the Beyond Biohacking Conference and Wonderland Conference. 4.8 stars.</p>
       </div>
       <div class="venture">
         <h3 class="venture__name">Shop &amp; Shag</h3>
@@ -652,7 +664,7 @@
   <!-- ===== FEATURED VIDEOS ===== -->
   <section class="section" style="text-align:center;">
     <p class="section__eyebrow">See the Work</p>
-    <h2 class="section__heading">Watch Christina Live</h2>
+    <h2 class="section__heading">Featured Videos</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:32px;margin-top:40px;">
       <div>
         <div class="talk__embed" style="margin:0 auto;">
@@ -663,9 +675,9 @@
       </div>
       <div>
         <div class="talk__embed" style="margin:0 auto;">
-          <iframe src="https://www.youtube.com/embed/MMhmKjTsEs8" title="Christina Weber at Biohacking Conference" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/MMhmKjTsEs8" title="Christina Weber at Beyond Biohacking Conference" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
-        <p style="margin-top:16px;font-weight:600;font-size:0.95rem;">Biohacking Conference</p>
+        <p style="margin-top:16px;font-weight:600;font-size:0.95rem;">Beyond Biohacking Conference</p>
         <p style="color:var(--aap-text-muted);font-size:0.85rem;">Speaking on creating deeper experiential connection</p>
       </div>
     </div>
@@ -677,19 +689,19 @@
       <p class="section__eyebrow">Press &amp; Appearances</p>
       <h2 class="section__heading">As seen in</h2>
       <div class="press-grid">
-        <a href="#" class="press-item">
-          <p class="press-item__source">Bravo / Andy Cohen</p>
-          <p class="press-item__title">Cast on Ex-Rated reality TV show</p>
+        <a href="https://www.peacocktv.com/watch-online/tv/ex-rated-with-andy-cohen/9185873263242663112/seasons/1/episodes/the-relationship-guru-cant-find-love-episode-7/e74053b1-3738-3da8-9e30-2ae2f4134f08" target="_blank" rel="noopener" class="press-item">
+          <p class="press-item__source">Peacock / Andy Cohen</p>
+          <p class="press-item__title">Ex-Rated — "The Relationship Guru Can't Find Love" (Episode 7)</p>
         </a>
         <a href="https://lamag.com/angelinos/now-that-the-pandemic-is-finally-mostly-over-l-a-singles-are-ditching-dating-apps-and-venturing-into-the-real-world-in-search-of-love-and-finding-it-in-of-all-places-erewhon-supermarkets/" target="_blank" rel="noopener" class="press-item">
           <p class="press-item__source">LA Magazine</p>
           <p class="press-item__title">Cover feature on "Shop &amp; Shag" (2023)</p>
         </a>
-        <a href="#" class="press-item">
-          <p class="press-item__source">Bill Maher Show</p>
-          <p class="press-item__title">Featured for groundbreaking dating events</p>
+        <a href="https://www.youtube.com/watch?v=GjnJu8go-YQ" target="_blank" rel="noopener" class="press-item">
+          <p class="press-item__source">Real Time with Bill Maher</p>
+          <p class="press-item__title">Shop &amp; Shag featured in "Ditch Your Dating App" segment</p>
         </a>
-        <a href="#" class="press-item">
+        <a href="https://www.instagram.com/p/CoaTmwpDTWN/" target="_blank" rel="noopener" class="press-item">
           <p class="press-item__source">Good Day LA</p>
           <p class="press-item__title">Shop &amp; Shag at Erewhon segment</p>
         </a>
@@ -763,7 +775,7 @@
             <div style="display:flex;align-items:center;gap:12px;"><span style="color:var(--aap-accent);font-weight:700;">01</span> Speaking &amp; Keynotes</div>
             <div style="display:flex;align-items:center;gap:12px;"><span style="color:var(--aap-accent);font-weight:700;">02</span> Experience Design &amp; Facilitation</div>
             <div style="display:flex;align-items:center;gap:12px;"><span style="color:var(--aap-accent);font-weight:700;">03</span> Private Coaching</div>
-            <div style="display:flex;align-items:center;gap:12px;"><span style="color:var(--aap-accent);font-weight:700;">04</span> Truth or Dare Nights</div>
+
           </div>
           <a href="https://wedeepen.com/schedule-with-christina" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Or book a free strategy session &rarr;</a>
         </div>
@@ -775,7 +787,7 @@
             <option value="speaking">Speaking &amp; Keynotes</option>
             <option value="experience-design">Experience Design &amp; Facilitation</option>
             <option value="coaching">Private Coaching</option>
-            <option value="truth-or-dare">Truth or Dare Night</option>
+
             <option value="other">Something else</option>
           </select>
           <textarea name="message" placeholder="Tell me a bit about what you're looking for..." rows="4" style="padding:14px 18px;border:1px solid var(--aap-border);border-radius:8px;font-size:0.9rem;font-family:inherit;background:var(--aap-bg);outline:none;resize:vertical;"></textarea>
@@ -791,6 +803,8 @@
       </style>
     </div>
   </section>
+
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
