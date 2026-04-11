@@ -140,13 +140,13 @@
 
     /* ========== HERO ========== */
     .hero {
-      min-height: 100vh; display: flex; align-items: center;
-      padding: 120px 24px 96px;
+      display: flex; align-items: center;
+      padding: 112px 24px 88px;
       max-width: 1200px; margin: 0 auto;
     }
     .hero__grid {
-      display: grid; grid-template-columns: 1fr 1.15fr;
-      gap: 64px; align-items: center; width: 100%;
+      display: grid; grid-template-columns: 1fr 1.1fr;
+      gap: 72px; align-items: center; width: 100%;
     }
     .hero__image-col { position: relative; z-index: 2; }
     .hero__eyebrow {
@@ -155,19 +155,20 @@
     }
     .hero__heading {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1;
-      margin-bottom: 24px;
+      font-size: clamp(2.75rem, 5.2vw, 4.25rem); line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
     }
     .hero__sub {
-      font-size: 1.125rem; color: var(--aap-text-muted);
-      line-height: 1.75; margin-bottom: 32px; max-width: 480px;
+      font-size: 1.15rem; color: var(--aap-text-muted);
+      line-height: 1.7; margin-bottom: 36px; max-width: 500px;
     }
     .hero__ctas { display: flex; gap: 16px; flex-wrap: wrap; }
     .hero__photo {
       width: 100%; aspect-ratio: 3/4; object-fit: cover;
-      border-radius: 16px; box-shadow: var(--aap-shadow-xl);
+      object-position: 50% 22%;
+      border-radius: 12px; box-shadow: var(--aap-shadow-xl);
       background: var(--aap-bg-muted);
-      transform: scale(1.08); transform-origin: center center;
     }
     .hero__photo-placeholder {
       width: 100%; aspect-ratio: 3/4; border-radius: 16px;
@@ -206,40 +207,50 @@
 
     /* ========== SECTIONS ========== */
     .section {
-      padding: 96px 24px; max-width: 1200px; margin: 0 auto;
+      padding: 104px 24px; max-width: 1200px; margin: 0 auto;
     }
     .section--full { max-width: none; }
     .section--dark { background: var(--aap-bg-dark); color: #faf9f6; }
     .section--muted { background: var(--aap-bg-muted); }
     .section__eyebrow {
-      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--aap-accent); margin-bottom: 12px;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--aap-accent); margin-bottom: 14px;
     }
     .section__heading {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 24px;
+      font-size: clamp(2.25rem, 4.4vw, 3.5rem); line-height: 1.12;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
     }
     .section__inner { max-width: 1200px; margin: 0 auto; }
 
+    @media (max-width: 768px) {
+      .section { padding: 72px 24px; }
+    }
+
     /* ========== ABOUT ========== */
     .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 64px; align-items: center;
+      display: grid; grid-template-columns: 0.9fr 1.1fr;
+      gap: 72px; align-items: center;
     }
     .about__photo {
-      width: 100%; aspect-ratio: 4/5; object-fit: cover;
-      border-radius: 16px; box-shadow: var(--aap-shadow-xl);
-      background: linear-gradient(135deg, var(--aap-bg-muted), #e8e4da);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--aap-text-muted); font-size: 0.875rem; text-align: center; padding: 32px;
+      position: relative;
+      border-radius: 12px;
+      box-shadow: var(--aap-shadow-xl);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+    .about__photo img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block;
     }
     .about__text p {
-      font-size: 1.1rem; line-height: 1.8; color: var(--aap-text-muted); margin-bottom: 20px;
+      font-size: 1.1rem; line-height: 1.75; color: var(--aap-text-muted); margin-bottom: 20px;
     }
-    .about__credentials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .about__credentials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
     .credential {
-      padding: 4px 16px; font-size: 0.7rem; font-weight: 600;
-      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 7px 16px; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
       border-radius: 9999px; background: rgba(212, 136, 58, 0.1); color: var(--aap-accent);
     }
     @media (max-width: 768px) {
@@ -251,35 +262,36 @@
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
     }
     .service-card {
-      padding: 48px 32px; text-align: center;
-      border-right: 2px solid var(--aap-accent);
-      transition: all 200ms ease;
+      padding: 48px 36px; text-align: left;
+      border-right: 1px solid var(--aap-border);
+      transition: background 200ms ease, transform 200ms ease;
+      display: flex; flex-direction: column;
     }
     .service-card:last-child { border-right: none; }
     .service-card:hover { background: rgba(212, 136, 58, 0.04); transform: translateY(-4px); }
     .service-card__title {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.5rem; margin-bottom: 16px;
+      font-size: 1.625rem; line-height: 1.2; margin-bottom: 20px;
     }
     .service-card__text {
       color: var(--aap-text-muted); line-height: 1.75; margin-bottom: 20px;
     }
     .service-card__list {
-      list-style: none; margin-bottom: 24px; text-align: left;
-      display: inline-block;
+      list-style: none; margin-bottom: 28px;
+      flex: 1;
     }
     .service-card__list li {
-      padding: 4px 0; color: var(--aap-text-muted); font-size: 0.95rem;
+      padding: 6px 0; color: var(--aap-text-muted); font-size: 0.95rem; line-height: 1.55;
     }
     .service-card__list li::before {
-      content: ""; display: inline-block; width: 6px; height: 6px;
-      border-radius: 50%; background: var(--aap-accent); margin-right: 10px;
+      content: ""; display: inline-block; width: 5px; height: 5px;
+      border-radius: 50%; background: var(--aap-accent); margin-right: 12px;
       vertical-align: middle;
     }
     @media (max-width: 768px) {
       .services-grid { grid-template-columns: 1fr; }
       .service-card {
-        border-right: none; border-bottom: 2px solid var(--aap-accent);
+        border-right: none; border-bottom: 1px solid var(--aap-border);
         padding: 40px 24px;
       }
       .service-card:last-child { border-bottom: none; }
@@ -287,17 +299,22 @@
 
     /* ========== VENTURES ========== */
     .ventures-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 8px;
     }
     .venture {
-      padding: 32px; border-radius: 16px; background: var(--aap-bg-muted);
+      padding: 32px 28px; border-radius: 10px; background: var(--aap-bg-muted);
+      border: 1px solid transparent;
       transition: all 200ms ease;
     }
-    .venture:hover { box-shadow: var(--aap-shadow); transform: translateY(-2px); }
+    .venture:hover {
+      box-shadow: var(--aap-shadow); transform: translateY(-2px);
+      border-color: rgba(212, 136, 58, 0.25);
+    }
     .venture__name {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.25rem; margin-bottom: 8px;
+      font-size: 1.375rem; line-height: 1.25; margin-bottom: 10px;
     }
     .venture__desc { color: var(--aap-text-muted); line-height: 1.75; margin-bottom: 16px; }
     .venture__link {
@@ -471,15 +488,18 @@
   </section>
 
   <!-- ===== AS SEEN IN ===== -->
-  <div style="padding:32px 24px;border-top:1px solid var(--aap-border);border-bottom:1px solid var(--aap-border);">
-    <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:24px 48px;">
-      <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text-muted);">As Seen In</span>
-      <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">Peacock</span>
-      <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">LA Magazine</span>
-      <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">Bill Maher</span>
-      <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">Good Day LA</span>
-      <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">Omega Institute</span>
-      <span style="font-size:0.95rem;font-weight:600;color:var(--aap-text);opacity:0.5;">Beyond Biohacking Conference</span>
+  <div style="padding:44px 24px;border-top:1px solid var(--aap-border);border-bottom:1px solid var(--aap-border);">
+    <div style="max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:20px 56px;">
+      <span style="font-family:'DM Serif Display',Georgia,serif;font-style:italic;font-size:1rem;color:var(--aap-text-muted);letter-spacing:0.01em;">As seen in</span>
+      <span style="font-size:1rem;font-weight:500;color:var(--aap-text);opacity:0.72;letter-spacing:0.01em;">Peacock</span>
+      <span style="font-size:1rem;font-weight:500;color:var(--aap-text);opacity:0.72;letter-spacing:0.01em;">LA Magazine</span>
+      <span style="font-size:1rem;font-weight:500;color:var(--aap-text);opacity:0.72;letter-spacing:0.01em;">Bill Maher</span>
+      <span style="font-size:1rem;font-weight:500;color:var(--aap-text);opacity:0.72;letter-spacing:0.01em;">Good Day LA</span>
+      <span style="font-size:1rem;font-weight:500;color:var(--aap-text);opacity:0.72;letter-spacing:0.01em;">Omega Institute</span>
+      <span style="font-size:1rem;font-weight:500;color:var(--aap-text);opacity:0.72;letter-spacing:0.01em;">Beyond Biohacking</span>
+      <span style="font-size:1rem;font-weight:500;color:var(--aap-text);opacity:0.72;letter-spacing:0.01em;">Wellness Mama</span>
+      <span style="font-size:1rem;font-weight:500;color:var(--aap-text);opacity:0.72;letter-spacing:0.01em;">Dr. Anna Cabeca</span>
+      <span style="font-size:1rem;font-weight:500;color:var(--aap-text);opacity:0.72;letter-spacing:0.01em;">Conscious Kitchen Radio</span>
     </div>
   </div>
 
@@ -487,7 +507,7 @@
   <section class="section" id="about">
     <div class="about-grid">
       <div class="about__photo">
-        <img src="/images/christina-about-nobg.jpg" alt="Christina Weber seated in blue chair" style="width:100%;height:100%;object-fit:cover;border-radius:var(--aap-radius-lg);">
+        <img src="/images/christina-about-nobg.jpg" alt="Christina Weber seated in blue chair">
       </div>
       <div class="about__text">
         <p class="section__eyebrow">About Christina</p>
@@ -561,7 +581,7 @@
   </section>
 
   <!-- ===== FOUR PILLARS ===== -->
-  <section class="section section--full" style="background:var(--aap-bg-dark);color:#faf9f6;padding:80px 24px;">
+  <section class="section section--full" style="background:var(--aap-bg-dark);color:#faf9f6;padding:104px 24px;">
     <div class="section__inner" style="text-align:center;">
       <p class="section__eyebrow">Core Teaching</p>
       <h2 class="section__heading" style="color:#faf9f6;">The Four Pillars of a Conscious Relationship</h2>
@@ -569,22 +589,22 @@
         A framework for practicing love as a path of growth, truth, and transformation.
       </p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;max-width:960px;margin:0 auto;">
-        <div style="background:rgba(250,249,246,0.06);border:1px solid rgba(250,249,246,0.1);border-radius:16px;padding:32px 24px;">
+        <div style="background:rgba(250,249,246,0.04);border:1px solid rgba(250,249,246,0.12);border-radius:8px;padding:36px 28px;">
           <div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--aap-accent);margin-bottom:12px;">1</div>
           <h3 style="font-size:1rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:8px;">Prioritize Growth</h3>
           <p style="font-size:0.9rem;color:rgba(250,249,246,0.6);line-height:1.6;">No attachment to outcome. Growth comes first.</p>
         </div>
-        <div style="background:rgba(250,249,246,0.06);border:1px solid rgba(250,249,246,0.1);border-radius:16px;padding:32px 24px;">
+        <div style="background:rgba(250,249,246,0.04);border:1px solid rgba(250,249,246,0.12);border-radius:8px;padding:36px 28px;">
           <div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--aap-accent);margin-bottom:12px;">2</div>
           <h3 style="font-size:1rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:8px;">Own Your Own Sh*t</h3>
           <p style="font-size:0.9rem;color:rgba(250,249,246,0.6);line-height:1.6;">Take responsibility for your wounds and reactions.</p>
         </div>
-        <div style="background:rgba(250,249,246,0.06);border:1px solid rgba(250,249,246,0.1);border-radius:16px;padding:32px 24px;">
+        <div style="background:rgba(250,249,246,0.04);border:1px solid rgba(250,249,246,0.12);border-radius:8px;padding:36px 28px;">
           <div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--aap-accent);margin-bottom:12px;">3</div>
           <h3 style="font-size:1rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:8px;">All Feelings Are Welcome</h3>
           <p style="font-size:0.9rem;color:rgba(250,249,246,0.6);line-height:1.6;">No internal process is condemned.</p>
         </div>
-        <div style="background:rgba(250,249,246,0.06);border:1px solid rgba(250,249,246,0.1);border-radius:16px;padding:32px 24px;">
+        <div style="background:rgba(250,249,246,0.04);border:1px solid rgba(250,249,246,0.12);border-radius:8px;padding:36px 28px;">
           <div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--aap-accent);margin-bottom:12px;">4</div>
           <h3 style="font-size:1rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:8px;">Practice Love</h3>
           <p style="font-size:0.9rem;color:rgba(250,249,246,0.6);line-height:1.6;">In every moment, with every person.</p>
@@ -725,6 +745,18 @@
           <p class="press-item__source">Inside The Greenroom</p>
           <p class="press-item__title">EP113: Curating Deeper Experiential Connection</p>
         </a>
+        <a href="https://wellnessmama.com/podcast/1032/" target="_blank" rel="noopener" class="press-item">
+          <p class="press-item__source">Wellness Mama Podcast</p>
+          <p class="press-item__title">Episode 1032 — with Katie Wells</p>
+        </a>
+        <a href="https://drannacabeca.com/blogs/podcast/successful-relationship-christina-webber" target="_blank" rel="noopener" class="press-item">
+          <p class="press-item__source">Dr. Anna Cabeca</p>
+          <p class="press-item__title">Building a Successful Relationship</p>
+        </a>
+        <a href="https://open.spotify.com/episode/2S7IkusA1pdUGuZm0XynfD" target="_blank" rel="noopener" class="press-item">
+          <p class="press-item__source">Conscious Kitchen Radio</p>
+          <p class="press-item__title">Guest appearance with Dr. Nikki</p>
+        </a>
         <a href="https://www.streetinsider.com/Newsfile/Revolutionizing+Romance:+WeDeepen+Launches+The+Love+Club+at+Wonderland+Conference/22301918.html" target="_blank" rel="noopener" class="press-item">
           <p class="press-item__source">Street Insider</p>
           <p class="press-item__title">Revolutionizing Romance: WeDeepen Launches The Love Club</p>
@@ -784,9 +816,9 @@
           <a href="https://wedeepen.com/schedule-with-christina" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Or book a free strategy session &rarr;</a>
         </div>
         <form action="https://formspree.io/f/xdkogpvr" method="POST" style="display:flex;flex-direction:column;gap:16px;">
-          <input type="text" name="name" placeholder="Your name" required style="padding:14px 18px;border:1px solid var(--aap-border);border-radius:8px;font-size:0.9rem;font-family:inherit;background:var(--aap-bg);outline:none;">
-          <input type="email" name="email" placeholder="Email address" required style="padding:14px 18px;border:1px solid var(--aap-border);border-radius:8px;font-size:0.9rem;font-family:inherit;background:var(--aap-bg);outline:none;">
-          <select name="interest" style="padding:14px 18px;border:1px solid var(--aap-border);border-radius:8px;font-size:0.9rem;font-family:inherit;background:var(--aap-bg);color:var(--aap-text);outline:none;">
+          <input type="text" name="name" placeholder="Your name" required style="padding:14px 18px;border:1px solid var(--aap-border);border-radius:6px;font-size:0.95rem;font-family:inherit;background:#ffffff;outline:none;">
+          <input type="email" name="email" placeholder="Email address" required style="padding:14px 18px;border:1px solid var(--aap-border);border-radius:6px;font-size:0.95rem;font-family:inherit;background:#ffffff;outline:none;">
+          <select name="interest" style="padding:14px 18px;border:1px solid var(--aap-border);border-radius:6px;font-size:0.95rem;font-family:inherit;background:#ffffff;color:var(--aap-text);outline:none;">
             <option value="" disabled selected>I'm interested in...</option>
             <option value="speaking">Speaking &amp; Keynotes</option>
             <option value="experience-design">Experience Design &amp; Facilitation</option>
@@ -794,7 +826,7 @@
 
             <option value="other">Something else</option>
           </select>
-          <textarea name="message" placeholder="Tell me a bit about what you're looking for..." rows="4" style="padding:14px 18px;border:1px solid var(--aap-border);border-radius:8px;font-size:0.9rem;font-family:inherit;background:var(--aap-bg);outline:none;resize:vertical;"></textarea>
+          <textarea name="message" placeholder="Tell me a bit about what you're looking for..." rows="4" style="padding:14px 18px;border:1px solid var(--aap-border);border-radius:6px;font-size:0.95rem;font-family:inherit;background:#ffffff;outline:none;resize:vertical;"></textarea>
           <input type="hidden" name="_subject" value="New inquiry from christinalweber.com">
           <input type="hidden" name="_next" value="https://christinalweber.com/#booking">
           <button type="submit" class="btn btn--primary btn-pulse" style="border:none;cursor:pointer;width:100%;">Send Inquiry</button>
