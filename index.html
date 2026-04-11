@@ -222,6 +222,9 @@
       letter-spacing: -0.01em;
       margin-bottom: 28px;
     }
+    .section__heading--long {
+      font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.2;
+    }
     .section__inner { max-width: 1200px; margin: 0 auto; }
 
     @media (max-width: 768px) {
@@ -230,7 +233,7 @@
 
     /* ========== ABOUT ========== */
     .about-grid {
-      display: grid; grid-template-columns: 0.9fr 1.1fr;
+      display: grid; grid-template-columns: 1fr 1fr;
       gap: 72px; align-items: center;
     }
     .about__photo {
@@ -238,7 +241,7 @@
       border-radius: 12px;
       box-shadow: var(--aap-shadow-xl);
       overflow: hidden;
-      aspect-ratio: 4/5;
+      aspect-ratio: 3/4;
     }
     .about__photo img {
       width: 100%; height: 100%; object-fit: cover;
@@ -507,7 +510,7 @@
       </div>
       <div class="about__text">
         <p class="section__eyebrow">About Christina</p>
-        <h2 class="section__heading">From hosting dating events in NYC to mapping an entire industry dedicated to love</h2>
+        <h2 class="section__heading section__heading--long">From hosting dating events in NYC to mapping an entire industry dedicated to love</h2>
         <p>
           It started in 2014. Christina was throwing "Underground Unattached" dating events in NYC — convinced that if she could get enough dope people in one room, we'd all live happily ever after.
         </p>
