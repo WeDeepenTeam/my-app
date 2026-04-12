@@ -181,6 +181,18 @@
       border-color: var(--aap-accent);
     }
 
+    .gallery-filters__fb {
+      padding: 8px 20px; border-radius: 9999px;
+      font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      border: 1.5px solid var(--aap-accent);
+      background: transparent; color: var(--aap-accent);
+      text-decoration: none; transition: all 200ms ease;
+    }
+    .gallery-filters__fb:hover {
+      background: var(--aap-accent); color: #fff;
+    }
+
     /* ========== MASONRY GRID ========== */
     .gallery-grid {
       max-width: 1200px; margin: 0 auto; padding: 0 24px 96px;
@@ -349,6 +361,7 @@
     <button data-filter="dojo">Dating Dojo</button>
     <button data-filter="bhl">Playful Portal</button>
     <button data-filter="medidating">MediDating</button>
+    <a href="https://www.facebook.com/WeDeepen/photos_albums" target="_blank" rel="noopener" class="gallery-filters__fb">Facebook Albums &rarr;</a>
   </div>
 
   <!-- ===== PHOTO GRID ===== -->
