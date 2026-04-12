@@ -325,6 +325,29 @@
     }
     .venture__link:hover { text-decoration: underline; }
 
+    /* ========== MARKETPLACE / PICKS ========== */
+    .picks-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .pick {
+      padding: 28px 24px; border-radius: 10px; background: var(--aap-bg);
+      border: 1px solid var(--aap-border);
+      text-align: center; text-decoration: none; color: var(--aap-text);
+      transition: all 200ms ease;
+    }
+    .pick:hover {
+      border-color: var(--aap-accent); box-shadow: var(--aap-shadow); transform: translateY(-2px);
+    }
+    .pick__name {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.1rem; margin-bottom: 8px;
+    }
+    .pick__desc { color: var(--aap-text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 14px; }
+    .pick__link {
+      font-size: 0.8rem; font-weight: 600; color: var(--aap-accent);
+    }
+
     /* ========== PODCAST (dark) ========== */
     .podcast__grid {
       display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start;
@@ -662,6 +685,43 @@
       <div class="venture">
         <h3 class="venture__name">MediDating</h3>
         <p class="venture__desc">Town hall on love and relationships. Opens with a 20-minute group meditation for heart coherence, then an unfiltered conversation on sex, love, and what's actually working.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHRISTINA'S PICKS ===== -->
+  <section class="section section--full section--muted" id="picks" style="padding-left:24px;padding-right:24px;">
+    <div class="section__inner">
+      <div style="text-align:center;margin-bottom:48px;">
+        <p class="section__eyebrow">Christina's Picks</p>
+        <h2 class="section__heading">Products I Love</h2>
+      </div>
+      <div class="picks-grid">
+        <a href="#" target="_blank" rel="noopener" class="pick">
+          <h3 class="pick__name">Be Here Farms</h3>
+          <p class="pick__desc">A ceremony for your skin. Clean, intentional skincare.</p>
+          <span class="pick__link">Shop &rarr;</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="pick">
+          <h3 class="pick__name">LivingPrana</h3>
+          <p class="pick__desc">The best pancake ever — nutrient-dense, clean ingredients.</p>
+          <span class="pick__link">Shop &rarr;</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="pick">
+          <h3 class="pick__name">Danger Coffee</h3>
+          <p class="pick__desc">Coffee with minerals. Not mold. By Dave Asprey.</p>
+          <span class="pick__link">Shop &rarr;</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="pick">
+          <h3 class="pick__name">TruKava</h3>
+          <p class="pick__desc">Natural nervous-system relaxant for calm without the crash.</p>
+          <span class="pick__link">Shop &rarr;</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="pick">
+          <h3 class="pick__name">MindBody Matrix</h3>
+          <p class="pick__desc">Hydrogen water for longevity and mitochondrial health.</p>
+          <span class="pick__link">Shop &rarr;</span>
+        </a>
       </div>
     </div>
   </section>
