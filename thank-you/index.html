@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You — Christina Weber</title>
+  <link rel="canonical" href="https://christinalweber.com/thank-you/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --aap-font-body: 'DM Sans', sans-serif;
+      --aap-font-heading: 'DM Serif Display', serif;
+      --aap-bg: #faf9f6;
+      --aap-text: #1c1618;
+      --aap-accent: #d4883a;
+      --aap-text-muted: #5a5048;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--aap-font-body);
+      background: var(--aap-bg);
+      color: var(--aap-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .thank-you__heading {
+      font-family: var(--aap-font-heading);
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .thank-you__sub {
+      font-size: 1.1rem;
+      color: var(--aap-text-muted);
+      max-width: 480px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .thank-you__btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--aap-accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all 200ms ease;
+    }
+    .thank-you__btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    .thank-you__logo {
+      font-family: var(--aap-font-heading);
+      font-size: 1.4rem;
+      color: var(--aap-text);
+      text-decoration: none;
+      margin-bottom: 48px;
+    }
+  </style>
+</head>
+<body>
+  <a href="/" class="thank-you__logo">Christina Weber</a>
+  <h1 class="thank-you__heading">Thank you for reaching out.</h1>
+  <p class="thank-you__sub">
+    I read every inquiry personally and will be in touch soon if there's a fit. In the meantime, feel free to explore more of my work.
+  </p>
+  <a href="/" class="thank-you__btn">Back to Home</a>
+</body>
+</html>
