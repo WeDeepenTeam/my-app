@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Strategists — WeDeepen | World-Class Teachers, Coaches & Practitioners</title>
+  <meta name="description" content="Meet the Love Strategists — a hand-picked cabinet of world-class teachers, coaches, and practitioners who teach inside the WeDeepen Love Club and at every Love Immersion.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wedeepen.com/love-guides/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wedeepen.com/love-guides/">
+  <meta property="og:title" content="Love Strategists — WeDeepen">
+  <meta property="og:description" content="The hand-picked cabinet of world-class teachers behind WeDeepen.">
+  <meta property="og:site_name" content="WeDeepen">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Love Strategists — WeDeepen">
+  <meta name="twitter:description" content="The cabinet of world-class teachers behind WeDeepen.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rose:    { deep: '#A01B4A', light: '#C4577A' },
+            pink:    { hot: '#E8337A', bright: '#FF4F8C', glow: 'rgba(232,51,122,0.25)' },
+            teal:    { DEFAULT: '#C9A277', light: '#D4B78C', dark: '#A8855C' },
+            gold:    { DEFAULT: '#C9A277', light: '#D4B78C', dark: '#A8855C' },
+            charcoal: '#2D2D2D',
+            cream:   '#F4EDE0',
+            ink:     '#1A1A1A',
+            black:   '#1A1A1A',
+            softgray: '#F5F5F5',
+          },
+          fontFamily: {
+            heading: ['"Playfair Display"', 'Georgia', 'serif'],
+            body:    ['"DM Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          maxWidth: { site: '1200px' },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', 'Inter', system-ui, sans-serif; }
+
+    .wd-header {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .wd-header.scrolled {
+      background-color: rgba(26,26,26,0.95);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    .gold-line-center::after {
+      content: ''; display: block;
+      width: 60px; height: 2px;
+      background: #C9A277;
+      margin: 16px auto 0;
+    }
+
+    .btn-rose {
+      background: #A01B4A; color: #fff;
+      padding: 14px 32px; border-radius: 9999px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-block; text-decoration: none;
+    }
+    .btn-rose:hover { background: #851437; transform: translateY(-1px); }
+
+    .btn-outline {
+      border: 1.5px solid #C9A277; color: #C9A277;
+      padding: 14px 32px; border-radius: 9999px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      display: inline-block; text-decoration: none;
+    }
+    .btn-outline:hover { background: #C9A277; color: #1A1A1A; transform: translateY(-1px); }
+
+    /* Strategist profile */
+    .strategist-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .strategist-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    /* Specialty tag */
+    .specialty-tag {
+      display: inline-block;
+      padding: 5px 14px;
+      background: rgba(201,162,119,0.1);
+      border: 1px solid rgba(201,162,119,0.3);
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      color: #C9A277;
+      letter-spacing: 0.05em;
+    }
+
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Mobile nav */
+    .mobile-nav { transform: translateX(100%); transition: transform 0.35s ease; }
+    .mobile-nav.open { transform: translateX(0); }
+
+    /* Smooth scroll anchor offset for sticky header */
+    section[id] { scroll-margin-top: 100px; }
+  </style>
+  <script src="https://catch.share.one/01954a1a-1897-7f53-bd40-a67ac4997dff.js" defer></script>
+</head>
+<body class="bg-ink text-white">
+
+  <!-- STICKY HEADER -->
+  <header id="wd-header" class="wd-header fixed top-0 left-0 right-0 z-50" style="background: rgba(20,16,18,0.92); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-site mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/wedeepen/" class="flex items-center">
+        <img src="/wedeepen/images/deepen-logo-white.png" alt="DeePeN" class="h-7 w-auto">
+      </a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium">
+        <a href="/wedeepen/" class="text-white/80 hover:text-white transition">Home</a>
+        <a href="/wedeepen/love-club/" class="text-white/80 hover:text-white transition">Love Club</a>
+        <a href="/wedeepen/love-immersion/" class="text-white/80 hover:text-white transition">Love Immersion</a>
+        <a href="/wedeepen/love-guides/" class="text-white hover:text-white transition">Love Strategists</a>
+        <a href="/wedeepen/events/" class="text-white/80 hover:text-white transition">Events</a>
+        <a href="/wedeepen/reviews/" class="text-white/80 hover:text-white transition">Reviews</a>
+        <a href="/wedeepen/about/" class="text-white/80 hover:text-white transition">About</a>
+        <a href="/wedeepen/podcast/" class="text-white/80 hover:text-white transition">Podcast</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="https://circle.wedeepenloveclub.com/" class="btn-rose text-sm !py-2.5 !px-6 hidden sm:inline-block">Login to Love Club</a>
+        <button id="mobile-toggle" class="lg:hidden text-white p-2" aria-label="Open menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-nav" class="mobile-nav fixed inset-0 z-[60] bg-ink/98 flex flex-col pt-20 px-8">
+    <button id="mobile-close" class="absolute top-5 right-5 text-white p-2" aria-label="Close menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav class="flex flex-col gap-6 text-lg font-medium">
+      <a href="/wedeepen/" class="text-white hover:text-gold transition">Home</a>
+      <a href="/wedeepen/love-club/" class="text-white hover:text-gold transition">Love Club</a>
+      <a href="/wedeepen/love-immersion/" class="text-white hover:text-gold transition">Love Immersion</a>
+      <a href="/wedeepen/love-guides/" class="text-white hover:text-gold transition">Love Strategists</a>
+      <a href="/wedeepen/events/" class="text-white hover:text-gold transition">Events</a>
+      <a href="/wedeepen/reviews/" class="text-white hover:text-gold transition">Reviews</a>
+      <a href="/wedeepen/about/" class="text-white hover:text-gold transition">About</a>
+      <a href="/wedeepen/podcast/" class="text-white hover:text-gold transition">Podcast</a>
+      <a href="https://circle.wedeepenloveclub.com/" class="btn-rose text-center mt-4">Login to Love Club</a>
+    </nav>
+  </div>
+
+
+  <!-- HERO -->
+  <section class="pt-32 md:pt-40 pb-16 md:pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <p class="text-gold text-xs md:text-sm uppercase tracking-[0.3em] font-semibold mb-5">The Cabinet</p>
+      <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.05] mb-6">
+        Meet the <span class="italic" style="color:#C4577A;">Love Strategists.</span>
+      </h1>
+      <p class="text-white/65 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light">
+        A hand-picked cabinet of world-class teachers, coaches, and practitioners. Each with a distinct specialty. Each extraordinary in their own right. Together, they teach inside the Love Club and at every Love Immersion.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+  <section class="bg-ink py-12 md:py-16 px-6 border-b border-white/5">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <p class="text-white/70 text-base md:text-lg leading-relaxed font-light italic">
+        "There is no one teacher. No one modality. No one path. We bring together the world's most extraordinary love and relationship guides so you can explore, find your fit, and go deeper."
+      </p>
+    </div>
+  </section>
+
+
+  <!-- STRATEGIST 1: Christina Weber -->
+  <section id="christina-weber" class="bg-ink py-20 md:py-24 px-6">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: linear-gradient(135deg, rgba(160,27,74,0.08) 0%, rgba(26,26,26,0.5) 100%); border: 1px solid rgba(201,162,119,0.2);">
+        <div class="md:col-span-2">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
+            <img src="/wedeepen/images/strategists/christina-weber.jpg" alt="Christina Weber" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:col-span-3">
+          <span class="specialty-tag mb-4">Love Strategist &amp; Founder</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Christina Weber</h2>
+          <p class="text-gold italic text-sm md:text-base mb-5">Love Industry Pioneer · Speaker · Experience Designer · Coach</p>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
+            Founder of WeDeepen. Christina began her career hosting <em>Underground Unattached</em> dating events in NYC in 2014 &mdash; and after recognizing that proximity alone couldn't teach people to love well, she went deep into the underground world of relationship education. Over a decade later, she's curated the most potent experiences in the love industry into one ecosystem.
+          </p>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            ICF Certified Coach · iPEC Trained · Heart-Coaching Certified. Based in Austin, TX.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STRATEGIST 2: Jordan Bowditch -->
+  <section id="jordan-bowditch" class="py-20 md:py-24 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+        <div class="md:col-span-2 md:order-2">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
+            <img src="/wedeepen/images/strategists/jordan-bowditch.jpg" alt="Jordan Bowditch" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:col-span-3 md:order-1">
+          <span class="specialty-tag mb-4">Radical Play &amp; Polarity</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Jordan Bowditch</h2>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
+            Jordan teaches the embodied mechanics of polarity &mdash; the magnetic tension between masculine and feminine energy that keeps long-term relationships alive. His work invites radical play, presence, and the kind of permission most people have never been given to desire fully.
+          </p>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Expect somatic work, direct coaching, and a rare fusion of warmth and precision that transforms how people experience their own aliveness.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STRATEGIST 3: Ariana Hall -->
+  <section id="ariana-hall" class="bg-ink py-20 md:py-24 px-6">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+        <div class="md:col-span-2">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
+            <img src="/wedeepen/images/strategists/ariana-hall.jpg" alt="Ariana Hall" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:col-span-3">
+          <span class="specialty-tag mb-4">Deep Transformation &amp; Clarity</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Ariana Hall</h2>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
+            Ariana works in the precise territory between truth and tenderness. Her coaching cuts through the stories people have been telling themselves for years &mdash; and holds them steady while they feel what was underneath.
+          </p>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Known for clarity without cruelty, Ariana is the strategist you go to when you're ready to stop dressing up the same pattern in new clothes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STRATEGIST 4: Dave Asprey -->
+  <section id="dave-asprey" class="py-20 md:py-24 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+        <div class="md:col-span-2 md:order-2">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
+            <img src="/wedeepen/images/strategists/dave-asprey.jpg" alt="Dave Asprey" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:col-span-3 md:order-1">
+          <span class="specialty-tag mb-4">Biohacking &amp; Longevity</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Dave Asprey</h2>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
+            The founding father of biohacking &mdash; founder of Bulletproof, host of <em>The Human Upgrade</em> podcast, and author of multiple <em>New York Times</em> bestsellers on optimizing the body, brain, and nervous system.
+          </p>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Inside WeDeepen, Dave brings the biology of love to the table: how your nervous system, sleep, and stress physiology directly shape your capacity for intimacy, desire, and sustained partnership.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STRATEGIST 5: Annie Lalla -->
+  <section id="annie-lalla" class="bg-ink py-20 md:py-24 px-6">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+        <div class="md:col-span-2">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
+            <img src="/wedeepen/images/strategists/annie-lalla.jpg" alt="Annie Lalla" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:col-span-3">
+          <span class="specialty-tag mb-4">Cartographer of Love</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Annie Lalla</h2>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
+            Philosopher, relationship coach, and self-described Cartographer of Love &mdash; Annie has spent decades mapping the architecture of great relationships. Her frameworks for conflict, commitment, and communication are used by some of the world's most successful couples.
+          </p>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Expect intelligence, warmth, and a linguistic precision that reorganizes how you understand your own love life.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STRATEGIST 6: Yossef Sagi -->
+  <section id="yossef-sagi" class="py-20 md:py-24 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+        <div class="md:col-span-2 md:order-2">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
+            <img src="/wedeepen/images/strategists/yossef-sagi.jpg" alt="Yossef Sagi" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:col-span-3 md:order-1">
+          <span class="specialty-tag mb-4">Intimacy &amp; Embodied Partnership</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Yossef Sagi</h2>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
+            Yossef brings the ancient and the anatomical together &mdash; teaching intimacy as a practice of presence, nervous system regulation, and deep somatic attunement. His work guides partners back to each other at the level of the body, not just the mind.
+          </p>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Known for creating containers where people feel profoundly safe enough to drop the armor they didn't even know they were wearing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STRATEGIST 7: Dana Arielle -->
+  <section id="dana-arielle" class="bg-ink py-20 md:py-24 px-6">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+        <div class="md:col-span-2">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
+            <img src="/wedeepen/images/strategists/dana-arielle.webp" alt="Dana Arielle" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:col-span-3">
+          <span class="specialty-tag mb-4">Feminine Embodiment</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Dana Arielle</h2>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
+            Dana's work lives at the intersection of feminine embodiment, pleasure, and devotion. She teaches women (and anyone returning to their feminine) how to move from performance into presence, from ambition into receptivity, without losing edge.
+          </p>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            A practitioner of sacred movement, erotic self-awareness, and nervous system softening &mdash; her presence alone is the transmission.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="py-20 md:py-28 px-6" style="background: linear-gradient(135deg, #1A1A1A 0%, #2a1620 100%);">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-normal mb-6 leading-tight">
+        Study with all of them. <br><span class="italic" style="color:#C4577A;">Inside the Love Club.</span>
+      </h2>
+      <p class="text-white/65 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed font-light">
+        Every Love Strategist teaches inside the Love Club and at Love Immersions &mdash; rotating throughout the year so you learn from the full cabinet, not just one voice.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="/wedeepen/love-club/" class="btn-rose">Join Love Club</a>
+        <a href="/wedeepen/love-immersion/" class="btn-outline">Attend Love Immersion</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-ink border-t border-white/10 py-16">
+    <div class="max-w-site mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <div class="md:col-span-1">
+          <img src="/wedeepen/images/deepen-logo-white.png" alt="DeePeN" class="h-7 w-auto">
+          <p class="text-white/40 text-sm mt-3 leading-relaxed">Your intimacy journey is your life story.</p>
+          <div class="flex gap-4 mt-5">
+            <a href="https://www.instagram.com/wedeepen/" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@wedeepen" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="YouTube">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="#1A1A1A" d="M9.545 15.568V8.432L15.818 12z"/></svg>
+            </a>
+            <a href="https://open.spotify.com/show/1Aq7R8l77roUrzY9q4DO1l" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="Spotify">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4">Explore</h4>
+          <ul class="space-y-2 text-white/40 text-sm">
+            <li><a href="/wedeepen/love-club/" class="hover:text-gold transition">Love Club</a></li>
+            <li><a href="/wedeepen/love-immersion/" class="hover:text-gold transition">Love Immersion</a></li>
+            <li><a href="/wedeepen/love-guides/" class="hover:text-gold transition">Love Strategists</a></li>
+            <li><a href="/wedeepen/events/" class="hover:text-gold transition">Events</a></li>
+            <li><a href="/wedeepen/reviews/" class="hover:text-gold transition">Reviews</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4">Learn More</h4>
+          <ul class="space-y-2 text-white/40 text-sm">
+            <li><a href="/wedeepen/about/" class="hover:text-gold transition">About Christina</a></li>
+            <li><a href="/wedeepen/podcast/" class="hover:text-gold transition">Podcast</a></li>
+            <li><a href="https://christinalweber.com" class="hover:text-gold transition">ChristinaLWeber.com</a></li>
+            <li><a href="mailto:team@wedeepen.com" class="hover:text-gold transition">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4">Members</h4>
+          <ul class="space-y-2 text-white/40 text-sm">
+            <li><a href="https://circle.wedeepenloveclub.com/" class="hover:text-gold transition">Member Login</a></li>
+            <li><a href="/wedeepen/love-club/" class="hover:text-gold transition">Join Love Club</a></li>
+            <li><a href="https://circle.wedeepenloveclub.com" class="hover:text-gold transition">Community</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+        <p class="text-white/30 text-xs">&copy; 2026 WeDeepen. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const header = document.getElementById('wd-header');
+    window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileClose = document.getElementById('mobile-close');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileToggle.addEventListener('click', () => mobileNav.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+    mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>
