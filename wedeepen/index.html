@@ -55,12 +55,17 @@
       theme: {
         extend: {
           colors: {
-            rose:    { deep: '#9B2335', light: '#c4567a' },
-            pink:    { hot: '#E91E63', bright: '#FF2D78', glow: 'rgba(233,30,99,0.25)' },
-            gold:    { DEFAULT: '#C9A96E', light: '#e0d0a8', dark: '#a88c4f' },
+            // Love Club sub-brand accents
+            rose:    { deep: '#C01553', light: '#D4466F' },
+            pink:    { hot: '#FE019E', bright: '#FF2DB0', glow: 'rgba(254,1,158,0.25)' },
+            // WeDeepen parent platform — Teal is the signature thread
+            teal:    { DEFAULT: '#5AC4D2', light: '#8DD6E0', dark: '#3FAAB8' },
+            gold:    { DEFAULT: '#5AC4D2', light: '#8DD6E0', dark: '#3FAAB8' }, // alias to teal during migration
+            // Structural
             charcoal: '#2D2D2D',
-            cream:   '#FDF8F4',
-            ink:     '#1A1A1A',
+            cream:   '#EFE8DF',
+            ink:     '#222222',
+            black:   '#222222',
             softgray: '#F5F5F5',
           },
           fontFamily: {
@@ -96,9 +101,9 @@
       position: absolute; inset: 0;
       background: linear-gradient(
         180deg,
-        rgba(26,26,26,0.75) 0%,
-        rgba(26,26,26,0.55) 40%,
-        rgba(26,26,26,0.80) 100%
+        rgba(34,34,34,0.75) 0%,
+        rgba(34,34,34,0.55) 40%,
+        rgba(34,34,34,0.80) 100%
       );
       z-index: 1;
     }
@@ -110,7 +115,7 @@
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
     .wd-header.scrolled {
-      background-color: rgba(26,26,26,0.95);
+      background-color: rgba(34,34,34,0.95);
       box-shadow: 0 2px 20px rgba(0,0,0,0.3);
     }
 
@@ -122,13 +127,13 @@
     .gold-line::after {
       content: ''; display: block;
       width: 60px; height: 2px;
-      background: #C9A96E;
+      background: #5AC4D2;
       margin-top: 16px;
     }
     .gold-line-center::after {
       content: ''; display: block;
       width: 60px; height: 2px;
-      background: #C9A96E;
+      background: #5AC4D2;
       margin: 16px auto 0;
     }
 
@@ -161,8 +166,8 @@
     @media (min-width: 1024px) { .photo-grid { columns: 4; } }
     .photo-grid img { width: 100%; margin-bottom: 12px; border-radius: 8px; }
 
-    /* Tier card highlight */
-    .tier-popular { border: 2px solid #C9A96E; }
+    /* Tier card highlight — Love Club sub-brand uses Deep Rose for weight */
+    .tier-popular { border: 2px solid #C01553; }
 
     /* Testimonial slider */
     .testimonial-track { transition: transform 0.5s ease; }
@@ -176,40 +181,40 @@
 
     /* Button styles */
     .btn-rose {
-      background: #9B2335; color: #fff;
+      background: #C01553; color: #fff;
       padding: 14px 32px; border-radius: 9999px;
       font-weight: 600; font-size: 0.95rem;
       transition: background 0.3s, transform 0.2s;
       display: inline-block; text-decoration: none;
     }
-    .btn-rose:hover { background: #7d1c2b; transform: translateY(-1px); }
+    .btn-rose:hover { background: #9A0F41; transform: translateY(-1px); }
 
     .btn-pink {
-      background: #E91E63; color: #fff;
+      background: #FE019E; color: #fff;
       padding: 14px 32px; border-radius: 12px;
       font-weight: 600; font-size: 0.95rem;
       transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
       display: inline-block; text-decoration: none;
     }
-    .btn-pink:hover { background: #D81B60; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(233,30,99,0.35); }
+    .btn-pink:hover { background: #E0018A; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(254,1,158,0.35); }
 
     .btn-outline {
-      border: 1.5px solid #C9A96E; color: #C9A96E;
+      border: 1.5px solid #5AC4D2; color: #5AC4D2;
       padding: 14px 32px; border-radius: 9999px;
       font-weight: 600; font-size: 0.95rem;
       transition: background 0.3s, color 0.3s, transform 0.2s;
       display: inline-block; text-decoration: none;
     }
-    .btn-outline:hover { background: #C9A96E; color: #1A1A1A; transform: translateY(-1px); }
+    .btn-outline:hover { background: #5AC4D2; color: #222222; transform: translateY(-1px); }
 
     .btn-gold {
-      background: #C9A96E; color: #1A1A1A;
+      background: #5AC4D2; color: #222222;
       padding: 14px 32px; border-radius: 9999px;
       font-weight: 600; font-size: 0.95rem;
       transition: background 0.3s, transform 0.2s;
       display: inline-block; text-decoration: none;
     }
-    .btn-gold:hover { background: #b8954f; transform: translateY(-1px); }
+    .btn-gold:hover { background: #3FAAB8; transform: translateY(-1px); }
   </style>
 </head>
 <body class="bg-ink text-white">
@@ -280,7 +285,7 @@
       ></iframe>
     </div>
     <!-- Dark overlay -->
-    <div class="absolute inset-0 z-[1]" style="background: linear-gradient(180deg, rgba(26,26,26,0.60) 0%, rgba(26,26,26,0.50) 40%, rgba(26,26,26,0.75) 85%, rgba(26,26,26,0.92) 100%);"></div>
+    <div class="absolute inset-0 z-[1]" style="background: linear-gradient(180deg, rgba(34,34,34,0.60) 0%, rgba(34,34,34,0.50) 40%, rgba(34,34,34,0.75) 85%, rgba(34,34,34,0.92) 100%);"></div>
 
     <!-- Hero Content — generous top padding for nav clearance + breathing room -->
     <div class="relative z-10 text-center px-6 max-w-5xl mx-auto pt-32 md:pt-40">
@@ -301,7 +306,7 @@
       <!-- Split-color headline — matching Growth-U proportions exactly -->
       <h1 class="font-heading text-[2.6rem] md:text-[3.5rem] lg:text-[4.2rem] font-normal leading-[1.12] mb-7">
         <span class="text-white">Your Intimacy Journey</span><br>
-        <span class="italic" style="color: #E91E63;">Is Your Life Story</span>
+        <span class="italic" style="color: #FE019E;">Is Your Life Story</span>
       </h1>
 
       <p class="text-[15px] md:text-lg text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
@@ -472,41 +477,41 @@
 
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
 
-        <!-- Tier 1: Annual -->
+        <!-- Tier 1: Annual (Love Club sub-brand — Hot Pink + Deep Rose accents) -->
         <div class="wd-card bg-charcoal rounded-2xl p-8 md:p-10 border border-white/10 flex flex-col">
-          <p class="text-gold text-sm uppercase tracking-widest font-semibold mb-2">Annual</p>
+          <p class="text-pink-hot text-sm uppercase tracking-widest font-semibold mb-2">Annual</p>
           <h3 class="font-heading text-2xl font-semibold mb-1">Love Club</h3>
           <div class="flex items-baseline gap-1 mb-6">
             <span class="text-3xl font-bold">$4,997</span>
             <span class="text-white/50 text-sm">/year</span>
           </div>
           <ul class="space-y-3 text-white/70 text-sm mb-8 flex-1">
-            <li class="flex gap-2"><span class="text-gold">&#10003;</span> Biweekly masterminds with rotating Love Strategists</li>
-            <li class="flex gap-2"><span class="text-gold">&#10003;</span> Biweekly integration and bonding circles</li>
-            <li class="flex gap-2"><span class="text-gold">&#10003;</span> 1 Love Immersion credit &mdash; $1,995 value (transferable, rolls forward)</li>
-            <li class="flex gap-2"><span class="text-gold">&#10003;</span> BrainTap Annual membership &mdash; $260 value</li>
-            <li class="flex gap-2"><span class="text-gold">&#10003;</span> Private member community</li>
-            <li class="flex gap-2"><span class="text-gold">&#10003;</span> WhatsApp groups and member-only invites</li>
+            <li class="flex gap-2"><span class="text-pink-hot">&#10003;</span> Biweekly masterminds with rotating Love Strategists</li>
+            <li class="flex gap-2"><span class="text-pink-hot">&#10003;</span> Biweekly integration and bonding circles</li>
+            <li class="flex gap-2"><span class="text-pink-hot">&#10003;</span> 1 Love Immersion credit &mdash; $1,995 value (transferable, rolls forward)</li>
+            <li class="flex gap-2"><span class="text-pink-hot">&#10003;</span> BrainTap Annual membership &mdash; $260 value</li>
+            <li class="flex gap-2"><span class="text-pink-hot">&#10003;</span> Private member community</li>
+            <li class="flex gap-2"><span class="text-pink-hot">&#10003;</span> WhatsApp groups and member-only invites</li>
           </ul>
-          <a href="https://circle.wedeepenloveclub.com/checkout/wedeepen-love-club-annual-membership?coupon_code=BL200" class="btn-outline w-full text-center block">Join Love Club</a>
+          <a href="https://circle.wedeepenloveclub.com/checkout/wedeepen-love-club-annual-membership?coupon_code=BL200" class="btn-pink w-full text-center block">Join Love Club</a>
         </div>
 
-        <!-- Tier 2: Love Club Plus -->
+        <!-- Tier 2: Love Club Plus (Love Club sub-brand — Deep Rose authority) -->
         <div class="wd-card bg-charcoal rounded-2xl p-8 md:p-10 tier-popular relative flex flex-col">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-ink text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
-          <p class="text-gold text-sm uppercase tracking-widest font-semibold mb-2">Annual + Coaching</p>
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-rose-deep text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
+          <p class="text-pink-hot text-sm uppercase tracking-widest font-semibold mb-2">Annual + Coaching</p>
           <h3 class="font-heading text-2xl font-semibold mb-1">Love Club Plus</h3>
           <div class="flex items-baseline gap-1 mb-6">
             <span class="text-3xl font-bold">$9,997</span>
             <span class="text-white/50 text-sm">/year</span>
           </div>
           <ul class="space-y-3 text-white/70 text-sm mb-8 flex-1">
-            <li class="flex gap-2"><span class="text-gold">&#10003;</span> Everything in Love Club Annual</li>
-            <li class="flex gap-2"><span class="text-gold">&#10003;</span> 10 group coaching sessions with Love Strategist (4&ndash;8 people max)</li>
-            <li class="flex gap-2"><span class="text-gold">&#10003;</span> Friday Office Hours with Christina</li>
-            <li class="flex gap-2"><span class="text-gold">&#10003;</span> BrainTap Headset + Annual membership &mdash; $907 value</li>
-            <li class="flex gap-2"><span class="text-gold">&#10003;</span> Energy4Life assessment &amp; debrief &mdash; $550 value</li>
-            <li class="flex gap-2"><span class="text-gold">&#10003;</span> Inner circle perks, access and introductions</li>
+            <li class="flex gap-2"><span class="text-pink-hot">&#10003;</span> Everything in Love Club Annual</li>
+            <li class="flex gap-2"><span class="text-pink-hot">&#10003;</span> 10 group coaching sessions with Love Strategist (4&ndash;8 people max)</li>
+            <li class="flex gap-2"><span class="text-pink-hot">&#10003;</span> Friday Office Hours with Christina</li>
+            <li class="flex gap-2"><span class="text-pink-hot">&#10003;</span> BrainTap Headset + Annual membership &mdash; $907 value</li>
+            <li class="flex gap-2"><span class="text-pink-hot">&#10003;</span> Energy4Life assessment &amp; debrief &mdash; $550 value</li>
+            <li class="flex gap-2"><span class="text-pink-hot">&#10003;</span> Inner circle perks, access and introductions</li>
           </ul>
           <a href="https://circle.wedeepenloveclub.com/checkout/love-clubcoaching-annual-membership" class="btn-rose w-full text-center block">Join Love Club Plus</a>
         </div>
@@ -917,7 +922,7 @@
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             </a>
             <a href="https://www.youtube.com/@wedeepen" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="YouTube">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="#1A1A1A" d="M9.545 15.568V8.432L15.818 12z"/></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="#222222" d="M9.545 15.568V8.432L15.818 12z"/></svg>
             </a>
             <a href="https://open.spotify.com/show/1Aq7R8l77roUrzY9q4DO1l" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="Spotify">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
