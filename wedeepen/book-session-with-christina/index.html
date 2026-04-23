@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Session with Christina — WeDeepen</title>
+  <meta name="description" content="Private mentorship with Christina Weber — love, intimacy, and conscious relationship guidance for clients and first-time sessions.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wedeepen.com/book-session-with-christina/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wedeepen.com/book-session-with-christina/">
+  <meta property="og:title" content="Book a Session with Christina — WeDeepen">
+  <meta property="og:description" content="Private mentorship with Christina Weber — love, intimacy, and conscious relationship guidance.">
+  <meta property="og:site_name" content="WeDeepen">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rose:    { deep: '#A01B4A', light: '#C4577A' },
+            pink:    { hot: '#E8337A', bright: '#FF4F8C', glow: 'rgba(232,51,122,0.25)' },
+            teal:    { DEFAULT: '#C9A277', light: '#D4B78C', dark: '#A8855C' },
+            gold:    { DEFAULT: '#C9A277', light: '#D4B78C', dark: '#A8855C' },
+            charcoal: '#2D2D2D',
+            cream:   '#F4EDE0',
+            ink:     '#1A1A1A',
+            black:   '#1A1A1A',
+          },
+          fontFamily: {
+            heading: ['"Playfair Display"', 'Georgia', 'serif'],
+            body:    ['"DM Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          maxWidth: { site: '1200px' },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', 'Inter', system-ui, sans-serif; background: #1A1A1A; }
+
+    .schedule-hero {
+      background:
+        radial-gradient(circle at 30% 20%, rgba(160,27,74,0.25), transparent 55%),
+        radial-gradient(circle at 70% 80%, rgba(201,162,119,0.12), transparent 55%),
+        #1A1A1A;
+    }
+
+    .wd-header {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .wd-header.scrolled {
+      background-color: rgba(26,26,26,0.95);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    .btn-pink {
+      background: #E8337A; color: #fff;
+      padding: 14px 32px; border-radius: 12px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      display: inline-block; text-decoration: none;
+    }
+    .btn-pink:hover { background: #D02767; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(232,51,122,0.35); }
+    .btn-rose {
+      background: #A01B4A; color: #fff;
+      padding: 14px 32px; border-radius: 9999px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-block; text-decoration: none;
+    }
+    .btn-rose:hover { background: #851437; transform: translateY(-1px); }
+    .btn-outline {
+      border: 1px solid rgba(201,162,119,0.6);
+      color: #C9A277;
+      padding: 14px 32px; border-radius: 9999px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: all 0.3s ease;
+      display: inline-block; text-decoration: none;
+    }
+    .btn-outline:hover { background: rgba(201,162,119,0.1); border-color: #C9A277; }
+
+    .mobile-nav { transform: translateX(100%); transition: transform 0.35s ease; }
+    .mobile-nav.open { transform: translateX(0); }
+
+    /* Acuity embed */
+    .acuity-wrap {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      min-height: 900px;
+    }
+    .acuity-wrap iframe {
+      width: 100%;
+      height: 900px;
+      border: none;
+      display: block;
+    }
+
+    /* Offering cards */
+    .offer-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem 2rem 1.75rem;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .offer-card:hover {
+      border-color: rgba(196,87,122,0.4);
+      transform: translateY(-2px);
+    }
+    .offer-card__price {
+      color: #C9A277;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .offer-card__title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.45rem;
+      line-height: 1.25;
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 0.85rem;
+    }
+    .offer-card__desc {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .offer-card__badge {
+      display: inline-block;
+      background: rgba(232,51,122,0.12);
+      color: #E8337A;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    /* Pillars */
+    .pillar {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+    .pillar__num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 2.25rem;
+      color: #C9A277;
+      line-height: 1;
+      flex-shrink: 0;
+      width: 2.5rem;
+      opacity: 0.9;
+    }
+    .pillar__body h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+    }
+    .pillar__body p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    /* Credential chips */
+    .cred-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.4rem 0.9rem;
+      background: rgba(201,162,119,0.08);
+      border: 1px solid rgba(201,162,119,0.25);
+      border-radius: 999px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body class="bg-ink text-white antialiased">
+
+  <!-- ============================
+       STICKY HEADER
+       ============================ -->
+  <header id="wd-header" class="wd-header fixed top-0 left-0 right-0 z-50" style="background: rgba(20,16,18,0.92); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-site mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/wedeepen/" class="flex items-center">
+        <img src="/wedeepen/images/deepen-logo-white.png" alt="DeePeN" class="h-7 w-auto">
+      </a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium">
+        <a href="/wedeepen/" class="text-white/80 hover:text-white transition">Home</a>
+        <a href="/wedeepen/love-club/" class="text-white/80 hover:text-white transition">Love Club</a>
+        <a href="/wedeepen/love-immersion/" class="text-white/80 hover:text-white transition">Love Immersion</a>
+        <a href="/wedeepen/love-guides/" class="text-white/80 hover:text-white transition">Love Strategists</a>
+        <a href="/wedeepen/events/" class="text-white/80 hover:text-white transition">Events</a>
+        <a href="/wedeepen/reviews/" class="text-white/80 hover:text-white transition">Reviews</a>
+        <a href="/wedeepen/about/" class="text-white/80 hover:text-white transition">About</a>
+        <a href="/wedeepen/podcast/" class="text-white/80 hover:text-white transition">Podcast</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="https://circle.wedeepenloveclub.com/" class="btn-rose text-sm !py-2.5 !px-6 hidden sm:inline-block">Login to Love Club</a>
+        <button id="mobile-toggle" class="lg:hidden text-white p-2" aria-label="Open menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div id="mobile-nav" class="mobile-nav fixed inset-0 z-[60] bg-ink/98 flex flex-col pt-20 px-8">
+    <button id="mobile-close" class="absolute top-5 right-5 text-white p-2" aria-label="Close menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav class="flex flex-col gap-6 text-lg font-medium">
+      <a href="/wedeepen/" class="text-white hover:text-gold transition">Home</a>
+      <a href="/wedeepen/love-club/" class="text-white hover:text-gold transition">Love Club</a>
+      <a href="/wedeepen/love-immersion/" class="text-white hover:text-gold transition">Love Immersion</a>
+      <a href="/wedeepen/love-guides/" class="text-white hover:text-gold transition">Love Strategists</a>
+      <a href="/wedeepen/events/" class="text-white hover:text-gold transition">Events</a>
+      <a href="/wedeepen/reviews/" class="text-white hover:text-gold transition">Reviews</a>
+      <a href="/wedeepen/about/" class="text-white hover:text-gold transition">About</a>
+      <a href="/wedeepen/podcast/" class="text-white hover:text-gold transition">Podcast</a>
+      <a href="https://circle.wedeepenloveclub.com/" class="btn-rose text-center mt-4">Login to Love Club</a>
+    </nav>
+  </div>
+
+
+  <!-- ============================
+       HERO
+       ============================ -->
+  <section class="schedule-hero pt-32 md:pt-40 pb-16 md:pb-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-5 gap-10 md:gap-14 items-center">
+        <div class="md:col-span-3 text-center md:text-left reveal">
+          <p class="text-gold text-xs tracking-[0.28em] uppercase font-semibold mb-5">Private Mentorship</p>
+          <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-[1.08]">
+            Book a Session with <span class="italic" style="color:#E8337A;">Christina</span>
+          </h1>
+          <p class="text-white/75 text-lg md:text-xl leading-relaxed font-light mb-8">
+            Love is the final frontier. Here&rsquo;s where you slow down, get real with yourself, and grow forward &mdash; with a mentor who has spent a decade studying what actually works.
+          </p>
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+            <a href="#book" class="btn-pink">Book a Session</a>
+            <a href="#offerings" class="btn-outline">See Offerings</a>
+          </div>
+        </div>
+        <div class="md:col-span-2 reveal">
+          <img
+            src="/wedeepen/images/christina-hero.jpg"
+            alt="Christina Weber"
+            class="w-full rounded-2xl"
+            style="aspect-ratio: 4/5; object-fit: cover; box-shadow: 0 20px 60px rgba(0,0,0,0.4);"
+            onerror="this.onerror=null;this.src='/wedeepen/images/christina-lift-2-1024x683.jpg';">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       OPENING COPY — why this work
+       ============================ -->
+  <section class="py-20 md:py-24 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #201519 100%);">
+    <div class="max-w-3xl mx-auto reveal">
+      <p class="text-gold text-xs tracking-[0.28em] uppercase font-semibold mb-5 text-center">Master Your Love Life</p>
+      <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-normal text-white text-center mb-10 leading-tight">
+        Transform heartbreak. Awaken intimacy. <span class="italic" style="color:#C4577A;">Align with the love you&rsquo;re meant to live.</span>
+      </h2>
+
+      <div class="space-y-6 text-white/75 text-lg leading-relaxed font-light">
+        <p>
+          You&rsquo;ve mastered success in many areas of life. But love? That&rsquo;s the final frontier. Whether you&rsquo;re healing from heartbreak, navigating dating, deepening your partnership, or standing at a crossroads asking <em class="text-gold">&ldquo;Do I stay or do I go?&rdquo;</em> &mdash; this is where you slow down, get honest, and grow forward.
+        </p>
+        <p>
+          Together we&rsquo;ll uncover what&rsquo;s actually happening beneath the surface of your love life &mdash; the patterns, the lessons, and the truths waiting to be spoken. We may draw from tools like Human Design, Genetic Energetics, Erotic Blueprints, and the <em>Four Pillars of a Conscious Relationship</em> to illuminate your relational map.
+        </p>
+        <p class="text-gold italic">
+          Because growth comes first. And when you&rsquo;re growing, love expands. I promise.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       RETURNING CLIENT HINT + ACUITY
+       ============================ -->
+  <section id="book" class="bg-ink pt-16 md:pt-20 pb-20 md:pb-28 px-6">
+    <div class="max-w-site mx-auto">
+      <div class="text-center mb-10 reveal">
+        <p class="text-gold text-xs tracking-[0.28em] uppercase font-semibold mb-4">Schedule</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-normal text-white mb-5 leading-tight">
+          Choose Your <span class="italic" style="color:#E8337A;">Session</span>
+        </h2>
+        <p class="text-white/55 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          <span class="text-white/75">Returning clients:</span> scroll to <em>&ldquo;Book a Mentorship Hour (pre-paid)&rdquo;</em> below.
+        </p>
+      </div>
+
+      <div class="acuity-wrap">
+        <iframe
+          src="https://app.acuityscheduling.com/schedule.php?owner=23658493&appointmentType=category:Guidance%20with%20Christina%20%28clients%29"
+          title="Book a Session with Christina"
+          loading="lazy"
+          allow="payment"></iframe>
+      </div>
+      <p class="text-center text-white/40 text-xs mt-5">
+        Having trouble loading the calendar?
+        <a href="https://app.acuityscheduling.com/schedule.php?owner=23658493&appointmentType=category:Guidance%20with%20Christina%20%28clients%29" target="_blank" rel="noopener" class="text-gold hover:underline">Open in a new tab</a>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       OFFERINGS OVERVIEW
+       ============================ -->
+  <section id="offerings" class="py-20 md:py-28 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #231820 100%);">
+    <div class="max-w-site mx-auto">
+      <div class="text-center mb-14 reveal">
+        <p class="text-gold text-xs tracking-[0.28em] uppercase font-semibold mb-4">Ways to Work Together</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-normal text-white mb-5 leading-tight">
+          Five paths into <span class="italic" style="color:#C4577A;">the work</span>.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <!-- Love Accelerator -->
+        <div class="offer-card reveal md:col-span-2" style="border-color: rgba(232,51,122,0.25); background: linear-gradient(135deg, rgba(232,51,122,0.06) 0%, rgba(160,27,74,0.03) 100%);">
+          <span class="offer-card__badge">&#x2728; Signature</span>
+          <p class="offer-card__price">$10,000 &middot; 3 months</p>
+          <h3 class="offer-card__title">Love Accelerator &mdash; 3-Month Private Mentorship</h3>
+          <p class="offer-card__desc">
+            My most transformational private offering. A three-month container designed for those truly ready to up-level how they experience love. Bi-weekly sessions, deep integration work, and direct access between calls. Begins with a first-time call (booked below).
+          </p>
+        </div>
+
+        <!-- First-Time Session -->
+        <div class="offer-card reveal">
+          <p class="offer-card__price">$295 &middot; 60 min</p>
+          <h3 class="offer-card__title">&#x1F449; Love & Intimacy Mentorship &mdash; First-Time Session</h3>
+          <p class="offer-card__desc">
+            You&rsquo;re here for clarity. We&rsquo;ll explore what&rsquo;s unfolding in your love life &mdash; what&rsquo;s working, what&rsquo;s not, and what&rsquo;s ready to grow. I draw from personal experience, years of research, and my training as an ICF-certified coach.
+          </p>
+        </div>
+
+        <!-- Human Design for Love -->
+        <div class="offer-card reveal">
+          <p class="offer-card__price">$375 &middot; 90 min</p>
+          <h3 class="offer-card__title">&#x1F9EC; Human Design for Love</h3>
+          <p class="offer-card__desc">
+            Your Human Design is the blueprint for how you love, decide, and connect. This isn&rsquo;t a typical reading &mdash; it&rsquo;s an activation. We decode your chart and apply it to your relationships, communication style, and energetic compatibility.
+          </p>
+        </div>
+
+        <!-- Deep Dive -->
+        <div class="offer-card reveal">
+          <p class="offer-card__price">$1,000 &middot; 2 hours</p>
+          <h3 class="offer-card__title">&#x1F9E1; Deep Dive: Experience Greater Intimacy</h3>
+          <p class="offer-card__desc">
+            A two-hour intensive. Before our session, you complete a personalized intake (including birth details and, if relevant, your partner&rsquo;s). I combine Human Design, Genetic Energetics, and Erotic Blueprints to reveal your unique relational map.
+          </p>
+        </div>
+
+        <!-- Mentorship Hour (pre-paid) -->
+        <div class="offer-card reveal" style="border-color: rgba(201,162,119,0.3);">
+          <span class="offer-card__badge" style="background: rgba(201,162,119,0.15); color: #C9A277;">Returning Clients</span>
+          <p class="offer-card__price">Pre-paid &middot; 60 min</p>
+          <h3 class="offer-card__title">Book a Mentorship Hour</h3>
+          <p class="offer-card__desc">
+            For active clients. Whether you&rsquo;re navigating love, dating, intimacy, conflict resolution, or simply longing to feel more aligned in life &mdash; this is your space. Scroll up to book your time.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 reveal">
+        <a href="#book" class="btn-pink">Book a Session</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       FOUR PILLARS
+       ============================ -->
+  <section class="py-20 md:py-28 px-6 bg-ink">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14 reveal">
+        <p class="text-gold text-xs tracking-[0.28em] uppercase font-semibold mb-4">The Framework</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-normal text-white mb-5 leading-tight">
+          The Four Pillars of a <span class="italic" style="color:#C4577A;">Conscious Relationship</span>
+        </h2>
+        <p class="text-white/60 max-w-2xl mx-auto leading-relaxed">
+          My mentorship is rooted in the WeDeepen framework. These principles guide every session &mdash; because the quality of your relationships mirrors the depth of your relationship with yourself.
+        </p>
+      </div>
+
+      <div class="space-y-8 reveal">
+        <div class="pillar">
+          <div class="pillar__num">I.</div>
+          <div class="pillar__body">
+            <h4>No Attachment to the Outcome &mdash; Growth Comes First</h4>
+            <p>Love is a byproduct of becoming. When growth leads, connection follows.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar__num">II.</div>
+          <div class="pillar__body">
+            <h4>Own Your Sh*t</h4>
+            <p>Radical ownership of your patterns, projections, and part to play. The gateway to real intimacy.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar__num">III.</div>
+          <div class="pillar__body">
+            <h4>All Feelings Are Welcome, No Internal Process Is Condemned</h4>
+            <p>You don&rsquo;t have to perform wellness here. Every feeling is information; every feeling belongs.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar__num">IV.</div>
+          <div class="pillar__body">
+            <h4>Practice Love</h4>
+            <p>Love is a skill, not a feeling. We practice it &mdash; in language, presence, and embodied action.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       ABOUT CHRISTINA
+       ============================ -->
+  <section class="py-20 md:py-28 px-6" style="background: linear-gradient(180deg, #201519 0%, #1A1A1A 100%);">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <p class="text-gold text-xs tracking-[0.28em] uppercase font-semibold mb-4">Your Mentor</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-normal text-white mb-5 leading-tight">
+          About <span class="italic" style="color:#E8337A;">Christina Weber</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6 text-white/75 text-lg leading-relaxed font-light max-w-3xl mx-auto reveal">
+        <p>
+          I&rsquo;m Christina Weber, founder of <em>WeDeepen</em> and the <em>Love Club</em> &mdash; and forever a student of love. For over a decade, I&rsquo;ve curated relationship-focused experiences and guided thousands of people into intimacy they didn&rsquo;t realize was possible.
+        </p>
+        <p>
+          My work bridges spirituality, science, and sensuality. I&rsquo;ve spoken on love at the <strong>Biohacking Conference</strong>, <strong>Wonderland</strong>, and <strong>Solar Punk Summit</strong>; hosted the <em>Deepen with Christina</em> podcast since 2020; and co-led retreats with thought leaders in love and human potential.
+        </p>
+        <p>
+          I&rsquo;ve studied with many of the world&rsquo;s most respected relationship teachers &mdash; <strong>Gay &amp; Katie Hendricks, Annie Lalla, Ken Page, John Gray, Alison Armstrong, Dr. Pat Allen, and Kimi Inch</strong> &mdash; and collaborated with industry leaders like biohacking pioneer <strong>Dave Asprey</strong> and global mindset coach <strong>Rod Hairston</strong>.
+        </p>
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-2.5 justify-center reveal">
+        <span class="cred-chip">ICF PCC &middot; Professional Certified Coach</span>
+        <span class="cred-chip">iPEC Certified Professional Coach</span>
+        <span class="cred-chip">ELI Master Practitioner</span>
+        <span class="cred-chip">Peacock &middot; Ex-Rated</span>
+        <span class="cred-chip">LA Magazine</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       FINAL CTA
+       ============================ -->
+  <section class="bg-ink py-20 md:py-24 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="font-heading text-3xl md:text-4xl text-white font-normal mb-5 leading-tight">
+        Ready when <span class="italic" style="color:#E8337A;">you are</span>.
+      </h2>
+      <p class="text-white/60 mb-8 leading-relaxed">
+        Private mentorship is an investment &mdash; in how you love, decide, and show up. Book a session and let&rsquo;s begin.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <a href="#book" class="btn-pink">Book a Session</a>
+        <a href="/wedeepen/love-club/" class="btn-outline">Explore Love Club</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer class="bg-ink border-t border-white/10 py-14">
+    <div class="max-w-site mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-10">
+        <div>
+          <img src="/wedeepen/images/deepen-logo-white.png" alt="DeePeN" class="h-7 w-auto">
+          <p class="text-white/40 text-sm mt-3 leading-relaxed max-w-xs">Your intimacy journey is your life story.</p>
+        </div>
+        <div class="flex gap-5">
+          <a href="https://www.facebook.com/WeDeepen/" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="Facebook">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/wedeepen/" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@wedeepen" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="YouTube">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="#1A1A1A" d="M9.545 15.568V8.432L15.818 12z"/></svg>
+          </a>
+          <a href="https://open.spotify.com/show/1Aq7R8l77roUrzY9q4DO1l" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="Spotify">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-white/40 text-xs">
+        <p>&copy; 2026 WeDeepen. All rights reserved.</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 items-center justify-center">
+          <a href="https://christinalweber.com" class="hover:text-gold transition">christinalweber.com</a>
+          <a href="https://feminineweapon.com" target="_blank" rel="noopener" class="hover:text-gold transition">Philanthropic Initiative</a>
+          <a href="/wedeepen/#contact" class="hover:text-gold transition">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const header = document.getElementById('wd-header');
+    window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileClose = document.getElementById('mobile-close');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileToggle.addEventListener('click', () => mobileNav.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+    mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+    // Simple reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+  <style>
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+  </style>
+
+</body>
+</html>
