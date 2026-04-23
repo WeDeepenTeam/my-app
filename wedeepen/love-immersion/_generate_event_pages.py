@@ -17,7 +17,7 @@ EVENTS = [
         "date_range_pretty": "June 26–28, 2026",
         "date_days": "26<span class='text-white/40'>–</span>28",
         "canonical": "june-2026",
-        "season_copy": "Three days of breakthrough, presence, and embodiment — designed for singles and couples ready to deepen.",
+        "season_copy": "Three days of breakthrough, presence, and embodiment — designed for individuals and couples ready to deepen.",
         "hook": "This is where love gets practiced. Not talked about. Not theorized. Practiced.",
         "checkout_url": "https://wedeepen.ticketspice.com/love-immersion-june-2026",
         "venue_name": "HAVAN Estates",
@@ -78,7 +78,7 @@ TEMPLATE = r"""<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Love Immersion {numeral} — {date_range_pretty} | WeDeepen</title>
-  <meta name="description" content="Love Immersion {numeral} — {date_range_pretty} in Austin, TX at HAVAN. A 3-day transformational retreat for singles and couples committed to extraordinary love.">
+  <meta name="description" content="Love Immersion {numeral} — {date_range_pretty} in Austin, TX at HAVAN. A 3-day transformational retreat for individuals and couples committed to extraordinary love.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://wedeepen.com/love-immersion/{canonical}/">
 
@@ -350,7 +350,7 @@ TEMPLATE = r"""<!DOCTYPE html>
 
       <div class="grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
         <div class="pillar-card rounded-xl p-6">
-          <h3 class="font-heading text-xl text-white mb-2">Singles ready to love differently</h3>
+          <h3 class="font-heading text-xl text-white mb-2">Individuals ready to love differently</h3>
           <p class="text-white/60 text-sm leading-relaxed">Done with the same patterns. Ready to come to love from wholeness instead of lack.</p>
         </div>
         <div class="pillar-card rounded-xl p-6">
@@ -478,7 +478,7 @@ TEMPLATE = r"""<!DOCTYPE html>
             <span class="faq-icon text-gold text-2xl leading-none">+</span>
           </button>
           <div class="faq-answer px-6 pb-6 text-white/65 text-sm leading-relaxed">
-            No. Love Immersion is designed for singles, couples, and anyone in between. About half of each retreat is typically single. The work is equally powerful either way.
+            No. Love Immersion is designed for individuals, couples, and anyone in between. About half of each retreat typically comes solo. The work is equally powerful either way.
           </div>
         </div>
 
