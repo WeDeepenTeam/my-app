@@ -37,10 +37,8 @@ def render_episode_page(ep: dict, related: list) -> str:
     ep_num = ep.get("episode", "")
     audio_url = ep.get("audio", "")
 
-    # Libsyn embed for THIS specific episode
+    # Native audio URL from RSS enclosure (reliable, no external embed dependency)
     libsyn_slug = libsyn_embed_slug(ep.get("link", ""))
-    # Libsyn iframe pattern for single episodes
-    libsyn_embed = f"//play.libsyn.com/embed/episode/id/{libsyn_slug}/height/192/theme/modern/size/large/thumbnail/yes/custom-color/1A1A1A/" if libsyn_slug else ""
 
     related_cards = "\n".join([f"""
           <a href="/wedeepen/deepen-with-christina/{slugify(r['title'])}/" class="flex gap-4 p-4 rounded-xl transition" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
@@ -218,8 +216,9 @@ def render_episode_page(ep: dict, related: list) -> str:
               <svg class="w-4 h-4" fill="#A855F7" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 3.6c4.639 0 8.4 3.761 8.4 8.4s-3.761 8.4-8.4 8.4S3.6 16.639 3.6 12 7.361 3.6 12 3.6zm-.001 2.5a5.9 5.9 0 00-5.9 5.9 5.9 5.9 0 0011.8 0 5.9 5.9 0 00-5.9-5.9zm0 2.4a3.5 3.5 0 013.5 3.5 3.5 3.5 0 11-7 0 3.5 3.5 0 013.5-3.5z"/></svg>
               Apple Podcasts
             </a>
-            <a href="{ep.get('link','')}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
-              Listen on Libsyn &rarr;
+            <a href="https://www.youtube.com/@wedeepen" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+              <svg class="w-4 h-4" fill="#FF0000" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="#FFFFFF" d="M9.545 15.568V8.432L15.818 12z"/></svg>
+              YouTube
             </a>
           </div>
         </div>
@@ -232,8 +231,11 @@ def render_episode_page(ep: dict, related: list) -> str:
   <!-- AUDIO PLAYER -->
   <section class="pb-12 md:pb-16 px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="rounded-xl overflow-hidden" style="box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
-        <iframe title="Play this episode" src="{libsyn_embed}" height="192" width="100%" scrolling="no" allowfullscreen="" style="border: none;"></iframe>
+      <div class="rounded-xl p-5 md:p-6" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 40px rgba(0,0,0,0.25);">
+        <audio controls preload="none" class="w-full" style="height: 54px;">
+          <source src="{audio_url}" type="audio/mpeg">
+          Your browser doesn't support HTML5 audio. <a href="{audio_url}" class="text-gold underline">Download the MP3</a>.
+        </audio>
       </div>
     </div>
   </section>
