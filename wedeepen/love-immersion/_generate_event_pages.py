@@ -296,14 +296,15 @@ TEMPLATE = r"""<!DOCTYPE html>
         <span class="text-gold text-xs tracking-[0.18em] uppercase font-medium">{date_range_pretty} · Austin, TX</span>
       </div>
 
-      <h1 class="font-vilonti uppercase text-white mb-2" style="font-size: clamp(4rem, 14vw, 9rem); text-shadow: 0 4px 30px rgba(0,0,0,0.7);">
-        Love
-      </h1>
-      <h2 class="font-vilonti uppercase text-white mb-4" style="font-size: clamp(2.5rem, 8vw, 5.5rem); letter-spacing: 0.04em; text-shadow: 0 4px 30px rgba(0,0,0,0.7);">
-        Immersion <span style="color: #C4577A;">{numeral}</span>
-      </h2>
-      <p class="font-heading italic text-white/90 text-lg md:text-2xl mb-10" style="text-shadow: 0 2px 16px rgba(0,0,0,0.6);">
-        Mastermind Your Love Life
+      <h1 class="sr-only">Love Immersion {numeral} — Mastermind Your Love Life</h1>
+      <img
+        src="/wedeepen/images/love-immersion-logo.png"
+        alt="Love Immersion — Mastermind Your Love Life"
+        class="mx-auto mb-4 w-full max-w-[420px] md:max-w-[560px] h-auto"
+        style="filter: drop-shadow(0 8px 30px rgba(0,0,0,0.5));"
+      >
+      <p class="font-heading italic text-white/80 text-2xl md:text-4xl mb-8 tracking-[0.15em]" style="text-shadow: 0 2px 16px rgba(0,0,0,0.6); color: #C4577A;">
+        {numeral}
       </p>
 
       <p class="text-base md:text-lg text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed font-light italic">
