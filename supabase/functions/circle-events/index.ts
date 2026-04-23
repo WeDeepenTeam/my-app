@@ -32,9 +32,11 @@ const ALLOWED_SPACE_SLUG = "events-calendar";
 interface NormalizedEvent {
   id: string;
   title: string;
-  date: string;
+  date: string; // Central Time (YYYY-MM-DD), used as primary sort + date label fallback
   end_date: string | null;
-  time: string;
+  time: string; // Pre-formatted Central Time string, fallback if frontend can't use ISO
+  starts_at_iso: string; // Raw UTC ISO, for client-side local-time conversion
+  ends_at_iso: string | null;
   location_type: "austin" | "online";
   location_label: string;
   tag: string;
@@ -154,6 +156,8 @@ function normalize(events: CircleEvent[]): NormalizedEvent[] {
       date: startDate,
       end_date: endDate,
       time: formatTime(starts),
+      starts_at_iso: starts,
+      ends_at_iso: ends || null,
       location_type,
       location_label,
       tag,
