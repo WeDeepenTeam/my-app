@@ -22,7 +22,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -50,12 +50,38 @@
   </script>
 
   <style>
+    /* Vilonti self-hosted — all weights referenced across site */
+    @font-face {
+      font-family: 'Vilonti';
+      src: url('/wedeepen/fonts/Vilonti-Regular.ttf') format('truetype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Vilonti';
+      src: url('/wedeepen/fonts/Vilonti-Italic.ttf') format('truetype');
+      font-weight: 400; font-style: italic; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Vilonti';
+      src: url('/wedeepen/fonts/Vilonti-Medium.ttf') format('truetype');
+      font-weight: 500; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Vilonti';
+      src: url('/wedeepen/fonts/Vilonti-Bold.ttf') format('truetype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Vilonti';
+      src: url('/wedeepen/fonts/Vilonti-ExtraBlack.ttf') format('truetype');
+      font-weight: 900; font-style: normal; font-display: swap;
+    }
+
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', 'Inter', system-ui, sans-serif; }
 
-    /* Vilonti substitute (until licensed Vilonti .woff2 is self-hosted) */
     .font-vilonti {
-      font-family: 'Archivo Black', 'Vilonti', 'Helvetica Neue', sans-serif;
+      font-family: 'Vilonti', 'Archivo Black', 'Helvetica Neue', sans-serif;
       font-weight: 900;
       letter-spacing: -0.01em;
       line-height: 0.95;
