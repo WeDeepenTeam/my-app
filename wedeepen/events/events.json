@@ -1,45 +1,19 @@
 {
-  "last_updated": "2026-04-07T22:45:50Z",
+  "last_updated": "2026-04-23T01:35:59Z",
   "source": "circle.wedeepenloveclub.com",
-  "event_count": 28,
+  "event_count": 24,
   "events": [
-    {
-      "id": "bonding-integration-sessions-26192f",
-      "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-04-08",
-      "end_date": null,
-      "time": "11:00 PM",
-      "location_type": "online",
-      "location_label": "Online",
-      "tag": "",
-      "description": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "image_url": "https://assets-v2.circle.so/daeo2qc5y003yokbgcfv9oktli33",
-      "url": "https://circle.wedeepenloveclub.com/c/events-calendar/bonding-integration-sessions-26192f"
-    },
-    {
-      "id": "magic-of-human-connection-april-12-los-angeles-ca",
-      "title": "Magic of Human Connection \u2014 April 12 | Los Angeles, CA",
-      "date": "2026-04-13",
-      "end_date": null,
-      "time": "12:00 AM",
-      "location_type": "austin",
-      "location_label": "1038 Princeton Dr Suite B, Marina Del Rey, CA 90292, USA",
-      "tag": "",
-      "description": "Magic of Human Connection returns to Los Angeles.  One of the most extraordinary experiences, led by Jessica Encell Coleman\u2014an evening designed to expand love, joy, and aliveness through deep human co",
-      "image_url": "https://assets-v2.circle.so/n5q52d7hpz6ixtq5nq1m0yia0yhp",
-      "url": "https://circle.wedeepenloveclub.com/c/events-calendar/magic-of-human-connection-april-12-los-angeles-ca"
-    },
     {
       "id": "biohacking-love-austin-two-day-workshop",
       "title": "Biohacking Love Austin (Two-Day Workshop)",
       "date": "2026-04-25",
-      "end_date": "2026-04-26",
-      "time": "3:00 PM",
+      "end_date": null,
+      "time": "4:00 PM",
       "location_type": "austin",
-      "location_label": "700 San Jacinto At, E 8th St, Austin, TX 78701, USA",
+      "location_label": "7600 Stillridge Dr, Austin, TX 78736, USA",
       "tag": "",
       "description": "Two Days of Biohacking Love  Upgrade your heart\u2019s operating system You\u2019ve optimized your body. You\u2019ve trained your mind. Now it\u2019s time to upgrade how you love. A two-day immersive experience blending",
-      "image_url": "https://assets-v2.circle.so/fwvkzeyhygrk9bdpz50rlrsiqzv4",
+      "image_url": "https://assets-v2.circle.so/iiwb0g90khgc07thnkohqn86dpoi",
       "url": "https://circle.wedeepenloveclub.com/c/events-calendar/biohacking-love-austin-two-day-workshop"
     },
     {
@@ -56,22 +30,9 @@
       "url": "https://circle.wedeepenloveclub.com/c/events-calendar/live-love-coaching-de2215-6ccdb1"
     },
     {
-      "id": "bonding-integration-sessions-083d4e",
-      "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-05-06",
-      "end_date": null,
-      "time": "11:00 PM",
-      "location_type": "online",
-      "location_label": "Online",
-      "tag": "",
-      "description": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "image_url": "https://assets-v2.circle.so/daeo2qc5y003yokbgcfv9oktli33",
-      "url": "https://circle.wedeepenloveclub.com/c/events-calendar/bonding-integration-sessions-083d4e"
-    },
-    {
       "id": "bonding-integration-sessions-c49c28",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-05-20",
+      "date": "2026-05-06",
       "end_date": null,
       "time": "11:00 PM",
       "location_type": "online",
@@ -82,6 +43,19 @@
       "url": "https://circle.wedeepenloveclub.com/c/events-calendar/bonding-integration-sessions-c49c28"
     },
     {
+      "id": "bonding-integration-sessions-e634dc",
+      "title": "Integration Session \u2014 Every Other Wednesday | Circle",
+      "date": "2026-05-20",
+      "end_date": null,
+      "time": "11:00 PM",
+      "location_type": "online",
+      "location_label": "Online",
+      "tag": "",
+      "description": "Integration Session \u2014 Every Other Wednesday | Circle",
+      "image_url": "https://assets-v2.circle.so/daeo2qc5y003yokbgcfv9oktli33",
+      "url": "https://circle.wedeepenloveclub.com/c/events-calendar/bonding-integration-sessions-e634dc"
+    },
+    {
       "id": "beyond-biohacking-conference",
       "title": "Beyond Biohacking Conference \u2014 May 27-29 | Austin, TX",
       "date": "2026-05-27",
@@ -90,8 +64,8 @@
       "location_type": "austin",
       "location_label": "101 Red River St, Austin, TX 78701, USA",
       "tag": "",
-      "description": "Three immersive days of biohacking, longevity science, and consciousness led by Dave Asprey. The largest and longest-running biohacking conference in the world.  Christina Weber will be speaking on \u201cH",
-      "image_url": "https://assets-v2.circle.so/9isoedppf3ycgey4fg8w38q95w44",
+      "description": "\ufeff\ufeffThree immersive days of biohacking, longevity science, and consciousness led by Dave Asprey. The largest and longest-running biohacking conference in the world.  Christina Weber will be speaking on",
+      "image_url": "https://assets-v2.circle.so/v4hqtaf4ematj4k0rmnqm3kdaymz",
       "url": "https://circle.wedeepenloveclub.com/c/events-calendar/beyond-biohacking-conference"
     },
     {
@@ -121,20 +95,7 @@
       "url": "https://circle.wedeepenloveclub.com/c/events-calendar/a-kashf-reveal-the-living-goddess-exhibit-may-30-austin-tx"
     },
     {
-      "id": "the-kashf-reveal-a-living-goddess-exhibit-may-30-austin-tx",
-      "title": "The Kashf Reveal: A Living Goddess Exhibit \u2014 May 30 | Austin, TX",
-      "date": "2026-05-31",
-      "end_date": null,
-      "time": "12:00 AM",
-      "location_type": "austin",
-      "location_label": "7600 Stillridge Dr, Austin, TX 78736",
-      "tag": "",
-      "description": "This is special. Rare. \ud83d\udc49\ud83c\udffd Click here.",
-      "image_url": "https://assets-v2.circle.so/x587wwtq03hoizp0gfvpf9e29bvc",
-      "url": "https://circle.wedeepenloveclub.com/c/events-calendar/the-kashf-reveal-a-living-goddess-exhibit-may-30-austin-tx"
-    },
-    {
-      "id": "bonding-integration-sessions-e634dc",
+      "id": "bonding-integration-sessions-68c6ef",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
       "date": "2026-06-03",
       "end_date": null,
@@ -144,10 +105,10 @@
       "tag": "",
       "description": "Integration Session \u2014 Every Other Wednesday | Circle",
       "image_url": "https://assets-v2.circle.so/daeo2qc5y003yokbgcfv9oktli33",
-      "url": "https://circle.wedeepenloveclub.com/c/events-calendar/bonding-integration-sessions-e634dc"
+      "url": "https://circle.wedeepenloveclub.com/c/events-calendar/bonding-integration-sessions-68c6ef"
     },
     {
-      "id": "bonding-integration-sessions-68c6ef",
+      "id": "bonding-integration-sessions-9a592b",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
       "date": "2026-06-17",
       "end_date": null,
@@ -157,7 +118,7 @@
       "tag": "",
       "description": "Integration Session \u2014 Every Other Wednesday | Circle",
       "image_url": "https://assets-v2.circle.so/daeo2qc5y003yokbgcfv9oktli33",
-      "url": "https://circle.wedeepenloveclub.com/c/events-calendar/bonding-integration-sessions-68c6ef"
+      "url": "https://circle.wedeepenloveclub.com/c/events-calendar/bonding-integration-sessions-9a592b"
     },
     {
       "id": "love-immersion-in-wimberley-tx-09d715-3f1e3b",
@@ -173,22 +134,9 @@
       "url": "https://circle.wedeepenloveclub.com/c/events-calendar/love-immersion-in-wimberley-tx-09d715-3f1e3b"
     },
     {
-      "id": "bonding-integration-sessions-9a592b",
-      "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-07-01",
-      "end_date": null,
-      "time": "11:00 PM",
-      "location_type": "online",
-      "location_label": "Online",
-      "tag": "",
-      "description": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "image_url": "https://assets-v2.circle.so/daeo2qc5y003yokbgcfv9oktli33",
-      "url": "https://circle.wedeepenloveclub.com/c/events-calendar/bonding-integration-sessions-9a592b"
-    },
-    {
       "id": "bonding-integration-sessions-9ec2e2",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-07-15",
+      "date": "2026-07-01",
       "end_date": null,
       "time": "11:00 PM",
       "location_type": "online",
@@ -201,7 +149,7 @@
     {
       "id": "bonding-integration-sessions-477dc3",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-07-29",
+      "date": "2026-07-15",
       "end_date": null,
       "time": "11:00 PM",
       "location_type": "online",
@@ -210,6 +158,19 @@
       "description": "Integration Session \u2014 Every Other Wednesday | Circle",
       "image_url": "https://assets-v2.circle.so/daeo2qc5y003yokbgcfv9oktli33",
       "url": "https://circle.wedeepenloveclub.com/c/events-calendar/bonding-integration-sessions-477dc3"
+    },
+    {
+      "id": "bonding-integration-sessions-c76e0a",
+      "title": "Integration Session \u2014 Every Other Wednesday | Circle",
+      "date": "2026-07-29",
+      "end_date": null,
+      "time": "11:00 PM",
+      "location_type": "online",
+      "location_label": "Online",
+      "tag": "",
+      "description": "Integration Session \u2014 Every Other Wednesday | Circle",
+      "image_url": "https://assets-v2.circle.so/daeo2qc5y003yokbgcfv9oktli33",
+      "url": "https://circle.wedeepenloveclub.com/c/events-calendar/bonding-integration-sessions-c76e0a"
     },
     {
       "id": "love-immersion-august-7-9",
@@ -225,22 +186,9 @@
       "url": "https://circle.wedeepenloveclub.com/c/events-calendar/love-immersion-august-7-9"
     },
     {
-      "id": "bonding-integration-sessions-c76e0a",
-      "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-08-12",
-      "end_date": null,
-      "time": "11:00 PM",
-      "location_type": "online",
-      "location_label": "Online",
-      "tag": "",
-      "description": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "image_url": "https://assets-v2.circle.so/daeo2qc5y003yokbgcfv9oktli33",
-      "url": "https://circle.wedeepenloveclub.com/c/events-calendar/bonding-integration-sessions-c76e0a"
-    },
-    {
       "id": "bonding-integration-sessions-0a62da",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-08-26",
+      "date": "2026-08-12",
       "end_date": null,
       "time": "11:00 PM",
       "location_type": "online",
@@ -253,7 +201,7 @@
     {
       "id": "bonding-integration-sessions-84b0fe",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-09-09",
+      "date": "2026-08-26",
       "end_date": null,
       "time": "11:00 PM",
       "location_type": "online",
@@ -266,7 +214,7 @@
     {
       "id": "bonding-integration-sessions-839def",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-09-23",
+      "date": "2026-09-09",
       "end_date": null,
       "time": "11:00 PM",
       "location_type": "online",
@@ -279,7 +227,7 @@
     {
       "id": "bonding-integration-sessions-b87cf7",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-10-07",
+      "date": "2026-09-23",
       "end_date": null,
       "time": "11:00 PM",
       "location_type": "online",
@@ -292,7 +240,7 @@
     {
       "id": "bonding-integration-sessions-5f11f0",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-10-21",
+      "date": "2026-10-07",
       "end_date": null,
       "time": "11:00 PM",
       "location_type": "online",
@@ -305,9 +253,9 @@
     {
       "id": "bonding-integration-sessions-643577",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-11-05",
+      "date": "2026-10-21",
       "end_date": null,
-      "time": "12:00 AM",
+      "time": "11:00 PM",
       "location_type": "online",
       "location_label": "Online",
       "tag": "",
@@ -318,9 +266,9 @@
     {
       "id": "bonding-integration-sessions-add788",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-11-19",
+      "date": "2026-11-04",
       "end_date": null,
-      "time": "12:00 AM",
+      "time": "11:00 PM",
       "location_type": "online",
       "location_label": "Online",
       "tag": "",
@@ -331,9 +279,9 @@
     {
       "id": "bonding-integration-sessions-e80f89",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-12-03",
+      "date": "2026-11-18",
       "end_date": null,
-      "time": "12:00 AM",
+      "time": "11:00 PM",
       "location_type": "online",
       "location_label": "Online",
       "tag": "",
@@ -344,9 +292,9 @@
     {
       "id": "bonding-integration-sessions-0e80b0",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-12-17",
+      "date": "2026-12-02",
       "end_date": null,
-      "time": "12:00 AM",
+      "time": "11:00 PM",
       "location_type": "online",
       "location_label": "Online",
       "tag": "",
@@ -357,9 +305,9 @@
     {
       "id": "bonding-integration-sessions-cc22e0",
       "title": "Integration Session \u2014 Every Other Wednesday | Circle",
-      "date": "2026-12-31",
+      "date": "2026-12-16",
       "end_date": null,
-      "time": "12:00 AM",
+      "time": "11:00 PM",
       "location_type": "online",
       "location_label": "Online",
       "tag": "",
