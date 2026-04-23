@@ -751,56 +751,9 @@
         <p class="text-white/60 text-lg">Join us live &mdash; in Austin or online.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto" id="events-grid">
-
-        <!-- Event 1: Love Immersion -->
-        <div class="wd-card bg-charcoal rounded-xl overflow-hidden">
-          <div class="aspect-[16/10] bg-gradient-to-br from-rose-deep/30 to-ink flex items-center justify-center">
-            <span class="font-heading text-2xl text-white/80 font-semibold">Love Immersion VII</span>
-          </div>
-          <div class="p-5">
-            <p class="text-gold text-xs uppercase tracking-wider mb-1">June 26&ndash;28, 2026</p>
-            <h3 class="font-semibold text-lg mb-1">Love Immersion VII</h3>
-            <p class="text-white/50 text-sm mb-3">Havan, Dripping Springs &mdash; Austin, TX</p>
-            <div class="flex items-center justify-between">
-              <span class="text-xs bg-gold/15 text-gold px-3 py-1 rounded-full">Included for Members</span>
-              <a href="/wedeepen/love-immersion/" class="text-gold text-sm hover:underline">Details &rarr;</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Event 2: Placeholder -->
-        <div class="wd-card bg-charcoal rounded-xl overflow-hidden">
-          <div class="aspect-[16/10] bg-gradient-to-br from-gold/15 to-ink flex items-center justify-center">
-            <span class="font-heading text-xl text-white/70">Love Mastermind</span>
-          </div>
-          <div class="p-5">
-            <p class="text-gold text-xs uppercase tracking-wider mb-1">Biweekly &mdash; Ongoing</p>
-            <h3 class="font-semibold text-lg mb-1">Love Mastermind</h3>
-            <p class="text-white/50 text-sm mb-3">Online &mdash; Zoom</p>
-            <div class="flex items-center justify-between">
-              <span class="text-xs bg-gold/15 text-gold px-3 py-1 rounded-full">Members Only</span>
-              <a href="/wedeepen/events/" class="text-gold text-sm hover:underline">Details &rarr;</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Event 3: Placeholder -->
-        <div class="wd-card bg-charcoal rounded-xl overflow-hidden">
-          <div class="aspect-[16/10] bg-gradient-to-br from-rose-deep/20 to-ink flex items-center justify-center">
-            <span class="font-heading text-xl text-white/70">Integration Call</span>
-          </div>
-          <div class="p-5">
-            <p class="text-gold text-xs uppercase tracking-wider mb-1">Biweekly &mdash; Ongoing</p>
-            <h3 class="font-semibold text-lg mb-1">Integration Call</h3>
-            <p class="text-white/50 text-sm mb-3">Online &mdash; Zoom</p>
-            <div class="flex items-center justify-between">
-              <span class="text-xs bg-gold/15 text-gold px-3 py-1 rounded-full">Members Only</span>
-              <a href="/wedeepen/events/" class="text-gold text-sm hover:underline">Details &rarr;</a>
-            </div>
-          </div>
-        </div>
-
+      <!-- Events grid — populated from Circle API via events.json -->
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto" id="home-events-grid">
+        <div class="col-span-full text-center text-white/40 text-sm py-10" id="home-events-loading">Loading upcoming events…</div>
       </div>
 
       <div class="text-center mt-10">
@@ -1073,6 +1026,63 @@
       });
     }, { threshold: 0.1 });
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // ========================
+    // HOME EVENTS PREVIEW (pulls from Circle via events.json)
+    // ========================
+    (async function loadHomeEvents() {
+      try {
+        const res = await fetch('/wedeepen/events/events.json');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const upcoming = (data.events || [])
+          .filter(e => {
+            const d = new Date(e.end_date || e.date);
+            d.setHours(23,59,59,999);
+            return d >= new Date();
+          })
+          .sort((a,b) => new Date(a.date) - new Date(b.date))
+          .slice(0, 3);
+
+        const grid = document.getElementById('home-events-grid');
+        if (!upcoming.length) {
+          grid.innerHTML = '<div class="col-span-full text-center text-white/40 text-sm py-10">New events coming soon.</div>';
+          return;
+        }
+
+        grid.innerHTML = upcoming.map(e => {
+          const d = new Date(e.date + 'T00:00:00');
+          const dateLabel = e.end_date
+            ? `${d.toLocaleDateString('en-US',{month:'short',day:'numeric'})} – ${new Date(e.end_date+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}`
+            : d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+          const hasImg = e.image_url && e.image_url.startsWith('http');
+          const imgStyle = hasImg
+            ? `background-image:url('${e.image_url}');background-size:cover;background-position:center;`
+            : `background:linear-gradient(135deg,#A01B4A 0%,#1A1A1A 100%);`;
+          const tagHtml = e.tag ? `<span class="text-xs bg-gold/15 text-gold px-3 py-1 rounded-full">${e.tag}</span>` : '<span></span>';
+          const loc = e.location_type === 'online' ? 'Online' : (e.location_label || 'Austin, TX');
+
+          return `
+            <a href="${e.url}" target="_blank" rel="noopener" class="wd-card bg-charcoal rounded-xl overflow-hidden block">
+              <div class="aspect-[16/10]" style="${imgStyle}"></div>
+              <div class="p-5">
+                <p class="text-gold text-xs uppercase tracking-wider mb-1">${dateLabel}</p>
+                <h3 class="font-semibold text-lg mb-1 line-clamp-1">${e.title}</h3>
+                <p class="text-white/50 text-sm mb-3 line-clamp-1">${loc}</p>
+                <div class="flex items-center justify-between">
+                  ${tagHtml}
+                  <span class="text-gold text-sm hover:underline">Details &rarr;</span>
+                </div>
+              </div>
+            </a>
+          `;
+        }).join('');
+      } catch (err) {
+        console.error('Failed to load home events:', err);
+        const grid = document.getElementById('home-events-grid');
+        grid.innerHTML = '<div class="col-span-full text-center text-white/40 text-sm py-10"><a href="/wedeepen/events/" class="text-gold hover:underline">View all events &rarr;</a></div>';
+      }
+    })();
 
     // Email signup handler (placeholder)
     function handleEmailSignup(e) {
