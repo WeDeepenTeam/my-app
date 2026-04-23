@@ -313,7 +313,6 @@ TEMPLATE = r"""<!DOCTYPE html>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a href="{checkout_url}" target="_blank" rel="noopener" class="btn-pink text-base !px-10 !py-4">Reserve Your Spot</a>
-        <a href="#what" class="btn-outline">Learn More</a>
       </div>
     </div>
   </section>
