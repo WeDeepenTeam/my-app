@@ -1031,10 +1031,19 @@
     // HOME EVENTS PREVIEW (pulls from Circle via events.json)
     // ========================
     (async function loadHomeEvents() {
+      const SOURCES = [
+        'https://oycfonjaufdihuwjecxu.supabase.co/functions/v1/circle-events',
+        '/wedeepen/events/events.json',
+      ];
+      let data;
       try {
-        const res = await fetch('/wedeepen/events/events.json');
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const data = await res.json();
+        for (const src of SOURCES) {
+          try {
+            const r = await fetch(src);
+            if (r.ok) { data = await r.json(); break; }
+          } catch (_) { /* try next */ }
+        }
+        if (!data) throw new Error('All event sources failed');
         const upcoming = (data.events || [])
           .filter(e => {
             const d = new Date(e.end_date || e.date);

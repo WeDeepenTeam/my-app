@@ -402,8 +402,8 @@
     //   - GitHub Action runs on schedule, calls Circle API with secret token
     //   - Writes wedeepen/events/events.json, commits to main
     // ============================================
-    const WD_EVENTS_API = null; // e.g. 'https://YOUR-PROJECT.supabase.co/functions/v1/circle-events'
-    const WD_EVENTS_JSON = '/wedeepen/events/events.json';
+    const WD_EVENTS_API = 'https://oycfonjaufdihuwjecxu.supabase.co/functions/v1/circle-events';
+    const WD_EVENTS_JSON = '/wedeepen/events/events.json'; // fallback if function fails
 
     let allEvents = [];
     let activeFilter = 'all';
