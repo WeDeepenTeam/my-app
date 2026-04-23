@@ -422,7 +422,8 @@
             eventDate.setHours(23,59,59,999);
             return eventDate >= new Date();
           })
-          .sort((a, b) => new Date(a.date) - new Date(b.date));
+          .sort((a, b) => new Date(a.date) - new Date(b.date))
+          .slice(0, 12);
         renderEvents();
       } catch (err) {
         console.error('Failed to load events:', err);
