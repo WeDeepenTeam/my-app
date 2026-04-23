@@ -410,26 +410,30 @@
     let searchQuery = '';
 
     async function loadEvents() {
-      try {
-        const source = WD_EVENTS_API || WD_EVENTS_JSON;
-        const res = await fetch(source);
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const data = await res.json();
-        allEvents = (data.events || data || [])
-          .filter(e => {
-            // Only show future events (or today)
-            const eventDate = new Date(e.end_date || e.date);
-            eventDate.setHours(23,59,59,999);
-            return eventDate >= new Date();
-          })
-          .sort((a, b) => new Date(a.date) - new Date(b.date))
-          .slice(0, 12);
-        renderEvents();
-      } catch (err) {
-        console.error('Failed to load events:', err);
-        document.getElementById('events-status').textContent = 'Could not load events. Please try again later.';
-        document.getElementById('event-count').textContent = '';
+      // Try live Supabase function first, fall back to static JSON if it fails
+      const sources = [WD_EVENTS_API, WD_EVENTS_JSON].filter(Boolean);
+      for (const source of sources) {
+        try {
+          const res = await fetch(source);
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+          allEvents = (data.events || data || [])
+            .filter(e => {
+              const eventDate = new Date(e.end_date || e.date);
+              eventDate.setHours(23,59,59,999);
+              return eventDate >= new Date();
+            })
+            .sort((a, b) => new Date(a.date) - new Date(b.date))
+            .slice(0, 12);
+          renderEvents();
+          return;
+        } catch (err) {
+          console.warn(`Events source ${source} failed:`, err);
+        }
       }
+      // All sources failed
+      document.getElementById('events-status').textContent = 'Could not load events. Please try again later.';
+      document.getElementById('event-count').textContent = '';
     }
 
     function renderEvents() {
