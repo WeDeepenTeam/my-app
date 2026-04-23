@@ -53,24 +53,33 @@ function pad(s: string) {
   return s;
 }
 
+// Convert UTC ISO datetime to Central Time formatted values.
+// All WeDeepen events are anchored in Austin, TX — the event's wall-clock
+// time in Austin is what members care about.
+const TZ = "America/Chicago";
+
 function formatTime(iso: string): string {
+  if (!iso) return "";
   try {
-    const d = new Date(iso);
-    const h = d.getUTCHours();
-    const m = d.getUTCMinutes();
-    // Convert UTC to Central (UTC-5 or UTC-6). We just return UTC time here;
-    // the frontend doesn't need wall-clock precision for preview cards.
-    const h12 = ((h + 11) % 12) + 1;
-    const ampm = h >= 12 ? "PM" : "AM";
-    const mm = m.toString().padStart(2, "0");
-    return `${h12}:${mm} ${ampm}`;
+    return new Date(iso).toLocaleTimeString("en-US", {
+      timeZone: TZ,
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
   } catch {
     return "";
   }
 }
 
-function toISODate(iso: string): string {
-  return iso ? iso.substring(0, 10) : "";
+function toISODateCT(iso: string): string {
+  if (!iso) return "";
+  try {
+    // en-CA yields "YYYY-MM-DD"
+    return new Date(iso).toLocaleDateString("en-CA", { timeZone: TZ });
+  } catch {
+    return iso.substring(0, 10);
+  }
 }
 
 async function fetchAllEvents(token: string): Promise<CircleEvent[]> {
@@ -136,8 +145,8 @@ function normalize(events: CircleEvent[]): NormalizedEvent[] {
     }
 
     const body = (e.body || "").substring(0, 200).replace(/\n/g, " ").trim();
-    const startDate = toISODate(starts);
-    const endDate = ends && toISODate(ends) !== startDate ? toISODate(ends) : null;
+    const startDate = toISODateCT(starts);
+    const endDate = ends && toISODateCT(ends) !== startDate ? toISODateCT(ends) : null;
 
     out.push({
       id: slug,
