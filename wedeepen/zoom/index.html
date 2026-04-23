@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join WeDeepen on Zoom</title>
+  <meta name="description" content="Click to enter the live WeDeepen Zoom session.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://wedeepen.com/zoom/">
+
+  <!-- Auto-redirect after 1.5s so people land in Zoom even if they don't click -->
+  <meta http-equiv="refresh" content="1.5; url=https://us02web.zoom.us/s/4229417854">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #1A1A1A;
+      --gold: #C9A277;
+      --rose: #A01B4A;
+      --rose-light: #C4577A;
+      --pink: #E8337A;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+      background: var(--ink);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      background-image:
+        radial-gradient(circle at 30% 20%, rgba(160,27,74,0.18), transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(201,162,119,0.10), transparent 50%);
+    }
+    .wrap { max-width: 540px; width: 100%; }
+    .logo {
+      height: 40px; width: auto;
+      opacity: 0.9;
+      margin-bottom: 2.5rem;
+    }
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--pink);
+    }
+    p.sub {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, var(--pink) 0%, var(--rose) 100%);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      box-shadow: 0 12px 40px rgba(232,51,122,0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 18px 50px rgba(232,51,122,0.5); }
+    .btn svg { width: 20px; height: 20px; }
+    .note {
+      margin-top: 2rem;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.8rem;
+    }
+    .note a { color: rgba(255,255,255,0.55); text-decoration: underline; }
+    .spinner {
+      display: inline-block;
+      width: 14px; height: 14px;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <img src="/wedeepen/images/deepen-logo-white.png" alt="DeePeN" class="logo">
+
+    <p class="eyebrow">Live Session</p>
+    <h1>Join WeDeepen <em>on Zoom</em></h1>
+    <p class="sub"><span class="spinner"></span>Redirecting you to the session…</p>
+
+    <a href="https://us02web.zoom.us/s/4229417854" class="btn" id="join-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M15 8v8H5c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2v2zm6-1.5v11l-4-3v-5l4-3z"/>
+      </svg>
+      Join Now
+    </a>
+
+    <p class="note">
+      Having trouble? <a href="https://us02web.zoom.us/s/4229417854">Open Zoom directly</a>
+    </p>
+  </main>
+
+  <script>
+    // Belt-and-suspenders: JS redirect in case meta refresh is blocked
+    setTimeout(function() {
+      window.location.href = 'https://us02web.zoom.us/s/4229417854';
+    }, 1500);
+  </script>
+</body>
+</html>
