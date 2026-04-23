@@ -82,6 +82,30 @@
 
   <style>
     /* ===== WeDeepen Custom Styles ===== */
+
+    /* Vilonti — reserved for Love Immersion branding */
+    @font-face {
+      font-family: 'Vilonti';
+      src: url('/wedeepen/fonts/Vilonti-Regular.ttf') format('truetype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Vilonti';
+      src: url('/wedeepen/fonts/Vilonti-Bold.ttf') format('truetype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Vilonti';
+      src: url('/wedeepen/fonts/Vilonti-ExtraBlack.ttf') format('truetype');
+      font-weight: 900; font-style: normal; font-display: swap;
+    }
+    .font-vilonti {
+      font-family: 'Vilonti', 'Archivo Black', 'Helvetica Neue', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      line-height: 0.95;
+    }
+
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', 'Inter', system-ui, sans-serif; }
 
@@ -555,7 +579,7 @@
 
         <!-- Right: Info -->
         <div>
-          <h2 class="font-heading text-3xl md:text-4xl font-semibold mb-6">Love Immersion</h2>
+          <h2 class="font-vilonti uppercase text-white mb-6" style="font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: 0.02em;">Love Immersion</h2>
           <p class="text-white/70 text-lg leading-relaxed mb-6">
             A 3-day immersive retreat featuring world-class Love Strategists, bonded community, and experiences that participants describe as life-changing. You'll receive and witness the most high-impact hot-seat coaching &mdash; which is why 70% of participants come back again and again.
           </p>
