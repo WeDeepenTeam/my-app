@@ -893,11 +893,60 @@
         <a href="/wedeepen/love-immersion/" class="btn-outline text-base">Attend Love Immersion</a>
       </div>
 
-      <!-- Email Capture — Circle embedded form -->
-      <div class="max-w-md mx-auto">
-        <p class="text-sm text-white/60 mb-4">Not ready yet? Stay in the loop.</p>
-        <div data-is-popup="false" data-circle-form-uid="e303f91f"></div>
-        <script>if(!window.circleFormsScriptLoaded){window.circleFormsScriptLoaded=true;const script=document.createElement('script');script.src='https://circle.wedeepenloveclub.com/external/form-embeds.js';script.defer=true;document.head.appendChild(script)}</script>
+      <!-- Drop a Line — native contact form, posts to Supabase Edge Function → Circle -->
+      <div class="max-w-lg mx-auto mt-12">
+        <div class="text-center mb-6">
+          <p class="text-gold text-xs uppercase tracking-[0.25em] font-semibold mb-3">Drop a Line</p>
+          <p class="text-white/60 text-sm">Have a question or want to connect? Reach out.</p>
+        </div>
+
+        <form id="drop-a-line-form" class="space-y-4 text-left">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="dal-name" class="block text-xs text-white/60 mb-1.5 uppercase tracking-wider">Name <span class="text-rose-light">*</span></label>
+              <input type="text" id="dal-name" name="name" required maxlength="200"
+                class="w-full bg-ink border border-white/15 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-gold transition">
+            </div>
+            <div>
+              <label for="dal-email" class="block text-xs text-white/60 mb-1.5 uppercase tracking-wider">Email <span class="text-rose-light">*</span></label>
+              <input type="email" id="dal-email" name="email" required maxlength="320"
+                class="w-full bg-ink border border-white/15 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-gold transition">
+            </div>
+          </div>
+
+          <div>
+            <label for="dal-phone" class="block text-xs text-white/60 mb-1.5 uppercase tracking-wider">Phone <span class="text-white/30">(optional)</span></label>
+            <input type="tel" id="dal-phone" name="phone" maxlength="50"
+              class="w-full bg-ink border border-white/15 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-gold transition">
+          </div>
+
+          <div>
+            <label for="dal-subject" class="block text-xs text-white/60 mb-1.5 uppercase tracking-wider">What's on your mind?</label>
+            <select id="dal-subject" name="subject"
+              class="w-full bg-ink border border-white/15 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-gold transition appearance-none cursor-pointer"
+              style="background-image: url(&quot;data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff80' stroke-width='2'%3e%3cpath d='M6 9l6 6 6-6'/%3e%3c/svg%3e&quot;); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 16px; padding-right: 2.5rem;">
+              <option value="">Choose one…</option>
+              <option value="Love Club">Love Club</option>
+              <option value="Love Immersion">Love Immersion</option>
+              <option value="Media / Press">Media / Press</option>
+              <option value="Becoming a Love Strategist">Becoming a Love Strategist</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="dal-message" class="block text-xs text-white/60 mb-1.5 uppercase tracking-wider">Message <span class="text-white/30">(optional)</span></label>
+            <textarea id="dal-message" name="message" rows="3" maxlength="5000"
+              class="w-full bg-ink border border-white/15 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-gold transition resize-y"></textarea>
+          </div>
+
+          <button type="submit" id="dal-submit"
+            class="w-full btn-rose text-center block !rounded-lg !py-3.5">
+            Send
+          </button>
+
+          <p id="dal-status" class="text-sm text-center text-white/70 hidden"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -1019,6 +1068,53 @@
       });
     }, { threshold: 0.1 });
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // ========================
+    // DROP A LINE FORM — submits to Supabase Edge Function → Circle
+    // ========================
+    (function initDropALine() {
+      const form = document.getElementById('drop-a-line-form');
+      if (!form) return;
+      const status = document.getElementById('dal-status');
+      const submit = document.getElementById('dal-submit');
+      const endpoint = 'https://oycfonjaufdihuwjecxu.supabase.co/functions/v1/drop-a-line';
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.classList.add('hidden');
+        submit.disabled = true;
+        submit.textContent = 'Sending…';
+
+        const payload = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          phone: form.phone.value.trim(),
+          subject: form.subject.value,
+          message: form.message.value.trim(),
+        };
+
+        try {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          form.reset();
+          status.textContent = "Thanks — we'll be in touch.";
+          status.className = 'text-sm text-center text-gold mt-3';
+          status.classList.remove('hidden');
+          submit.textContent = 'Sent ✓';
+        } catch (err) {
+          console.error('Drop a line failed:', err);
+          status.textContent = "Something went wrong. Email team@wedeepen.com instead?";
+          status.className = 'text-sm text-center text-rose-light mt-3';
+          status.classList.remove('hidden');
+          submit.disabled = false;
+          submit.textContent = 'Try again';
+        }
+      });
+    })();
 
     // ========================
     // HOME EVENTS PREVIEW (pulls from Circle via events.json)
