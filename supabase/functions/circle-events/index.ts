@@ -23,7 +23,11 @@ interface CircleEvent {
   cover_image_url: string | null;
   body: string | null;
   confirmation_message_title: string | null;
+  space?: { id: number; slug: string; name: string; community_id: number } | null;
 }
+
+// Only events in this Circle space appear on the site
+const ALLOWED_SPACE_SLUG = "events-calendar";
 
 interface NormalizedEvent {
   id: string;
@@ -97,6 +101,10 @@ function normalize(events: CircleEvent[]): NormalizedEvent[] {
   const out: NormalizedEvent[] = [];
 
   for (const e of events) {
+    // Filter: only include events from the public events-calendar space,
+    // not "Official Events" or other internal spaces
+    if (!e.space || e.space.slug !== ALLOWED_SPACE_SLUG) continue;
+
     const starts = e.starts_at || "";
     const ends = e.ends_at || "";
     const endTime = ends ? new Date(ends).getTime() : new Date(starts).getTime();
