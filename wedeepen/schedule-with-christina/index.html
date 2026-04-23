@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule with Christina — WeDeepen</title>
+  <meta name="description" content="Book a 15-minute Zoom with Christina Weber, founder of WeDeepen.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wedeepen.com/schedule-with-christina/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wedeepen.com/schedule-with-christina/">
+  <meta property="og:title" content="Schedule with Christina — WeDeepen">
+  <meta property="og:description" content="Book a 15-minute Zoom with Christina Weber.">
+  <meta property="og:site_name" content="WeDeepen">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rose:    { deep: '#A01B4A', light: '#C4577A' },
+            pink:    { hot: '#E8337A', bright: '#FF4F8C', glow: 'rgba(232,51,122,0.25)' },
+            teal:    { DEFAULT: '#C9A277', light: '#D4B78C', dark: '#A8855C' },
+            gold:    { DEFAULT: '#C9A277', light: '#D4B78C', dark: '#A8855C' },
+            charcoal: '#2D2D2D',
+            cream:   '#F4EDE0',
+            ink:     '#1A1A1A',
+            black:   '#1A1A1A',
+          },
+          fontFamily: {
+            heading: ['"Playfair Display"', 'Georgia', 'serif'],
+            body:    ['"DM Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          maxWidth: { site: '1200px' },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', 'Inter', system-ui, sans-serif; background: #1A1A1A; }
+
+    /* Hero gradient */
+    .schedule-hero {
+      background:
+        radial-gradient(circle at 30% 20%, rgba(160,27,74,0.25), transparent 55%),
+        radial-gradient(circle at 70% 80%, rgba(201,162,119,0.12), transparent 55%),
+        #1A1A1A;
+    }
+
+    /* Sticky header */
+    .wd-header {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .wd-header.scrolled {
+      background-color: rgba(26,26,26,0.95);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Buttons */
+    .btn-pink {
+      background: #E8337A; color: #fff;
+      padding: 14px 32px; border-radius: 12px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      display: inline-block; text-decoration: none;
+    }
+    .btn-pink:hover { background: #D02767; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(232,51,122,0.35); }
+    .btn-rose {
+      background: #A01B4A; color: #fff;
+      padding: 14px 32px; border-radius: 9999px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-block; text-decoration: none;
+    }
+    .btn-rose:hover { background: #851437; transform: translateY(-1px); }
+
+    /* Mobile nav */
+    .mobile-nav { transform: translateX(100%); transition: transform 0.35s ease; }
+    .mobile-nav.open { transform: translateX(0); }
+
+    /* Acuity embed */
+    .acuity-wrap {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      min-height: 850px;
+    }
+    .acuity-wrap iframe {
+      width: 100%;
+      height: 850px;
+      border: none;
+      display: block;
+    }
+
+    /* Value bullets */
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    .value-item svg {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: #C9A277;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body class="bg-ink text-white antialiased">
+
+  <!-- ============================
+       STICKY HEADER
+       ============================ -->
+  <header id="wd-header" class="wd-header fixed top-0 left-0 right-0 z-50" style="background: rgba(20,16,18,0.92); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-site mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/wedeepen/" class="flex items-center">
+        <img src="/wedeepen/images/deepen-logo-white.png" alt="DeePeN" class="h-7 w-auto">
+      </a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium">
+        <a href="/wedeepen/" class="text-white/80 hover:text-white transition">Home</a>
+        <a href="/wedeepen/love-club/" class="text-white/80 hover:text-white transition">Love Club</a>
+        <a href="/wedeepen/love-immersion/" class="text-white/80 hover:text-white transition">Love Immersion</a>
+        <a href="/wedeepen/love-guides/" class="text-white/80 hover:text-white transition">Love Strategists</a>
+        <a href="/wedeepen/events/" class="text-white/80 hover:text-white transition">Events</a>
+        <a href="/wedeepen/reviews/" class="text-white/80 hover:text-white transition">Reviews</a>
+        <a href="/wedeepen/about/" class="text-white/80 hover:text-white transition">About</a>
+        <a href="/wedeepen/podcast/" class="text-white/80 hover:text-white transition">Podcast</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="https://circle.wedeepenloveclub.com/" class="btn-rose text-sm !py-2.5 !px-6 hidden sm:inline-block">Login to Love Club</a>
+        <button id="mobile-toggle" class="lg:hidden text-white p-2" aria-label="Open menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div id="mobile-nav" class="mobile-nav fixed inset-0 z-[60] bg-ink/98 flex flex-col pt-20 px-8">
+    <button id="mobile-close" class="absolute top-5 right-5 text-white p-2" aria-label="Close menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav class="flex flex-col gap-6 text-lg font-medium">
+      <a href="/wedeepen/" class="text-white hover:text-gold transition">Home</a>
+      <a href="/wedeepen/love-club/" class="text-white hover:text-gold transition">Love Club</a>
+      <a href="/wedeepen/love-immersion/" class="text-white hover:text-gold transition">Love Immersion</a>
+      <a href="/wedeepen/love-guides/" class="text-white hover:text-gold transition">Love Strategists</a>
+      <a href="/wedeepen/events/" class="text-white hover:text-gold transition">Events</a>
+      <a href="/wedeepen/reviews/" class="text-white hover:text-gold transition">Reviews</a>
+      <a href="/wedeepen/about/" class="text-white hover:text-gold transition">About</a>
+      <a href="/wedeepen/podcast/" class="text-white hover:text-gold transition">Podcast</a>
+      <a href="https://circle.wedeepenloveclub.com/" class="btn-rose text-center mt-4">Login to Love Club</a>
+    </nav>
+  </div>
+
+
+  <!-- ============================
+       HERO — Schedule
+       ============================ -->
+  <section class="schedule-hero pt-32 md:pt-40 pb-12 md:pb-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-gold text-xs tracking-[0.28em] uppercase font-semibold mb-5">Book a Time</p>
+      <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-normal text-white mb-6 leading-[1.05]">
+        Schedule with <span class="italic" style="color:#E8337A;">Christina</span>
+      </h1>
+      <p class="text-white/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light">
+        A 15-minute Zoom with Christina Weber. Please plan for our time to be intentional and productive. 🙏
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       ACUITY EMBED
+       ============================ -->
+  <section class="bg-ink px-6 pb-20 md:pb-28">
+    <div class="max-w-site mx-auto">
+      <div class="acuity-wrap">
+        <iframe
+          src="https://app.acuityscheduling.com/schedule/209c70ea/appointment/25726495/calendar/5850974?categories[]=Christina%20Weber%20x%20WeDeepen"
+          title="Schedule with Christina"
+          loading="lazy"
+          allow="payment"></iframe>
+      </div>
+      <p class="text-center text-white/40 text-xs mt-5">
+        Having trouble loading the calendar?
+        <a href="https://app.acuityscheduling.com/schedule/209c70ea/appointment/25726495/calendar/5850974?categories[]=Christina%20Weber%20x%20WeDeepen" target="_blank" rel="noopener" class="text-gold hover:underline">Open in a new tab</a>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       EXPECTATIONS
+       ============================ -->
+  <section class="bg-ink py-20 md:py-24 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #231820 100%);">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-gold text-xs tracking-[0.28em] uppercase font-semibold mb-5">What to Expect</p>
+      <h2 class="font-heading text-3xl md:text-4xl text-white font-normal mb-10 leading-tight">
+        Make the most of our <span class="italic" style="color:#E8337A;">15 minutes</span>.
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
+        <div class="value-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          <span>Come with a specific question or decision you're working through.</span>
+        </div>
+        <div class="value-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          <span>Join from a quiet spot with good audio &mdash; this is a real conversation.</span>
+        </div>
+        <div class="value-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          <span>We'll explore fit for Love Club, Love Immersion, or 1:1 work.</span>
+        </div>
+        <div class="value-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          <span>Need to reschedule? You'll get a confirmation email with a link to manage.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       CTA — Not ready yet
+       ============================ -->
+  <section class="bg-ink py-20 md:py-24 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="font-heading text-3xl md:text-4xl text-white font-normal mb-5 leading-tight">
+        Not ready for a call?
+      </h2>
+      <p class="text-white/60 mb-8 leading-relaxed">
+        Send a message, explore the membership, or dive into the podcast.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <a href="/wedeepen/#contact" class="btn-pink">Drop a Line</a>
+        <a href="/wedeepen/love-club/" class="btn-rose">Explore Love Club</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer class="bg-ink border-t border-white/10 py-14">
+    <div class="max-w-site mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-10">
+        <div>
+          <img src="/wedeepen/images/deepen-logo-white.png" alt="DeePeN" class="h-7 w-auto">
+          <p class="text-white/40 text-sm mt-3 leading-relaxed max-w-xs">Your intimacy journey is your life story.</p>
+        </div>
+        <div class="flex gap-5">
+          <a href="https://www.facebook.com/WeDeepen/" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="Facebook">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/wedeepen/" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@wedeepen" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="YouTube">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="#1A1A1A" d="M9.545 15.568V8.432L15.818 12z"/></svg>
+          </a>
+          <a href="https://open.spotify.com/show/1Aq7R8l77roUrzY9q4DO1l" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="Spotify">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-white/40 text-xs">
+        <p>&copy; 2026 WeDeepen. All rights reserved.</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 items-center justify-center">
+          <a href="https://christinalweber.com" class="hover:text-gold transition">christinalweber.com</a>
+          <a href="https://feminineweapon.com" target="_blank" rel="noopener" class="hover:text-gold transition">Philanthropic Initiative</a>
+          <a href="/wedeepen/#contact" class="hover:text-gold transition">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const header = document.getElementById('wd-header');
+    window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileClose = document.getElementById('mobile-close');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileToggle.addEventListener('click', () => mobileNav.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+    mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
+  </script>
+
+</body>
+</html>
