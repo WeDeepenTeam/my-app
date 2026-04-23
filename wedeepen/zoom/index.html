@@ -8,9 +8,6 @@
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://wedeepen.com/zoom/">
 
-  <!-- Auto-redirect after 1.5s so people land in Zoom even if they don't click -->
-  <meta http-equiv="refresh" content="1.5; url=https://us02web.zoom.us/s/4229417854">
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,7 +111,7 @@
 
     <p class="eyebrow">Live Session</p>
     <h1>Join WeDeepen <em>on Zoom</em></h1>
-    <p class="sub"><span class="spinner"></span>Redirecting you to the session…</p>
+    <p class="sub">Click below to enter the session.</p>
 
     <a href="https://us02web.zoom.us/s/4229417854" class="btn" id="join-btn">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -128,11 +125,5 @@
     </p>
   </main>
 
-  <script>
-    // Belt-and-suspenders: JS redirect in case meta refresh is blocked
-    setTimeout(function() {
-      window.location.href = 'https://us02web.zoom.us/s/4229417854';
-    }, 1500);
-  </script>
 </body>
 </html>
