@@ -519,32 +519,28 @@
       var form = document.getElementById('waitlist-form');
       if (!form) return;
       var status = document.getElementById('waitlist-status');
-      var endpoint = 'https://oycfonjaufdihuwjecxu.supabase.co/functions/v1/drop-a-line';
-      form.addEventListener('submit', async function(e) {
+      var endpoint = 'https://script.google.com/macros/s/AKfycbzbch3y_mD55tazCQZRGChz8NtC-yeILGg9I4qVowSgqP3oe-D6_8RlC8zF94vgjHwz/exec';
+      form.addEventListener('submit', function(e) {
         e.preventDefault();
         var email = document.getElementById('waitlist-email').value.trim();
         if (!email || !email.includes('@')) { status.textContent = 'Please enter a valid email.'; return; }
         status.textContent = 'Sending…';
-        try {
-          var res = await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              name: email.split('@')[0],
-              email: email,
-              subject: 'Love Immersion',
-              message: 'Waitlist: Love Immersion IX · March 5–7, 2027'
-            })
-          });
-          if (res.ok) {
-            form.style.display = 'none';
-            status.innerHTML = '<span class="text-gold">You&rsquo;re on the list.</span> We&rsquo;ll be in touch when booking opens May 15.';
-          } else {
-            status.textContent = 'Something went wrong. Please try again or email team@wedeepen.com.';
-          }
-        } catch (err) {
+        var payload = JSON.stringify({
+          email: email,
+          edition: 'Love Immersion IX',
+          dateRange: 'March 5–7, 2027',
+          page: window.location.pathname
+        });
+        fetch(endpoint, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: payload
+        }).then(function() {
+          form.style.display = 'none';
+          status.innerHTML = '<span class="text-gold">You&rsquo;re on the list.</span> We&rsquo;ll be in touch when booking opens May 15.';
+        }).catch(function() {
           status.textContent = 'Network error. Please try again or email team@wedeepen.com.';
-        }
+        });
       });
     })();
   </script>
