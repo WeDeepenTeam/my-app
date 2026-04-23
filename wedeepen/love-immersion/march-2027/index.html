@@ -22,7 +22,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -52,6 +52,14 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', 'Inter', system-ui, sans-serif; }
+
+    /* Vilonti substitute (until licensed Vilonti .woff2 is self-hosted) */
+    .font-vilonti {
+      font-family: 'Archivo Black', 'Vilonti', 'Helvetica Neue', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      line-height: 0.95;
+    }
 
     .cloud-hero {
       background-image:
@@ -188,12 +196,17 @@
         <span class="text-gold text-xs tracking-[0.18em] uppercase font-medium">March 5–7, 2027 · Austin, TX</span>
       </div>
 
-      <h1 class="font-heading text-[2.6rem] md:text-[4rem] lg:text-[4.8rem] font-normal leading-[1.08] mb-6">
-        <span class="text-white">Love Immersion</span>
-        <span class="italic" style="color: #C4577A; text-shadow: 0 2px 20px rgba(0,0,0,0.7), 0 0 8px rgba(0,0,0,0.5);">IX</span>
+      <h1 class="font-vilonti uppercase text-white mb-2" style="font-size: clamp(4rem, 14vw, 9rem); text-shadow: 0 4px 30px rgba(0,0,0,0.7);">
+        Love
       </h1>
+      <h2 class="font-vilonti uppercase text-white mb-4" style="font-size: clamp(2.5rem, 8vw, 5.5rem); letter-spacing: 0.04em; text-shadow: 0 4px 30px rgba(0,0,0,0.7);">
+        Immersion <span style="color: #C4577A;">IX</span>
+      </h2>
+      <p class="font-heading italic text-white/90 text-lg md:text-2xl mb-10" style="text-shadow: 0 2px 16px rgba(0,0,0,0.6);">
+        Mastermind Your Love Life
+      </p>
 
-      <p class="text-lg md:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed font-light italic">
+      <p class="text-base md:text-lg text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed font-light italic">
         A new year. A new chapter. A new way of loving.
       </p>
 
@@ -294,9 +307,9 @@
   <section class="py-20 md:py-28 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
     <div class="max-w-3xl mx-auto text-center reveal">
       <p class="text-gold text-sm tracking-[0.2em] uppercase font-medium mb-4">The Venue</p>
-      <h2 class="font-heading text-4xl md:text-5xl font-normal mb-6">HAVAN Estates</h2>
-      <p class="text-white/65 text-lg mb-3">17301 Flint Rock Rd · Austin, TX 78738</p>
-      <p class="text-white/55 text-sm italic mb-10">A private, intentional space in the Texas Hill Country — designed for transformation.</p>
+      <h2 class="font-heading text-4xl md:text-5xl font-normal mb-6">Venue announcement coming soon</h2>
+      <p class="text-white/65 text-lg mb-3">Austin, TX</p>
+      <p class="text-white/55 text-sm italic mb-10">A curated venue in Austin — details shared closer to the retreat.</p>
 
       <div class="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
         <div class="pillar-card rounded-xl p-5 text-center">
