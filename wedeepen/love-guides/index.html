@@ -120,6 +120,28 @@
 
     /* Smooth scroll anchor offset for sticky header */
     section[id] { scroll-margin-top: 100px; }
+
+    /* Social chip */
+    .social-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .social-chip:hover {
+      background: rgba(201,162,119,0.12);
+      border-color: rgba(201,162,119,0.4);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .social-chip svg { width: 14px; height: 14px; }
   </style>
   <script src="https://catch.share.one/01954a1a-1897-7f53-bd40-a67ac4997dff.js" defer></script>
 </head>
@@ -211,6 +233,16 @@
           <p class="text-white/70 text-sm md:text-base leading-relaxed">
             ICF Certified Coach · iPEC Trained · Heart-Coaching Certified. Based in Austin, TX.
           </p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <a href="https://www.instagram.com/christinaweber/" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @christinaweber
+            </a>
+            <a href="https://christinalweber.com" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+              christinalweber.com
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -235,6 +267,12 @@
           <p class="text-white/70 text-sm md:text-base leading-relaxed">
             Expect somatic work, direct coaching, and a rare fusion of warmth and precision that transforms how people experience their own aliveness.
           </p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <a href="https://www.instagram.com/jordanbowditch/" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @jordanbowditch
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -259,6 +297,16 @@
           <p class="text-white/70 text-sm md:text-base leading-relaxed">
             Known for clarity without cruelty, Ariana is the strategist you go to when you're ready to stop dressing up the same pattern in new clothes.
           </p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <a href="https://www.instagram.com/arianahall/" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @arianahall
+            </a>
+            <a href="https://arianahall.com" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+              arianahall.com
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -283,6 +331,16 @@
           <p class="text-white/70 text-sm md:text-base leading-relaxed">
             Inside WeDeepen, Dave brings the biology of love to the table: how your nervous system, sleep, and stress physiology directly shape your capacity for intimacy, desire, and sustained partnership.
           </p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <a href="https://www.instagram.com/dave.asprey/" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @dave.asprey
+            </a>
+            <a href="https://daveasprey.com" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+              daveasprey.com
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -307,6 +365,16 @@
           <p class="text-white/70 text-sm md:text-base leading-relaxed">
             Expect intelligence, warmth, and a linguistic precision that reorganizes how you understand your own love life.
           </p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <a href="https://www.instagram.com/annielalla/" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @annielalla
+            </a>
+            <a href="https://annielalla.com" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+              annielalla.com
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -331,6 +399,16 @@
           <p class="text-white/70 text-sm md:text-base leading-relaxed">
             Known for creating containers where people feel profoundly safe enough to drop the armor they didn't even know they were wearing.
           </p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <a href="https://www.instagram.com/yossefsagi/" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @yossefsagi
+            </a>
+            <a href="https://yossefsagi.com" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+              yossefsagi.com
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -355,6 +433,12 @@
           <p class="text-white/70 text-sm md:text-base leading-relaxed">
             A practitioner of sacred movement, erotic self-awareness, and nervous system softening &mdash; her presence alone is the transmission.
           </p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <a href="https://www.danaarielle.com/" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+              danaarielle.com
+            </a>
+          </div>
         </div>
       </div>
     </div>

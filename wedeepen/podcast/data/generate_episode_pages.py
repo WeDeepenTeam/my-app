@@ -26,7 +26,15 @@ def libsyn_embed_slug(link: str) -> str:
 def render_episode_page(ep: dict, related: list) -> str:
     title_esc = html.escape(ep["title"])
     desc_esc = html.escape(ep.get("description", ""))[:400]
-    desc_long = html.escape(ep.get("description", ""))
+    # Use full description if available, fall back to short
+    desc_full_raw = ep.get("description_full") or ep.get("description", "")
+    # Convert to HTML: escape, then turn paragraph breaks into <p> tags
+    desc_full_escaped = html.escape(desc_full_raw)
+    desc_long_html = "".join(
+        f"<p>{para.replace(chr(10), '<br>')}</p>"
+        for para in desc_full_escaped.split("\n\n")
+        if para.strip()
+    )
     slug = slugify(ep["title"])
     url_path = f"/wedeepen/deepen-with-christina/{slug}/"
     image = ep.get("image") or "/wedeepen/images/podcast-artwork.png"
@@ -245,7 +253,7 @@ def render_episode_page(ep: dict, related: list) -> str:
   <section class="py-16 md:py-20 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
     <div class="max-w-3xl mx-auto">
       <p class="text-gold text-xs tracking-[0.25em] uppercase font-semibold mb-5">Show Notes</p>
-      <div class="text-white/75 text-base leading-relaxed episode-body">{desc_long}</div>
+      <div class="text-white/75 text-base leading-relaxed episode-body">{desc_long_html}</div>
     </div>
   </section>
 
