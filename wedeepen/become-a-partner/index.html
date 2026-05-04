@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Founding Love Strategist — A WeDeepen Invitation</title>
+  <meta name="description" content="A founding-circle membership for practitioners committed to role modeling and teaching love as a skill — growing your practice, exposing you to new students, and uniting the industry.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://wedeepen.com/become-a-partner/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wedeepen.com/become-a-partner/">
+  <meta property="og:title" content="Founding Love Strategist — A WeDeepen Invitation">
+  <meta property="og:description" content="A founding-circle membership for practitioners committed to role modeling and teaching love as a skill.">
+  <meta property="og:site_name" content="WeDeepen">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rose:    { deep: '#A01B4A', light: '#C4577A' },
+            pink:    { hot: '#E8337A', bright: '#FF4F8C', glow: 'rgba(232,51,122,0.25)' },
+            teal:    { DEFAULT: '#C9A277', light: '#D4B78C', dark: '#A8855C' },
+            gold:    { DEFAULT: '#C9A277', light: '#D4B78C', dark: '#A8855C' },
+            charcoal: '#2D2D2D',
+            cream:   '#F4EDE0',
+            ink:     '#1A1A1A',
+            black:   '#1A1A1A',
+            softgray: '#F5F5F5',
+          },
+          fontFamily: {
+            heading: ['"Playfair Display"', 'Georgia', 'serif'],
+            body:    ['"DM Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          maxWidth: { site: '1200px' },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', 'Inter', system-ui, sans-serif; }
+
+    /* Sticky header */
+    .wd-header {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .wd-header.scrolled {
+      background-color: rgba(26,26,26,0.95);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Gold underline accent */
+    .gold-line-center::after {
+      content: ''; display: block;
+      width: 60px; height: 2px;
+      background: #C9A277;
+      margin: 16px auto 0;
+    }
+
+    /* Card hover */
+    .wd-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .wd-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+
+    /* Buttons */
+    .btn-rose {
+      background: #A01B4A; color: #fff;
+      padding: 14px 32px; border-radius: 9999px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-block; text-decoration: none;
+    }
+    .btn-rose:hover { background: #851437; transform: translateY(-1px); }
+
+    .btn-pink {
+      background: #E8337A; color: #fff;
+      padding: 14px 32px; border-radius: 12px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      display: inline-block; text-decoration: none;
+    }
+    .btn-pink:hover { background: #D02767; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(232,51,122,0.35); }
+
+    .btn-outline {
+      border: 1.5px solid #C9A277; color: #C9A277;
+      padding: 14px 32px; border-radius: 9999px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      display: inline-block; text-decoration: none;
+    }
+    .btn-outline:hover { background: #C9A277; color: #1A1A1A; transform: translateY(-1px); }
+
+    /* Include card */
+    .include-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .include-card:hover {
+      border-color: rgba(201,162,119,0.4);
+      background: rgba(255,255,255,0.05);
+    }
+
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Mobile nav */
+    .mobile-nav { transform: translateX(100%); transition: transform 0.35s ease; }
+    .mobile-nav.open { transform: translateX(0); }
+
+    /* Numbered step bullet */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #C9A277;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-ink text-white">
+
+  <!-- ============================
+       STICKY HEADER
+       ============================ -->
+  <header id="wd-header" class="wd-header fixed top-0 left-0 right-0 z-50" style="background: rgba(20,16,18,0.92); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-site mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/wedeepen/" class="flex items-center">
+        <img src="/wedeepen/images/deepen-logo-white.png" alt="DeePeN" class="h-7 w-auto">
+      </a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium">
+        <a href="/wedeepen/" class="text-white/80 hover:text-white transition">Home</a>
+        <a href="/wedeepen/love-club/" class="text-white/80 hover:text-white transition">Love Club</a>
+        <a href="/wedeepen/love-immersion/" class="text-white/80 hover:text-white transition">Love Immersion</a>
+        <a href="/wedeepen/love-guides/" class="text-white/80 hover:text-white transition">Love Strategists</a>
+        <a href="/wedeepen/about/" class="text-white/80 hover:text-white transition">About</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="mailto:c@wedeepen.com?subject=Founding%20Love%20Guide%20%E2%80%94%20Yes" class="btn-rose text-sm !py-2.5 !px-6 hidden sm:inline-block">Say Yes</a>
+        <button id="mobile-toggle" class="lg:hidden text-white p-2" aria-label="Open menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-nav" class="mobile-nav fixed inset-0 z-[60] bg-ink/98 flex flex-col pt-20 px-8">
+    <button id="mobile-close" class="absolute top-5 right-5 text-white p-2" aria-label="Close menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav class="flex flex-col gap-6 text-lg font-medium">
+      <a href="/wedeepen/" class="text-white hover:text-gold transition">Home</a>
+      <a href="/wedeepen/love-club/" class="text-white hover:text-gold transition">Love Club</a>
+      <a href="/wedeepen/love-immersion/" class="text-white hover:text-gold transition">Love Immersion</a>
+      <a href="/wedeepen/love-guides/" class="text-white hover:text-gold transition">Love Strategists</a>
+      <a href="/wedeepen/about/" class="text-white hover:text-gold transition">About</a>
+      <a href="mailto:c@wedeepen.com?subject=Founding%20Love%20Guide%20%E2%80%94%20Yes" class="btn-rose text-center mt-4">Say Yes</a>
+    </nav>
+  </div>
+
+
+  <!-- ============================
+       HERO
+       ============================ -->
+  <section class="relative min-h-[80vh] flex items-center overflow-hidden" style="background: radial-gradient(ellipse at top, #2a1620 0%, #1A1A1A 60%, #0f0a0c 100%);">
+    <div class="relative z-10 max-w-4xl mx-auto px-6 pt-32 md:pt-40 pb-20 text-center">
+      <p class="text-gold text-xs md:text-sm uppercase tracking-[0.3em] font-semibold mb-6">A Private Invitation</p>
+      <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.05] mb-6">
+        <span class="text-white">Become a Founding</span>
+        <span class="italic" style="color: #C4577A;">WeDeepen Love Strategist.</span>
+      </h1>
+      <p class="text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+        A founding-circle membership for practitioners committed to role modeling and teaching love as a skill &mdash; <em class="text-white">growing your practice, exposing you to new students,</em> and uniting the industry.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#benefits" class="btn-rose text-base !px-8 !py-4">See What You Get</a>
+        <a href="#next-steps" class="flex items-center gap-2.5 text-white/80 hover:text-white transition font-medium text-base px-5 py-4">
+          How to say yes
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+      </div>
+      <p class="text-white/40 text-xs mt-8 italic">Twelve seats. Founding circle exists once.</p>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       THE MOMENT
+       ============================ -->
+  <section class="bg-ink py-24 md:py-32 px-6">
+    <div class="max-w-3xl mx-auto reveal">
+      <p class="text-gold text-xs md:text-sm uppercase tracking-[0.3em] font-semibold mb-5 text-center">The Moment</p>
+      <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-normal mb-10 leading-tight text-center">
+        Each decade chooses its frontier. <br>
+        <span class="italic" style="color:#E8337A;">Love is next.</span>
+      </h2>
+      <div class="space-y-6 text-white/75 text-lg leading-relaxed font-light">
+        <p>
+          Fitness went mainstream in the <strong class="text-white">1980s</strong>. Yoga in the <strong class="text-white">late &rsquo;90s</strong>. Meditation and mindfulness through the <strong class="text-white">2000s</strong>. Biohacking through the <strong class="text-white">2010s</strong>.
+        </p>
+        <p>
+          The pattern is consistent: a generation discovers that a dimension of being human is trainable, worth studying, worthy of real practice. Teachers, books, platforms, and communities form around it. The field grows up.
+        </p>
+        <p>
+          The teachers in love already exist. Esther Perel has cracked the conversation open. The Hendricks, John Gray, Ken Page, and dozens of brilliant practitioners are doing the work in adjacent silos. What&rsquo;s missing is the <em class="text-white">connective tissue</em> &mdash; the platform where the field&rsquo;s best teachers find each other, find the people ready to learn, and shape what this becomes.
+        </p>
+        <p class="font-heading italic text-xl md:text-2xl leading-snug pt-2" style="color:#C4577A;">
+          WeDeepen is building that.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       WHAT WEDEEPEN IS
+       ============================ -->
+  <section class="py-24 md:py-32 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #1e1019 100%);">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="text-center mb-14">
+        <p class="text-pink-hot text-xs md:text-sm uppercase tracking-[0.3em] font-semibold mb-5">The Platform You&rsquo;d Belong To</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-normal mb-6 leading-tight">
+          A platform uniting the world&rsquo;s most playful, integrous love practitioners with the people <span class="italic" style="color:#C4577A;">ready to learn alongside them.</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+
+        <div class="rounded-2xl p-7 md:p-8" style="background: linear-gradient(180deg, rgba(232,51,122,0.12) 0%, rgba(232,51,122,0.04) 100%); border: 1px solid rgba(232,51,122,0.35);">
+          <p class="text-pink-hot text-xs uppercase tracking-[0.25em] font-semibold mb-3">I &middot; Membership</p>
+          <h3 class="font-heading text-2xl text-white mb-3">Love Club</h3>
+          <p class="text-white/65 text-sm leading-relaxed">An annual membership community where members experience transformational coaching, events, and immersions with top practitioners. Your client base, ready and warm.</p>
+        </div>
+
+        <div class="rounded-2xl p-7 md:p-8" style="background: linear-gradient(180deg, rgba(196,87,122,0.12) 0%, rgba(196,87,122,0.04) 100%); border: 1px solid rgba(196,87,122,0.35);">
+          <p class="text-rose-light text-xs uppercase tracking-[0.25em] font-semibold mb-3">II &middot; Peak Experience</p>
+          <h3 class="font-heading text-2xl text-white mb-3">Love Immersions</h3>
+          <p class="text-white/65 text-sm leading-relaxed">Two to three signature weekend retreats per year &mdash; the peak moments where frameworks are lived, practiced, and embodied. Your stage to lead from.</p>
+        </div>
+
+        <div class="rounded-2xl p-7 md:p-8" style="background: linear-gradient(180deg, rgba(201,162,119,0.10) 0%, rgba(201,162,119,0.03) 100%); border: 1px solid rgba(201,162,119,0.35);">
+          <p class="text-gold text-xs uppercase tracking-[0.25em] font-semibold mb-3">III &middot; The Circle</p>
+          <h3 class="font-heading text-2xl text-white mb-3">Love Strategists</h3>
+          <p class="text-white/65 text-sm leading-relaxed">A founding circle of twelve practitioners who shape the work, lead the community, and share in the platform&rsquo;s growth. <em class="text-white">This is you.</em></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       THE INVITATION
+       ============================ -->
+  <section class="bg-ink py-24 md:py-32 px-6">
+    <div class="max-w-3xl mx-auto reveal text-center">
+      <p class="text-gold text-xs md:text-sm uppercase tracking-[0.3em] font-semibold mb-5">The Invitation</p>
+      <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-normal mb-8 leading-tight">
+        You are invited to be <span class="italic" style="color:#C4577A;">one of twelve.</span>
+      </h2>
+      <div class="space-y-6 text-white/75 text-lg leading-relaxed font-light">
+        <p>
+          In Year One, twelve practitioners will be invited to become Founding Love Strategists. After Year One, new invitations will be rare &mdash; and by invitation only.
+        </p>
+        <p class="font-heading italic text-xl md:text-2xl leading-snug" style="color:#E8337A;">
+          The founding circle exists once.
+        </p>
+        <p class="text-white/55 text-sm pt-2">Room to expand to fifteen if exceptional fit emerges.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       YOUR MEMBERSHIP BENEFITS — LEAD WITH WHAT YOU GET
+       ============================ -->
+  <section id="benefits" class="py-20 md:py-28 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
+    <div class="max-w-site mx-auto">
+
+      <div class="text-center mb-14 reveal">
+        <p class="text-gold text-xs md:text-sm uppercase tracking-[0.3em] font-semibold mb-5">Your Membership</p>
+        <h2 class="font-heading text-4xl md:text-5xl font-normal mb-4 gold-line-center">What You Get</h2>
+        <p class="text-white/60 max-w-2xl mx-auto mt-6">Every founding seat unlocks the same three categories of benefit: client pipeline, platform exposure, and peer circle. Each one compounds.</p>
+      </div>
+
+      <!-- Pipeline -->
+      <div class="max-w-5xl mx-auto mb-14">
+        <h3 class="font-heading text-xs uppercase tracking-[0.3em] text-pink-hot font-semibold mb-6 text-center">Client Pipeline</h3>
+        <div class="grid md:grid-cols-2 gap-5">
+
+          <div class="include-card rounded-xl p-7 reveal">
+            <h4 class="font-heading text-xl text-white mb-2">Referral Pipeline from Love Club Members</h4>
+            <p class="text-gold text-xs uppercase tracking-wider mb-4">10% reciprocal &middot; lifetime</p>
+            <p class="text-white/65 text-sm leading-relaxed">Love Club members hire you privately at your own rates. You keep 90%. The more the community grows, the more warm referrals show up at your door &mdash; for the lifetime of the relationship.</p>
+          </div>
+
+          <div class="include-card rounded-xl p-7 reveal">
+            <h4 class="font-heading text-xl text-white mb-2">Group Coaching Programs</h4>
+            <p class="text-gold text-xs uppercase tracking-wider mb-4">$9,000 / program &middot; flat coach pay</p>
+            <p class="text-white/65 text-sm leading-relaxed">Lead a 10-session, 90-minute transformation arc for groups of 4&ndash;8 Love Club members. Year 1: two founding Love Strategists selected. Year 2+: expanding rotation. Your pay is flat regardless of group size.</p>
+          </div>
+
+          <div class="include-card rounded-xl p-7 reveal">
+            <h4 class="font-heading text-xl text-white mb-2">Event Stage Time at Love Immersions</h4>
+            <p class="text-gold text-xs uppercase tracking-wider mb-4">Priority for founding Love Strategists</p>
+            <p class="text-white/65 text-sm leading-relaxed">Teach and lead at Love Immersion weekends. Position yourself as a leader in front of the most aligned audience for your work, display your coaching skills live, and build your private client pipeline from the room.</p>
+          </div>
+
+          <div class="include-card rounded-xl p-7 reveal">
+            <h4 class="font-heading text-xl text-white mb-2">Reciprocal Earnings on Your Referrals</h4>
+            <p class="text-gold text-xs uppercase tracking-wider mb-4">$500&ndash;$800 / yr per referred member</p>
+            <p class="text-white/65 text-sm leading-relaxed">When someone you refer joins Love Club, you earn 10% of their membership fee &mdash; every year they renew. One rate. Both directions. Built on mutual trust.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Platform & Brand -->
+      <div class="max-w-5xl mx-auto mb-14">
+        <h3 class="font-heading text-xs uppercase tracking-[0.3em] text-pink-hot font-semibold mb-6 text-center">Platform &amp; Brand Lift</h3>
+        <div class="grid md:grid-cols-2 gap-5">
+
+          <div class="include-card rounded-xl p-7 reveal">
+            <h4 class="font-heading text-xl text-white mb-2">Featured Love Strategist Profile</h4>
+            <p class="text-white/65 text-sm leading-relaxed">A prominent profile on the WeDeepen platform &mdash; how prospective members discover, vet, and choose practitioners. The most aligned audience for your work, finding you.</p>
+          </div>
+
+          <div class="include-card rounded-xl p-7 reveal">
+            <h4 class="font-heading text-xl text-white mb-2">Repeat Podcast Features</h4>
+            <p class="text-gold text-xs uppercase tracking-wider mb-4">Exclusive founding rotation</p>
+            <p class="text-white/65 text-sm leading-relaxed">Recurring features on the <em>Deepen with Christina</em> podcast &mdash; not a one-off interview, but ongoing presence. Past guests include John Gray, the Hendricks, Dave Asprey, and Ken Page, LCSW.</p>
+          </div>
+
+          <div class="include-card rounded-xl p-7 reveal">
+            <h4 class="font-heading text-xl text-white mb-2">BrainTap Session Recording</h4>
+            <p class="text-gold text-xs uppercase tracking-wider mb-4">$2,000 value &middot; 7.5% royalty share</p>
+            <p class="text-white/65 text-sm leading-relaxed">Record a BrainTap session as part of the WeDeepen bundle. Your voice, your framework, in the library used by tens of thousands &mdash; with 7.5% royalty earnership for the lifetime of the recording.</p>
+          </div>
+
+          <div class="include-card rounded-xl p-7 reveal">
+            <h4 class="font-heading text-xl text-white mb-2">Discretionary Opportunities</h4>
+            <p class="text-white/65 text-sm leading-relaxed">Speaking invitations, media spots, casting calls, brand partnerships, and collaborations Christina surfaces directly to the founding circle as they come in. The room you&rsquo;re in matters.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Peer Circle -->
+      <div class="max-w-5xl mx-auto">
+        <h3 class="font-heading text-xs uppercase tracking-[0.3em] text-rose-deep font-semibold mb-6 text-center">The Peer Circle</h3>
+        <div class="grid md:grid-cols-2 gap-5">
+
+          <div class="include-card rounded-xl p-7 reveal" style="border-color: rgba(160,27,74,0.3);">
+            <h4 class="font-heading text-xl text-white mb-2">Private Peer Channel</h4>
+            <p class="text-white/65 text-sm leading-relaxed">A members-only channel for the founding twelve. Cross-referrals, working questions, hot takes, real talk. The room top coaches rarely get to be in.</p>
+          </div>
+
+          <div class="include-card rounded-xl p-7 reveal" style="border-color: rgba(160,27,74,0.3);">
+            <h4 class="font-heading text-xl text-white mb-2">Quarterly Peer Gatherings</h4>
+            <p class="text-white/65 text-sm leading-relaxed">Four times a year, the founding circle convenes &mdash; on Zoom or in-person when geography allows &mdash; to teach each other, refine the work, and stay connected.</p>
+          </div>
+
+          <div class="include-card rounded-xl p-7 reveal" style="border-color: rgba(160,27,74,0.3);">
+            <h4 class="font-heading text-xl text-white mb-2">Annual Love Strategist Retreat</h4>
+            <p class="text-white/65 text-sm leading-relaxed">A dedicated retreat for the founding twelve. No clients, no stage, no performance &mdash; just peers being peers. The thing top practitioners almost never get.</p>
+          </div>
+
+          <div class="include-card rounded-xl p-7 reveal" style="border-color: rgba(160,27,74,0.3);">
+            <h4 class="font-heading text-xl text-white mb-2">Cross-Referral Culture</h4>
+            <p class="text-white/65 text-sm leading-relaxed">When a client doesn&rsquo;t fit your zone, you have eleven trusted peers to send them to &mdash; and they have you. Generosity becomes infrastructure.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Quiet benefit callout -->
+      <div class="max-w-3xl mx-auto mt-14 reveal">
+        <div class="rounded-2xl px-6 py-7 md:px-10 md:py-8 text-center" style="background: linear-gradient(135deg, rgba(232,51,122,0.10) 0%, rgba(201,162,119,0.08) 100%); border: 1px solid rgba(232,51,122,0.35);">
+          <p class="text-pink-hot text-xs uppercase tracking-[0.25em] font-semibold mb-3">The Quietest Benefit</p>
+          <p class="font-heading italic text-white text-xl md:text-2xl leading-snug">
+            Top coaches are often isolated. <br class="hidden md:block">Being in a room with peers who understand the work is rare air.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================
+       GROUP PROGRAM STANDARDS
+       ============================ -->
+  <section class="bg-ink py-24 md:py-32 px-6">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="text-center mb-14">
+        <p class="text-gold text-xs md:text-sm uppercase tracking-[0.3em] font-semibold mb-5">If You Lead a Group Program</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-normal mb-6 leading-tight">
+          One structure. <span class="italic" style="color:#C4577A;">No exceptions.</span>
+        </h2>
+        <p class="text-white/60 max-w-2xl mx-auto leading-relaxed">Every group program follows the same arc and pricing. Predictable for members, predictable for you.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 mb-10">
+        <div class="rounded-xl p-7 text-center" style="background: rgba(232,51,122,0.06); border: 1px solid rgba(232,51,122,0.35);">
+          <p class="text-pink-hot text-xs uppercase tracking-[0.22em] font-semibold mb-3">Duration</p>
+          <p class="font-heading text-3xl md:text-4xl text-white mb-2">10 Sessions</p>
+          <p class="text-white/55 text-sm">Weekly, 90 minutes each</p>
+        </div>
+        <div class="rounded-xl p-7 text-center" style="background: rgba(232,51,122,0.06); border: 1px solid rgba(232,51,122,0.35);">
+          <p class="text-pink-hot text-xs uppercase tracking-[0.22em] font-semibold mb-3">Coach Pay</p>
+          <p class="font-heading text-3xl md:text-4xl text-white mb-2">$900 / Session</p>
+          <p class="text-white/55 text-sm">Flat &mdash; regardless of group size</p>
+        </div>
+        <div class="rounded-xl p-7 text-center" style="background: rgba(232,51,122,0.06); border: 1px solid rgba(232,51,122,0.35);">
+          <p class="text-pink-hot text-xs uppercase tracking-[0.22em] font-semibold mb-3">Member Price</p>
+          <p class="font-heading text-3xl md:text-4xl text-white mb-2">$3,000</p>
+          <p class="text-white/55 text-sm">Standard for all programs</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl p-7 md:p-9" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);">
+        <p class="text-gold text-xs uppercase tracking-[0.25em] font-semibold mb-5 text-center">Group Size Policy</p>
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="text-center">
+            <p class="font-heading text-xl text-white mb-1">4 members</p>
+            <p class="text-white/55 text-sm">Minimum to run &mdash; below this, the start date postpones until filled</p>
+          </div>
+          <div class="text-center">
+            <p class="font-heading text-xl text-white mb-1">6 members</p>
+            <p class="text-white/55 text-sm">Standard target &mdash; 50/50 revenue split at this size</p>
+          </div>
+          <div class="text-center">
+            <p class="font-heading text-xl text-white mb-1">8 members</p>
+            <p class="text-white/55 text-sm">Maximum cap &mdash; preserves transformation quality and airtime</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       SAMPLE COACH ECONOMICS
+       ============================ -->
+  <section class="py-24 md:py-32 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #1e1019 100%);">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="text-center mb-14">
+        <p class="text-pink-hot text-xs md:text-sm uppercase tracking-[0.3em] font-semibold mb-5">Sample Year-One Economics</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-normal mb-6 leading-tight">
+          Realistic, not <span class="italic" style="color:#C4577A;">aspirational.</span>
+        </h2>
+        <p class="text-white/60 max-w-2xl mx-auto leading-relaxed">Two illustrative scenarios. Plus the harder-to-price downstream: clients from podcast exposure, peer referrals, brand association.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Scenario A -->
+        <div class="rounded-2xl p-7 md:p-8" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1);">
+          <p class="text-gold text-xs uppercase tracking-[0.25em] font-semibold mb-3">Scenario A</p>
+          <h3 class="font-heading text-2xl text-white mb-6">Coach without Group Program</h3>
+          <div class="space-y-3 text-sm mb-6">
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-white/70">Founding Love Strategist fee</span>
+              <span class="text-white/70 font-medium">($1,997)</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-white/70">3 members &rarr; private coaching @ $5K avg</span>
+              <span class="text-white font-medium">$13,500</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-white/70">2 members referred to Love Club (10%)</span>
+              <span class="text-white font-medium">$1,000</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-white/70">Priority Immersion stage time</span>
+              <span class="text-gold font-medium italic">included</span>
+            </div>
+          </div>
+          <div class="rounded-xl p-5 text-center" style="background: rgba(232,51,122,0.10); border: 1px solid rgba(232,51,122,0.35);">
+            <p class="text-pink-hot text-xs uppercase tracking-wider mb-1">Net Year One</p>
+            <p class="font-heading text-3xl text-white">~$12,503</p>
+          </div>
+        </div>
+
+        <!-- Scenario B -->
+        <div class="rounded-2xl p-7 md:p-8" style="background: linear-gradient(180deg, rgba(232,51,122,0.08) 0%, rgba(160,27,74,0.04) 100%); border: 2px solid rgba(160,27,74,0.5); position: relative;">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-rose-deep text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Year 1: 2 selected</div>
+          <p class="text-gold text-xs uppercase tracking-[0.25em] font-semibold mb-3 mt-2">Scenario B</p>
+          <h3 class="font-heading text-2xl text-white mb-6">Coach Leading a Group Program</h3>
+          <div class="space-y-3 text-sm mb-6">
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-white/70">Founding Love Strategist fee</span>
+              <span class="text-white/70 font-medium">($1,997)</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-white/70">Group program (10 sessions)</span>
+              <span class="text-white font-medium">$9,000</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-white/70">3 members &rarr; private coaching @ $5K avg</span>
+              <span class="text-white font-medium">$13,500</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-white/70">2 members referred to Love Club (10%)</span>
+              <span class="text-white font-medium">$1,000</span>
+            </div>
+          </div>
+          <div class="rounded-xl p-5 text-center" style="background: rgba(232,51,122,0.18); border: 1px solid rgba(232,51,122,0.5);">
+            <p class="text-pink-hot text-xs uppercase tracking-wider mb-1">Net Year One</p>
+            <p class="font-heading text-3xl text-white">~$21,503</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center text-white/40 text-xs italic max-w-2xl mx-auto mt-8 leading-relaxed">
+        Illustrative scenarios only, not guaranteed income. Actual earnings depend on your engagement, referrals, and client conversions. Plus the downstream lift &mdash; podcast exposure, peer referrals, brand association &mdash; that&rsquo;s harder to price and easy to feel.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       RECIPROCAL REFERRAL STRUCTURE
+       ============================ -->
+  <section class="bg-ink py-24 md:py-32 px-6">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="text-center mb-14">
+        <p class="text-gold text-xs md:text-sm uppercase tracking-[0.3em] font-semibold mb-5">Referral Structure</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-normal mb-6 leading-tight">
+          One rate. Both directions. <span class="italic" style="color:#C4577A;">Built on mutual trust.</span>
+        </h2>
+        <div class="inline-block mt-4">
+          <p class="font-heading text-6xl md:text-7xl" style="color:#E8337A;">10%</p>
+          <p class="text-white/55 text-xs uppercase tracking-[0.25em] mt-2">lifetime &middot; both directions</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl p-7 md:p-8" style="background: rgba(232,51,122,0.06); border: 1px solid rgba(232,51,122,0.35);">
+          <p class="text-pink-hot text-xs uppercase tracking-[0.25em] font-semibold mb-3">WeDeepen &rarr; You</p>
+          <h3 class="font-heading text-2xl text-white mb-3">We send you clients</h3>
+          <p class="text-white/65 text-sm leading-relaxed mb-4">Love Club members hire you privately at your own rates. WeDeepen earns 10% for the lifetime of that client relationship.</p>
+          <p class="text-gold font-heading text-lg italic">You keep 90%</p>
+        </div>
+
+        <div class="rounded-2xl p-7 md:p-8" style="background: rgba(201,162,119,0.06); border: 1px solid rgba(201,162,119,0.35);">
+          <p class="text-gold text-xs uppercase tracking-[0.25em] font-semibold mb-3">You &rarr; WeDeepen</p>
+          <h3 class="font-heading text-2xl text-white mb-3">You send us members</h3>
+          <p class="text-white/65 text-sm leading-relaxed mb-4">When someone you refer joins Love Club, you earn 10% of their membership fee &mdash; every year they renew.</p>
+          <p class="text-pink-hot font-heading text-lg italic">$500&ndash;$800 / yr per referral</p>
+        </div>
+      </div>
+
+      <p class="text-center text-white/45 text-xs italic max-w-2xl mx-auto mt-8 leading-relaxed">
+        Private engagements only. External speaking, media, and conference intros are generosity, not commission.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       YOUR INVESTMENT — "WHAT YOU GIVE"
+       ============================ -->
+  <section class="py-24 md:py-32 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
+    <div class="max-w-4xl mx-auto reveal">
+      <div class="text-center mb-12">
+        <p class="text-gold text-xs md:text-sm uppercase tracking-[0.3em] font-semibold mb-5">Your Investment</p>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-normal mb-6 leading-tight">
+          What it costs to <span class="italic" style="color:#C4577A;">be in the room.</span>
+        </h2>
+        <p class="text-white/60 max-w-2xl mx-auto leading-relaxed">A small founding fee, plus your zone-of-genius time. That&rsquo;s it.</p>
+      </div>
+
+      <div class="rounded-2xl p-8 md:p-10" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1);">
+        <div class="text-center mb-8 pb-8 border-b border-white/10">
+          <p class="text-pink-hot text-xs uppercase tracking-widest font-semibold mb-2">Founding Investment</p>
+          <div class="flex items-baseline justify-center gap-1">
+            <span class="font-heading text-5xl md:text-6xl text-white">$1,997</span>
+            <span class="text-white/50 text-base">/year</span>
+          </div>
+          <p class="text-white/45 text-sm mt-2 italic">Locks in founding-circle pricing for the life of your seat</p>
+        </div>
+
+        <p class="text-gold text-xs uppercase tracking-[0.25em] font-semibold mb-5 text-center">Plus your time, three ways</p>
+        <ul class="space-y-4 text-white/75 max-w-2xl mx-auto">
+          <li class="flex gap-4">
+            <span class="text-pink-hot mt-1 flex-shrink-0">&#10003;</span>
+            <span><strong class="text-white">3&ndash;4 committed sessions per year</strong> &mdash; masterminds or integration calls, in your zone of genius</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="text-pink-hot mt-1 flex-shrink-0">&#10003;</span>
+            <span><strong class="text-white">Deliver in your frame</strong> &mdash; your frameworks, your embodiment, your voice. We don&rsquo;t want you to be anyone else.</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="text-pink-hot mt-1 flex-shrink-0">&#10003;</span>
+            <span><strong class="text-white">Show up as a peer</strong> &mdash; for the founding circle, in the channel, at the gatherings, with the cross-referrals</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       NEXT STEPS
+       ============================ -->
+  <section id="next-steps" class="py-24 md:py-32 px-6 relative overflow-hidden" style="background: linear-gradient(135deg, #1A1A1A 0%, #2a1620 100%);">
+    <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
+      <p class="text-gold text-xs uppercase tracking-[0.3em] font-semibold mb-5">Next Steps</p>
+      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-normal mb-6 leading-tight">
+        Say yes, <br>
+        <span class="italic" style="color:#C4577A;">and let&rsquo;s build this together.</span>
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-5 mt-14 mb-12 text-left">
+        <div class="rounded-2xl p-6 md:p-7" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);">
+          <p class="step-num mb-3">01</p>
+          <h3 class="font-heading text-lg text-white mb-2">Review the Agreement</h3>
+          <p class="text-white/60 text-sm leading-relaxed">A short Love Strategist agreement covering the basics &mdash; commitments, referral structure, peer expectations.</p>
+        </div>
+        <div class="rounded-2xl p-6 md:p-7" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(232,51,122,0.3);">
+          <p class="step-num mb-3" style="color:#E8337A;">02</p>
+          <h3 class="font-heading text-lg text-white mb-2">Send Your Founding Investment</h3>
+          <p class="text-white/60 text-sm leading-relaxed">$1,997 reserves your seat in the founding twelve.</p>
+        </div>
+        <div class="rounded-2xl p-6 md:p-7" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);">
+          <p class="step-num mb-3">03</p>
+          <h3 class="font-heading text-lg text-white mb-2">Join the Peer Channel</h3>
+          <p class="text-white/60 text-sm leading-relaxed">Welcome to the founding circle. Introductions, calendar, and the first peer gathering follow.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="mailto:c@wedeepen.com?subject=Founding%20Love%20Guide%20%E2%80%94%20Yes" class="btn-pink text-base !py-4 !px-10">Email Christina &mdash; Yes</a>
+        <a href="mailto:c@wedeepen.com?subject=Founding%20Love%20Guide%20%E2%80%94%20Question" class="btn-outline text-base !py-4 !px-10">Ask a Question First</a>
+      </div>
+      <p class="text-white/40 text-xs italic mt-6">c@wedeepen.com &middot; WeDeepen.com</p>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer class="bg-ink border-t border-white/10 py-14">
+    <div class="max-w-site mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-10">
+        <div>
+          <img src="/wedeepen/images/deepen-logo-white.png" alt="DeePeN" class="h-7 w-auto">
+          <p class="text-white/40 text-sm mt-3 leading-relaxed max-w-xs">A founding-circle invitation from Christina Weber.</p>
+        </div>
+        <div class="flex gap-5">
+          <a href="https://www.instagram.com/wedeepen/" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@wedeepen" target="_blank" rel="noopener" class="text-white/40 hover:text-gold transition" aria-label="YouTube">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="#1A1A1A" d="M9.545 15.568V8.432L15.818 12z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-white/40 text-xs">
+        <p>&copy; 2026 WeDeepen. All rights reserved.</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 items-center justify-center">
+          <a href="https://christinalweber.com" class="hover:text-gold transition">christinalweber.com</a>
+          <a href="mailto:c@wedeepen.com" class="hover:text-gold transition">c@wedeepen.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const header = document.getElementById('wd-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileClose = document.getElementById('mobile-close');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileToggle.addEventListener('click', () => mobileNav.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+    mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>
