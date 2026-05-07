@@ -142,6 +142,111 @@
       transform: translateY(-1px);
     }
     .social-chip svg { width: 14px; height: 14px; }
+
+    /* Council grid card */
+    .council-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .council-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(201,162,119,0.35);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+    }
+    .council-photo {
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #2a1a22 0%, #1a1a1a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .council-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .initials-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(160,27,74,0.18) 0%, rgba(201,162,119,0.10) 100%);
+      color: rgba(201,162,119,0.7);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 500;
+      font-size: 3rem;
+      letter-spacing: 0.05em;
+    }
+    .council-body {
+      padding: 20px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .council-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .council-specialty {
+      color: #C9A277;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+    .council-bio {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.875rem;
+      line-height: 1.55;
+      flex: 1;
+    }
+    .council-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+    .council-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 9999px;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .council-links a:hover {
+      background: rgba(201,162,119,0.12);
+      border-color: rgba(201,162,119,0.4);
+      color: #fff;
+    }
+    .council-links svg { width: 11px; height: 11px; }
+
+    .draft-flag {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: rgba(232,51,122,0.85);
+      color: #fff;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      z-index: 2;
+      pointer-events: none;
+    }
   </style>
   <script src="https://catch.share.one/01954a1a-1897-7f53-bd40-a67ac4997dff.js" defer></script>
 </head>
@@ -249,114 +354,16 @@
   </section>
 
 
-  <!-- STRATEGIST 2: Jordan Bowditch -->
-  <section id="jordan-bowditch" class="py-20 md:py-24 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
+  <!-- STRATEGIST 2: Annie Lalla -->
+  <section id="annie-lalla" class="py-20 md:py-24 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
     <div class="max-w-5xl mx-auto reveal">
       <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
         <div class="md:col-span-2 md:order-2">
-          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
-            <img src="/wedeepen/images/strategists/jordan-bowditch.jpg" alt="Jordan Bowditch" class="w-full h-full object-cover">
-          </div>
-        </div>
-        <div class="md:col-span-3 md:order-1">
-          <span class="specialty-tag mb-4">Radical Play &amp; Polarity</span>
-          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Jordan Bowditch</h2>
-          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
-            Jordan teaches the embodied mechanics of polarity &mdash; the magnetic tension between masculine and feminine energy that keeps long-term relationships alive. His work invites radical play, presence, and the kind of permission most people have never been given to desire fully.
-          </p>
-          <p class="text-white/70 text-sm md:text-base leading-relaxed">
-            Expect somatic work, direct coaching, and a rare fusion of warmth and precision that transforms how people experience their own aliveness.
-          </p>
-          <div class="flex flex-wrap gap-2 mt-6">
-            <a href="https://www.instagram.com/jordanbowditch/" target="_blank" rel="noopener" class="social-chip">
-              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              @jordanbowditch
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- STRATEGIST 3: Ariana Hall -->
-  <section id="ariana-hall" class="bg-ink py-20 md:py-24 px-6">
-    <div class="max-w-5xl mx-auto reveal">
-      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
-        <div class="md:col-span-2">
-          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
-            <img src="/wedeepen/images/strategists/ariana-hall.jpg" alt="Ariana Hall" class="w-full h-full object-cover">
-          </div>
-        </div>
-        <div class="md:col-span-3">
-          <span class="specialty-tag mb-4">Deep Transformation &amp; Clarity</span>
-          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Ariana Hall</h2>
-          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
-            Ariana works in the precise territory between truth and tenderness. Her coaching cuts through the stories people have been telling themselves for years &mdash; and holds them steady while they feel what was underneath.
-          </p>
-          <p class="text-white/70 text-sm md:text-base leading-relaxed">
-            Known for clarity without cruelty, Ariana is the strategist you go to when you're ready to stop dressing up the same pattern in new clothes.
-          </p>
-          <div class="flex flex-wrap gap-2 mt-6">
-            <a href="https://www.instagram.com/arianahall/" target="_blank" rel="noopener" class="social-chip">
-              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              @arianahall
-            </a>
-            <a href="https://arianahall.com" target="_blank" rel="noopener" class="social-chip">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
-              arianahall.com
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- STRATEGIST 4: Dave Asprey -->
-  <section id="dave-asprey" class="py-20 md:py-24 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
-    <div class="max-w-5xl mx-auto reveal">
-      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
-        <div class="md:col-span-2 md:order-2">
-          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
-            <img src="/wedeepen/images/strategists/dave-asprey.jpg" alt="Dave Asprey" class="w-full h-full object-cover">
-          </div>
-        </div>
-        <div class="md:col-span-3 md:order-1">
-          <span class="specialty-tag mb-4">Biohacking &amp; Longevity</span>
-          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Dave Asprey</h2>
-          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
-            The founding father of biohacking &mdash; founder of Bulletproof, host of <em>The Human Upgrade</em> podcast, and author of multiple <em>New York Times</em> bestsellers on optimizing the body, brain, and nervous system.
-          </p>
-          <p class="text-white/70 text-sm md:text-base leading-relaxed">
-            Inside WeDeepen, Dave brings the biology of love to the table: how your nervous system, sleep, and stress physiology directly shape your capacity for intimacy, desire, and sustained partnership.
-          </p>
-          <div class="flex flex-wrap gap-2 mt-6">
-            <a href="https://www.instagram.com/dave.asprey/" target="_blank" rel="noopener" class="social-chip">
-              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              @dave.asprey
-            </a>
-            <a href="https://daveasprey.com" target="_blank" rel="noopener" class="social-chip">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
-              daveasprey.com
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- STRATEGIST 5: Annie Lalla -->
-  <section id="annie-lalla" class="bg-ink py-20 md:py-24 px-6">
-    <div class="max-w-5xl mx-auto reveal">
-      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
-        <div class="md:col-span-2">
           <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
             <img src="/wedeepen/images/strategists/annie-lalla.jpg" alt="Annie Lalla" class="w-full h-full object-cover">
           </div>
         </div>
-        <div class="md:col-span-3">
+        <div class="md:col-span-3 md:order-1">
           <span class="specialty-tag mb-4">Cartographer of Love</span>
           <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Annie Lalla</h2>
           <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
@@ -381,32 +388,32 @@
   </section>
 
 
-  <!-- STRATEGIST 6: Yossef Sagi -->
-  <section id="yossef-sagi" class="py-20 md:py-24 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
+  <!-- STRATEGIST 3: Ken Page, LCSW -->
+  <section id="ken-page" class="bg-ink py-20 md:py-24 px-6">
     <div class="max-w-5xl mx-auto reveal">
       <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
-        <div class="md:col-span-2 md:order-2">
+        <div class="md:col-span-2">
           <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
-            <img src="/wedeepen/images/strategists/yossef-sagi.jpg" alt="Yossef Sagi" class="w-full h-full object-cover">
+            <img src="/wedeepen/images/strategists/ken-page.jpg" alt="Ken Page, LCSW" class="w-full h-full object-cover">
           </div>
         </div>
-        <div class="md:col-span-3 md:order-1">
-          <span class="specialty-tag mb-4">Intimacy &amp; Embodied Partnership</span>
-          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Yossef Sagi</h2>
+        <div class="md:col-span-3">
+          <span class="specialty-tag mb-4">Author of Deeper Dating</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Ken Page, LCSW</h2>
           <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
-            Yossef brings the ancient and the anatomical together &mdash; teaching intimacy as a practice of presence, nervous system regulation, and deep somatic attunement. His work guides partners back to each other at the level of the body, not just the mind.
+            Psychotherapist, bestselling author of <em>Deeper Dating</em>, and host of the Deeper Dating Podcast &mdash; Ken has spent four decades guiding people back to what he calls their <em>Core Gifts</em>: the places of deepest sensitivity that hold the keys to lasting intimacy.
           </p>
           <p class="text-white/70 text-sm md:text-base leading-relaxed">
-            Known for creating containers where people feel profoundly safe enough to drop the armor they didn't even know they were wearing.
+            His work has been featured in <em>O, The Oprah Magazine</em>, <em>The New York Times</em>, and <em>Cosmopolitan</em>, and has helped thousands trade the games of seduction for the slower, truer pull of real connection.
           </p>
           <div class="flex flex-wrap gap-2 mt-6">
-            <a href="https://www.instagram.com/yossefsagi/" target="_blank" rel="noopener" class="social-chip">
+            <a href="https://www.instagram.com/deeper.dating/" target="_blank" rel="noopener" class="social-chip">
               <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              @yossefsagi
+              @deeper.dating
             </a>
-            <a href="https://yossefsagi.com" target="_blank" rel="noopener" class="social-chip">
+            <a href="https://deeperdatingpodcast.com/" target="_blank" rel="noopener" class="social-chip">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
-              yossefsagi.com
+              deeperdatingpodcast.com
             </a>
           </div>
         </div>
@@ -415,16 +422,84 @@
   </section>
 
 
-  <!-- STRATEGIST 7: Dana Arielle -->
-  <section id="dana-arielle" class="bg-ink py-20 md:py-24 px-6">
+  <!-- STRATEGIST 4: Ariana Hall -->
+  <section id="ariana-hall" class="py-20 md:py-24 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+        <div class="md:col-span-2 md:order-2">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
+            <img src="/wedeepen/images/strategists/ariana-hall.jpg" alt="Ariana Hall" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:col-span-3 md:order-1">
+          <span class="specialty-tag mb-4">Deep Transformation &amp; Clarity</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Ariana Hall</h2>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
+            Ariana works in the precise territory between truth and tenderness. Her coaching cuts through the stories people have been telling themselves for years &mdash; and holds them steady while they feel what was underneath.
+          </p>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Known for clarity without cruelty, Ariana is the strategist you go to when you're ready to stop dressing up the same pattern in new clothes.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <a href="https://www.instagram.com/arianahall/" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @arianahall
+            </a>
+            <a href="https://arianahall.com" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+              arianahall.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STRATEGIST 5: Dave Asprey -->
+  <section id="dave-asprey" class="bg-ink py-20 md:py-24 px-6">
     <div class="max-w-5xl mx-auto reveal">
       <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
         <div class="md:col-span-2">
           <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
-            <img src="/wedeepen/images/strategists/dana-arielle.webp" alt="Dana Arielle" class="w-full h-full object-cover">
+            <img src="/wedeepen/images/strategists/dave-asprey.jpg" alt="Dave Asprey" class="w-full h-full object-cover">
           </div>
         </div>
         <div class="md:col-span-3">
+          <span class="specialty-tag mb-4">Biohacking &amp; Longevity</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Dave Asprey</h2>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
+            The founding father of biohacking &mdash; founder of Bulletproof, host of <em>The Human Upgrade</em> podcast, and author of multiple <em>New York Times</em> bestsellers on optimizing the body, brain, and nervous system.
+          </p>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Inside WeDeepen, Dave brings the biology of love to the table: how your nervous system, sleep, and stress physiology directly shape your capacity for intimacy, desire, and sustained partnership.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <a href="https://www.instagram.com/dave.asprey/" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @dave.asprey
+            </a>
+            <a href="https://daveasprey.com" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+              daveasprey.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STRATEGIST 6: Dana Arielle -->
+  <section id="dana-arielle" class="py-20 md:py-24 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+        <div class="md:col-span-2 md:order-2">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
+            <img src="/wedeepen/images/strategists/dana-arielle.webp" alt="Dana Arielle" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:col-span-3 md:order-1">
           <span class="specialty-tag mb-4">Feminine Embodiment</span>
           <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Dana Arielle</h2>
           <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
@@ -439,6 +514,459 @@
               danaarielle.com
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STRATEGIST 7: Jordan Bowditch -->
+  <section id="jordan-bowditch" class="bg-ink py-20 md:py-24 px-6">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="grid md:grid-cols-5 gap-10 items-center strategist-card rounded-2xl p-6 md:p-10" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+        <div class="md:col-span-2">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden max-w-xs mx-auto md:max-w-full">
+            <img src="/wedeepen/images/strategists/jordan-bowditch.jpg" alt="Jordan Bowditch" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:col-span-3">
+          <span class="specialty-tag mb-4">Radical Play &amp; Polarity</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-semibold mb-3 mt-4">Jordan Bowditch</h2>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed mb-4">
+            Jordan teaches the embodied mechanics of polarity &mdash; the magnetic tension between masculine and feminine energy that keeps long-term relationships alive. His work invites radical play, presence, and the kind of permission most people have never been given to desire fully.
+          </p>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Expect somatic work, direct coaching, and a rare fusion of warmth and precision that transforms how people experience their own aliveness.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <a href="https://www.instagram.com/jordanbowditch/" target="_blank" rel="noopener" class="social-chip">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @jordanbowditch
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       THE FULL COUNCIL — additional strategists in compact grid
+       NOTE: Bios marked DRAFT below are awaiting strategist approval.
+       Photos marked TBD are awaiting better source/approval.
+       ============================================================ -->
+  <section id="full-council" class="py-20 md:py-28 px-6" style="background: linear-gradient(180deg, #1A1A1A 0%, #221618 100%);">
+    <div class="max-w-site mx-auto reveal">
+      <div class="text-center mb-14">
+        <p class="text-gold text-xs md:text-sm uppercase tracking-[0.3em] font-semibold mb-5">The Full Council</p>
+        <h2 class="font-heading text-4xl md:text-5xl font-normal mb-5">The rest of the <span class="italic" style="color:#C4577A;">extraordinary.</span></h2>
+        <p class="text-white/60 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light">
+          A wider council of teachers, healers, and practitioners who join us throughout the year &mdash; in masterminds, immersions, and curated programs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
+
+        <!-- Yossef Sagi -->
+        <div class="council-card">
+          <div class="council-photo"><img src="/wedeepen/images/strategists/yossef-sagi.jpg" alt="Yossef Sagi" loading="lazy"></div>
+          <div class="council-body">
+            <h3 class="council-name">Yossef Sagi</h3>
+            <p class="council-specialty">Intimacy &amp; Embodied Partnership</p>
+            <p class="council-bio">Yossef brings the ancient and the anatomical together &mdash; teaching intimacy as a practice of presence, nervous system regulation, and deep somatic attunement. Known for creating containers where people drop the armor they didn't know they were wearing.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/yossefsagi/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@yossefsagi</a>
+              <a href="https://yossefsagi.com" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>Site</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Katie & Gay Hendricks, PhDs -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">K&amp;G</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Katie &amp; Gay Hendricks, PhDs</h3>
+            <p class="council-specialty">Pioneers of Conscious Loving</p>
+            <p class="council-bio">Co-authors of <em>Conscious Loving</em> and co-founders of the Hendricks Institute, Katie and Gay have worked with more than 30,000 individuals and 3,000 couples over four decades, training generations of relationship coaches. Their body-centered method has been called the field's gold standard.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/heartsintrueharmony/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@heartsintrueharmony</a>
+              <a href="https://hendricks.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>hendricks.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dawn Cartwright -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">DC</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Dawn Cartwright</h3>
+            <p class="council-specialty">Bio-Energetic Tantra Visionary</p>
+            <p class="council-bio">An internationally celebrated Tantra teacher and founder of Chandra Bindu Tantra Institute, Dawn has been teaching since 1992 and is the innovator of bio-energetic Tantra fusion. A direct disciple of Margo Anand and Daniel Odier, she draws on Kashmir Shaivism and Vigyan Bhairav lineages to guide lovers toward their full ecstatic potential.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/dawncartwright/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@dawncartwright</a>
+              <a href="http://www.dawncartwright.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>dawncartwright.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kayce Neill -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">KN</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Kayce Neill, MA</h3>
+            <p class="council-specialty">Erotic Blueprints &amp; Conscious Kink</p>
+            <p class="council-bio">A love and intimacy expert, trauma therapist, and certified Erotic Blueprints&trade; Coach, Kayce holds a master's in Mental Health Counseling focused on trauma and intimacy. With Kimi Inch, she co-founded Eros and Kink &mdash; a body of work integrating somatic healing, kink literacy, and the language of desire.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/msladolcevita/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@msladolcevita</a>
+              <a href="https://www.erosandkink.com" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>erosandkink.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- John Wineland -->
+        <div class="council-card">
+          <div class="council-photo"><img src="/wedeepen/images/strategists/john-wineland.jpg" alt="John Wineland" loading="lazy"></div>
+          <div class="council-body">
+            <h3 class="council-name">John Wineland</h3>
+            <p class="council-specialty">Embodied Masculine Leadership</p>
+            <p class="council-bio">Author of <em>From the Core</em> and host of <em>The Embodied Relationship Experience</em>, John has spent 16+ years guiding men and women in masculine and feminine embodiment and sacred intimacy. His teaching weaves Tantric Buddhism, Taoist sexuality, and 13 years of study with David Deida into a body-first paradigm for conscious relationship.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/john_wineland/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@john_wineland</a>
+              <a href="https://johnwineland.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>johnwineland.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Jet Eveleth -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">JE</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Dr. Jet Eveleth</h3>
+            <p class="council-specialty">Clown Church &amp; Embodied Awakening</p>
+            <p class="council-bio">A doctor of integrative medicine, professor of Taoist medicine, and creator of Clown Church &mdash; a workshop tradition that uses clown, breath, and presence to access flow state and authentic connection. A Wim Hof-trained breath practitioner and longtime Second City performer, she brings a rare blend of mystic rigor and disarming play to opening the heart.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/clownchurchla/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@clownchurchla</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rod Hairston -->
+        <div class="council-card">
+          <div class="council-photo"><img src="/wedeepen/images/strategists/rod-hairston.jpg" alt="Rod Hairston" loading="lazy"></div>
+          <div class="council-body">
+            <h3 class="council-name">Rod Hairston, MA</h3>
+            <p class="council-specialty">Dream Marriage Method</p>
+            <p class="council-bio">A relationship strategist, two-time Super Bowl-winning chaplain, and creator of the Dream Marriage Method, Rod has spent thirty-plus years coaching elite athletes, executives, and ministry leaders. He weaves psychological depth, spiritual grounding, and concierge-level rigor into work designed for high-performing couples.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/rodhairston/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@rodhairston</a>
+              <a href="https://www.rodhairston.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>rodhairston.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Anna Cabeca -->
+        <div class="council-card">
+          <div class="council-photo"><img src="/wedeepen/images/strategists/anna-cabeca.png" alt="Dr. Anna Cabeca" loading="lazy"></div>
+          <div class="council-body">
+            <h3 class="council-name">Dr. Anna Cabeca</h3>
+            <p class="council-specialty">Hormones, Sexuality &amp; Menopause</p>
+            <p class="council-bio">Triple board-certified OB/GYN, Emory-trained physician, and bestselling author of <em>The Hormone Fix</em>, Dr. Anna is an internationally acclaimed menopause and sexual health expert known as "The Girlfriend Doctor." She brings rigorous medicine to the often-ignored intersection of hormones, libido, and lifelong vitality.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/thegirlfrienddoctor/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@thegirlfrienddoctor</a>
+              <a href="https://drannacabeca.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>drannacabeca.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mike Zeller -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">MZ</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Mike Zeller</h3>
+            <p class="council-specialty">Purpose, Genius &amp; Aligned Living</p>
+            <p class="council-bio">Business architect, mentor, and author of <em>The Genius Within</em>, Mike has founded or partnered in 20+ ventures generating over $300M in sales &mdash; and now guides high-achievers in aligning purpose, relationship, and work. Trained under Tony Robbins, Russell Brunson, and Jay Abraham, he combines NLP mastery with a deeply personal story of healing.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/themikezeller/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@themikezeller</a>
+              <a href="https://mikezeller.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>mikezeller.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kimi Inch -->
+        <div class="council-card">
+          <div class="council-photo"><img src="/wedeepen/images/strategists/kimi-inch.png" alt="Kimi Inch" loading="lazy"></div>
+          <div class="council-body">
+            <h3 class="council-name">Kimi Inch</h3>
+            <p class="council-specialty">Erotic Leadership &amp; Conscious Kink</p>
+            <p class="council-bio">Founder of &amp;More, a global erotic leadership brand, and a somatic therapist, author, and Core Energetics practitioner, Kimi pioneered "eros as medicine" &mdash; merging therapeutic depth with conscious kink to help clients reclaim pleasure, voice, and erotic agency. Featured in <em>The Wall Street Journal</em>, <em>Cosmopolitan</em>, ABC's <em>20/20</em>, and <em>Nightline</em>.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/kimiinch/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@kimiinch</a>
+              <a href="https://andmorepresents.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>andmorepresents.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anil Gupta -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">AG</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Anil Gupta</h3>
+            <p class="council-specialty">The Love Doctor</p>
+            <p class="council-bio">International speaker, transformational coach, and bestselling author of <em>Immediate Happiness</em>, Anil &mdash; known as "The Love Doctor" &mdash; has led workshops in 18+ countries and spoken at Harvard and TEDx. He teaches a deceptively simple practice of giving, gratitude, and growth that has reached celebrities, athletes, royalty, and spiritual leaders alike.</p>
+            <div class="council-links">
+              <a href="https://meetanil.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>meetanil.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alorah Inanna -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">AI</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Alorah Inanna</h3>
+            <p class="council-specialty">Sensuous Awakening &amp; Mythic Love</p>
+            <p class="council-bio">For thirty-five-plus years, Alorah has taught conscious relationship and sensuous spiritual evolution from her temple in Marina del Rey. As the creator of WindDancing, The Sensuous Woman's Workout, Doorways to Intimacy, and the movements A Man in A Million and The Goddess Alive, she leads people into a felt, mythic experience of beauty, body, and divine recognition.</p>
+            <div class="council-links">
+              <a href="https://www.alorahinanna.com" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>alorahinanna.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Larry Michel -->
+        <div class="council-card">
+          <div class="council-photo"><img src="/wedeepen/images/strategists/larry-michel.jpg" alt="Larry Michel" loading="lazy"></div>
+          <div class="council-body">
+            <h3 class="council-name">Larry Michel</h3>
+            <p class="council-specialty">Genetic Energetics of Love</p>
+            <p class="council-bio">Founder of the Institute of Genetic Energetics and author of <em>Lasting</em>, Larry &mdash; known as "The Love Shepherd" &mdash; uses a science-based personal profiling system rooted in birth-date energetics to map chemistry, communication, and compatibility. His work compresses what often takes years of couples therapy into a single illuminating session.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/love_shepherd/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@love_shepherd</a>
+              <a href="https://theloveshepherd.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>theloveshepherd.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Melissa Davison (BodyJoy) -->
+        <div class="council-card">
+          <div class="council-photo"><img src="/wedeepen/images/strategists/melissa-davison.jpg" alt="Melissa Davison" loading="lazy"></div>
+          <div class="council-body">
+            <h3 class="council-name">Melissa Davison</h3>
+            <p class="council-specialty">Somatic Sex Education &amp; Sensuous Embodiment</p>
+            <p class="council-bio">Founder of BodyJoy Intimacy School, Melissa is a somatic sex educator, sexological bodyworker, and clinical hypnotherapist whose practice helps curious adults learn new ways to talk, touch, and play. With a trauma-sensitive foundation and a famously playful edge, she's led hundreds of workshops worldwide and hosts the <em>After Office Hours</em> podcast.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/bodyjoyintimacyschool/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@bodyjoyintimacyschool</a>
+              <a href="https://bodyjoy.org/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>bodyjoy.org</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Avrum Weiss -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">AW</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Dr. Avrum Weiss</h3>
+            <p class="council-specialty">The Inner Lives of Men</p>
+            <p class="council-bio">A clinical psychologist with 35+ years in practice, Dr. Weiss is the author of the Amazon bestseller <em>Hidden in Plain Sight: How Men's Fears of Women Shape Their Intimate Relationships</em>. His pioneering work on experiential psychotherapy &mdash; and his unflinching map of the seven hidden fears most men carry into love &mdash; has made him a sought-after voice for couples ready to bridge the silence between them.</p>
+            <div class="council-links">
+              <a href="https://www.avrumweissphd.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>avrumweissphd.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leola Watkins -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">LW</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Leola Watkins</h3>
+            <p class="council-specialty">Pleasure Priestess &amp; Tantric Intimacy</p>
+            <p class="council-bio">Author, pleasure priestess, and tantric intimacy mentor, Leola's mission is to integrate sexuality and spirituality at the most intimate level. Author of <em>Sacred Sex Ed</em> and host of the <em>Talk Tantra to Me</em> podcast, she guides individuals and couples to harness life-force energy as a path to freedom, abundance, and deep connection.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/talktantratome/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@talktantratome</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sarah Wilde & Brad Wethington -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">S&amp;B</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Sarah Wilde &amp; Brad Wethington</h3>
+            <p class="council-specialty">Modern Sex Life for Long-Term Couples</p>
+            <p class="council-bio">Certified sex and relationship coaches behind Modern Sex Life and married for nineteen-plus years, Sarah teaches sexual archetypes and partner dynamics; Brad specializes in emotional intelligence, human design, and "relational hacking." Together they help modern couples evolve their intimacy without losing the love.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/modernsexlife/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@modernsexlife</a>
+              <a href="https://www.modernsex.life/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>modernsex.life</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ashley Ashida -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">AA</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Ashley Ashida</h3>
+            <p class="council-specialty">Quantum Human Design for Conscious Living</p>
+            <p class="council-bio">A Certified Quantum Human Design Specialist, life and family coach, and creator of Decondition Daily&trade;, Ashley synthesizes astrology, the I'Ching, chakras, kabbalah, and quantum mechanics into a practical lens for understanding energy, decision-making, and the truest expression of self in love and partnership.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/ashleyashida/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@ashleyashida</a>
+              <a href="https://connect.ashleyashida.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>connect.ashleyashida.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dina Mayaan -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Needs Confirmation</span><div class="initials-placeholder">DM</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Dina Mayaan</h3>
+            <p class="council-specialty">Bio &amp; specialty pending</p>
+            <p class="council-bio"><em>Bio coming soon. Christina &mdash; please confirm exact spelling, website, and Instagram so we can complete this profile.</em></p>
+          </div>
+        </div>
+
+        <!-- Melanie Wild -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">MW</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Melanie Wild</h3>
+            <p class="council-specialty">Somatic Nervous System Training</p>
+            <p class="council-bio">An emotional performance trainer and somatic coach, Melanie works with high-impact leaders to dissolve triggers at the level of sensation. Drawing on a decade-plus in emotional mastery, she teaches the nervous system practices that let people stay clear, grounded, and powerfully authentic under pressure.</p>
+            <div class="council-links">
+              <a href="https://www.melaniewild.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>melaniewild.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jamie & Yonatan Elkayam -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">J&amp;Y</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Jamie &amp; Yonatan Elkayam</h3>
+            <p class="council-specialty">Reiki, Intimacy &amp; Conscious Partnership</p>
+            <p class="council-bio">A married couple, certified Reiki Master Teachers, and founders of Word of Mouth, a healing sanctuary in Los Angeles. Together they weave Reiki, breathwork, sound, and conscious coaching into work that helps couples and sensitive people meet themselves and each other more honestly.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/wordofmouth.love/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@wordofmouth.love</a>
+              <a href="https://wordofmouth.love/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>wordofmouth.love</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terrie Huberman -->
+        <div class="council-card">
+          <div class="council-photo"><img src="/wedeepen/images/strategists/terrie-huberman.jpg" alt="Terrie Huberman" loading="lazy"></div>
+          <div class="council-body">
+            <h3 class="council-name">Terrie Huberman</h3>
+            <p class="council-specialty">Intuition &amp; Decision Clarity</p>
+            <p class="council-bio">An intuitive, psychic medium, and emotional mastery coach, Terrie helps ambitious women move from overthinking and overwhelm into clear, embodied knowing. Creator of the Heart Hug Method, she blends heart-coherence research with Reiki, mediumship, and trauma-informed energy work &mdash; a science-meets-soul approach to dating, relationships, and self-trust.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/intuitiveterriehuberman/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@intuitiveterriehuberman</a>
+              <a href="https://terriehuberman.com/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>terriehuberman.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Colleen Schell -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">CS</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Colleen Schell</h3>
+            <p class="council-specialty">Storytelling, Sensuality &amp; Stage Presence</p>
+            <p class="council-bio">Founder of FABx, the storytelling academy that has trained over 300 coaches, leaders, and artists to craft TED-worthy talks. A former international advertising executive (Google, Microsoft, Coca-Cola), she now mentors clients on love and intimacy and hosts sensuality events worldwide &mdash; committed to up-leveling the collective consciousness of love, joy, and intimacy.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/colleenschell/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@colleenschell</a>
+              <a href="https://fabx.tv/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>fabx.tv</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dina Montefuscoli -->
+        <div class="council-card">
+          <div class="council-photo"><span class="draft-flag">Photo TBD</span><div class="initials-placeholder">DM</div></div>
+          <div class="council-body">
+            <h3 class="council-name">Dina Montefuscoli</h3>
+            <p class="council-specialty">Sound Alchemy &amp; Energy Medicine</p>
+            <p class="council-bio">A Soul Sound Alchemist, Energy Medicine practitioner (CRQH), and yoga teacher, Dina weaves voice, sound, breath, and movement into deep nervous-system reset. Based in Venice, California, she creates ceremonial space for people who want to remember their wholeness through frequency, embodiment, and play.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/dinamontefuscoli/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@dinamontefuscoli</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lindsey Means (note: spelling correction from "Lindsay") -->
+        <div class="council-card">
+          <div class="council-photo"><img src="/wedeepen/images/strategists/lindsey-means.jpg" alt="Lindsey Means" loading="lazy"></div>
+          <div class="council-body">
+            <h3 class="council-name">Lindsey Means</h3>
+            <p class="council-specialty">Human Design &amp; Embodied Wholeness</p>
+            <p class="council-bio">A Human Design teacher and embodiment guide, Lindsey's work centers on a single question: <em>Who am I?</em> Through Find Your WAI, she helps clients reclaim their personal power and prosperity codes via custom Human Design readings &mdash; a return to wholeness, not another self-improvement program.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/lindseymeans_/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@lindseymeans_</a>
+              <a href="https://bio.site/findyourwai" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>Find Your WAI</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carla Swiryn -->
+        <div class="council-card">
+          <div class="council-photo"><img src="/wedeepen/images/strategists/carla-swiryn.jpg" alt="Carla Swiryn" loading="lazy"></div>
+          <div class="council-body">
+            <h3 class="council-name">Carla Swiryn</h3>
+            <p class="council-specialty">Modern Matchmaking &amp; Dating Strategy</p>
+            <p class="council-bio">A certified matchmaker with over a decade of experience and the founder of DateSpot, Carla brings warmth, candor, and modern strategy to the work of helping people find a real partner. A former Senior Matchmaker at Three Day Rule, she connects relationship-minded singles across the matchmaking industry through AI-assisted matching.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/matchmakercarla/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@matchmakercarla</a>
+              <a href="https://www.datespot.love/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>datespot.love</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nick Gray -->
+        <div class="council-card">
+          <div class="council-photo"><img src="/wedeepen/images/strategists/nick-gray.png" alt="Nick Gray" loading="lazy"></div>
+          <div class="council-body">
+            <h3 class="council-name">Nick Gray</h3>
+            <p class="council-specialty">Friendship Through Small Gatherings</p>
+            <p class="council-bio">Author of <em>The 2-Hour Cocktail Party</em> and founder of Museum Hack, Nick reverse-engineered the art of hosting after moving to New York with few friends &mdash; turning a small, structured cocktail party into a method for building deep friendships and serendipitous opportunity. Featured in <em>The New York Times</em> and <em>Wall Street Journal</em>.</p>
+            <div class="council-links">
+              <a href="https://www.instagram.com/nickgraynews/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@nickgraynews</a>
+              <a href="https://nickgray.net/" target="_blank" rel="noopener"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>nickgray.net</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       IN MEMORIAM — Dr. Robert Gilbert
+       NOTE: Research suggests passing date is February 10, 2025
+       (not Fall 2024). Please confirm with Christina before publishing.
+       ============================================================ -->
+  <section id="in-memoriam" class="bg-ink py-20 md:py-24 px-6 border-t border-white/5">
+    <div class="max-w-4xl mx-auto reveal">
+      <div class="text-center mb-10">
+        <p class="text-gold text-xs md:text-sm uppercase tracking-[0.3em] font-semibold mb-4">In Memoriam</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-normal italic text-white/90">With deep gratitude.</h2>
+      </div>
+      <div class="rounded-2xl p-6 md:p-10 mx-auto max-w-2xl text-center" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(201,162,119,0.18);">
+        <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden" style="background: linear-gradient(135deg, rgba(160,27,74,0.18) 0%, rgba(201,162,119,0.10) 100%);">
+          <div class="w-full h-full flex items-center justify-center" style="font-family: 'Playfair Display', Georgia, serif; color: rgba(201,162,119,0.7); font-size: 2.5rem; letter-spacing: 0.05em;">RG</div>
+        </div>
+        <h3 class="font-heading text-2xl md:text-3xl text-white font-semibold mb-2">Dr. Robert J. Gilbert</h3>
+        <p class="text-gold italic text-sm md:text-base mb-5">Sacred Geometry &amp; Spiritual Science</p>
+        <p class="text-white/70 text-sm md:text-base leading-relaxed mb-3">
+          A scholar of spiritual science, sacred geometry, and Rosicrucian wisdom, Dr. Gilbert was the first non-Egyptian authorized to teach BioGeometry, and the founder of the Vesica Institute for Holistic Studies. With more than twenty-five years of study in the European Rosicrucian and Holy Grail traditions, his teaching empowered students to walk a sovereign path of inner knowing.
+        </p>
+        <p class="text-white/70 text-sm md:text-base leading-relaxed">
+          His scholarship continues to shape how a generation thinks about consciousness, vibration, and the living geometry of love.
+        </p>
+        <div class="flex flex-wrap gap-2 justify-center mt-7">
+          <a href="https://www.vesica.org/" target="_blank" rel="noopener" class="social-chip">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+            Vesica Institute
+          </a>
         </div>
       </div>
     </div>
