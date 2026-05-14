@@ -1,122 +1,93 @@
-# AlpacApps Infra
+# christinalweber.com
 
-A complete property management platform template. Clone it, run the setup wizard, and get a full-featured system for managing rentals, events, smart home devices, payments, and more — all on free or near-free infrastructure.
+The production website for **[christinalweber.com](https://christinalweber.com)** — Christina Weber's personal brand site (advisor, founder, host).
 
-## What you get
+This repo also hosts the shared **Supabase Edge Functions** used by both christinalweber.com and [wedeepen.com](https://wedeepen.com).
 
-### Core Platform
-- **Database + Auth + Storage** — Supabase (free tier)
-- **Website + Hosting** — GitHub Pages (free)
-- **Login + Admin Dashboard** — Role-based auth, 15+ admin pages
-- **Resident Portal** — Smart home controls, profile, bookkeeping
+---
 
-### Communication
-- **Email** — Resend (free: 3,000/month)
-- **SMS** — Telnyx (~$0.004/message)
-- **WhatsApp** — Meta Business API
+## Sister repo
 
-### Payments & Documents
-- **Payments** — Stripe, Square, or PayPal
-- **E-Signatures** — SignWell (free: 3 docs/month)
-- **PDF Generation** — Lease agreements, contracts, receipts
+This is one of two repos in the Weber ecosystem. Strict separation:
 
-### Smart Home & IoT
-- **Lighting** — Govee, Home Assistant, WiZ
-- **Climate** — Google Nest thermostats
-- **Music** — Sonos multi-room audio
-- **Cameras** — UniFi Protect / RTSP via go2rtc
-- **Laundry** — LG ThinQ washer/dryer monitoring
-- **Vehicles** — Tesla Fleet API
-- **Appliances** — Anova Precision Oven, 3D printers, laser cutters
+| Repo | Site | What lives here |
+|------|------|-----------------|
+| **`WeDeepenTeam/my-app`** (this repo) | **christinalweber.com** | Personal brand site, shared Supabase Edge Functions, schema migrations for non-WeDeepen tables, AlpacApps platform infra |
+| [`WeDeepenTeam/wedeepen-site`](https://github.com/WeDeepenTeam/wedeepen-site) | **wedeepen.com** | All WeDeepen pages (Love Club, Love Immersion, gallery, podcast, retreats), gallery build pipeline, WeDeepen-specific Supabase schema |
 
-### AI & Voice
-- **AI Assistant** — Gemini-powered property assistant
-- **Voice Calling** — Vapi voice agent
-- **Alexa Skill** — Room control via Alexa
+**WeDeepen-specific code, content, and assets do not belong here.** If you're working on WeDeepen, you're in the wrong repo.
 
-### Property Operations
-- **Rental Pipeline** — Inquiry → apply → review → sign → move-in
-- **Event Hosting** — Full event management workflow
-- **Associate Management** — Clock in/out, timesheets, payouts
-- **Airbnb Sync** — iCal calendar integration
-- **Mobile App** — iOS/Android via Capacitor 8
+---
 
-## Prerequisites
+## Quick facts
 
-| Tool | Install |
-|------|---------|
-| **Git** | [git-scm.com/downloads](https://git-scm.com/downloads) |
-| **Claude Code** | [docs.anthropic.com/claude-code](https://docs.anthropic.com/en/docs/claude-code/overview) |
-| **GitHub account** | [github.com/signup](https://github.com/signup) |
+- **Live URL:** [christinalweber.com](https://christinalweber.com)
+- **Tech:** Vanilla HTML/JS + Tailwind CSS v4
+- **Hosting:** GitHub Pages, deploys automatically on push to `main`
+- **DNS / CDN:** Cloudflare
+- **Backend:** Supabase (database, auth, edge functions)
+- **Repo origin:** Forked from the [AlpacApps Infra](https://github.com/rsonnad/alpacapps-infra) template
 
-## Quick start
+---
+
+## Getting started
 
 ```bash
-# 1. Clone this repo
-git clone https://github.com/rsonnad/alpacapps-infra.git my-project
-cd my-project
+git clone https://github.com/WeDeepenTeam/my-app.git
+cd my-app
 
-# 2. Open Claude Code
-claude
-
-# 3. Run the setup wizard
-/setup-alpacapps-infra
+# Preview locally
+python3 -m http.server 8000
+# → open http://localhost:8000
 ```
 
-The wizard will:
-1. Ask what you're building (7 persona templates available)
-2. Create a new GitHub repo under your account
-3. Set up Supabase (database, auth, storage, edge functions)
-4. Customize branding, domain, and credentials
-5. Deploy your site live on GitHub Pages
+For development workflow, branch naming, commit style, and PR conventions, see **[CLAUDE.md](./CLAUDE.md)** (it doubles as the developer guide).
 
-## Architecture
+For full infrastructure documentation (auth, payments, smart home, etc. from the AlpacApps template), see **[docs/](./docs/)** and **[CUSTOMIZATION.md](./CUSTOMIZATION.md)**.
 
-```
-Browser → GitHub Pages (static HTML/JS/CSS)
-                ↓
-         Supabase (PostgreSQL + Edge Functions + Auth + Storage)
-```
+---
 
-- **Frontend:** Vanilla HTML/JS + Tailwind CSS v4
-- **Backend:** Supabase (75+ edge functions, RLS, JWT auth)
-- **Hosting:** GitHub Pages (no build step, push to deploy)
-- **Mobile:** Capacitor 8 (iOS + Android wrapper)
+## Shared Supabase Edge Functions
 
-## Project structure
+This repo hosts edge functions called by both christinalweber.com and wedeepen.com:
 
-```
-shared/           — 47 JS modules (auth, services, shells, widgets)
-styles/           — Tailwind v4 design tokens + CSS
-login/            — Authentication pages
-spaces/           — Rental listing + admin dashboard (65+ pages)
-residents/        — Resident portal (device control, profile)
-associates/       — Staff hours tracking + work photos
-events/           — Event hosting pipeline
-pay/              — Self-service payment page
-supabase/
-  functions/      — 63 edge functions
-  migrations/     — 33 database migrations
-mobile/           — Capacitor iOS/Android app
+| Function | Purpose | Used by |
+|----------|---------|---------|
+| `circle-events` | Pulls live events from Circle Admin API | wedeepen.com /events/ |
+| `drop-a-line` | Homepage contact form → creates Circle member | wedeepen.com / |
+| (others) | See `supabase/functions/` | varies |
+
+Functions are deployed with `supabase functions deploy <name>`. Secrets are set via `supabase secrets set` (never committed).
+
+---
+
+## Deployment
+
+Push to `main` → GitHub Pages auto-deploys in ~30 seconds. Check status:
+
+```bash
+gh run list --limit 5
 ```
 
-## Persona templates
+---
 
-| Template | Best for |
-|----------|----------|
-| Vacation Rental | Short-term rentals with Airbnb sync + smart home |
-| Long-term Landlord | Lease management + rent collection |
-| Event Venue | Event pipeline with contracts + payments |
-| Hostel / Co-living | Mixed rooms + work-trade + shared amenities |
-| Personal AI Hub | Smart home + AI assistant (no property mgmt) |
-| Small Business | CRM + invoicing + communication |
-| Developer Portfolio | Auth + payments starter kit |
+## Platform infrastructure (AlpacApps template)
 
-## Customization
+This repo was bootstrapped from the [AlpacApps Infra template](https://github.com/rsonnad/alpacapps-infra), which provides:
 
-See [CUSTOMIZATION.md](CUSTOMIZATION.md) for details on branding, features, and configuration.
+- Supabase database, auth, storage
+- GitHub Pages hosting
+- Role-based admin dashboard
+- Communication (email/SMS/WhatsApp), payments (Stripe/Square/PayPal), e-signatures
+- Smart home integrations (lighting, climate, cameras, locks, audio, vehicles)
+- AI/voice (Claude API, ElevenLabs, AssemblyAI)
+
+The full set of features Christina uses is documented in **[CUSTOMIZATION.md](./CUSTOMIZATION.md)** and the per-domain runbooks under **[docs/](./docs/)**.
+
+For template upgrades from upstream, see **[infra/infra-upgrade-guide.md](./infra/infra-upgrade-guide.md)**.
+
+---
 
 ## License
 
 AGPL-3.0 — see [LICENSE](LICENSE).
-

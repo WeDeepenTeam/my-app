@@ -1,8 +1,8 @@
 {
-  "name": "your-app-infra",
+  "name": "christinalweber-site",
   "version": "1.0.0",
-  "description": "Property management platform template. Clone and customize for your organization.",
-  "main": "app.js",
+  "private": true,
+  "description": "christinalweber.com — Christina Weber's personal brand site, plus shared Supabase Edge Functions used by wedeepen.com. Bootstrapped from AlpacApps Infra template.",
   "directories": {
     "doc": "docs"
   },
@@ -10,9 +10,14 @@
     "css:build": "tailwindcss -i styles/tailwind.css -o styles/tailwind.out.css --minify",
     "css:watch": "tailwindcss -i styles/tailwind.css -o styles/tailwind.out.css --watch"
   },
-  "keywords": ["property-management", "supabase", "tailwind", "github-pages"],
-  "author": "",
-  "license": "MIT",
+  "keywords": ["christinalweber", "personal-brand", "supabase", "tailwind", "github-pages"],
+  "author": "Christina Weber",
+  "license": "AGPL-3.0",
+  "homepage": "https://christinalweber.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WeDeepenTeam/my-app.git"
+  },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",
     "tailwindcss": "^4.1.18"
