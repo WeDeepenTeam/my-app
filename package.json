@@ -8,7 +8,13 @@
   },
   "scripts": {
     "css:build": "tailwindcss -i styles/tailwind.css -o styles/tailwind.out.css --minify",
-    "css:watch": "tailwindcss -i styles/tailwind.css -o styles/tailwind.out.css --watch"
+    "css:watch": "tailwindcss -i styles/tailwind.css -o styles/tailwind.out.css --watch",
+    "gallery:install": "cd scripts/gallery && npm install",
+    "gallery:download": "python3 scripts/gallery/download-drive.py",
+    "gallery:process": "cd scripts/gallery && node process-and-upload.js",
+    "gallery:build": "cd scripts/gallery && node build-static-pages.js",
+    "gallery:smoke": "cd scripts/gallery && node smoke-test.js",
+    "gallery:test": "cd scripts/gallery && node --test lib/escape-html.test.js"
   },
   "keywords": ["property-management", "supabase", "tailwind", "github-pages"],
   "author": "",
