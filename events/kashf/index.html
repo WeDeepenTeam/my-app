@@ -1309,6 +1309,9 @@
     /* Shift the Kashf landing-page nav below the WeDeepen masthead so they stack cleanly */
     .nav { top: 56px !important; }
     @media (max-width: 640px) { .nav { top: 54px !important; } }
+    /* Mobile drawer panel also needs to clear BOTH navs (was top: 56px for kashf nav only) */
+    .drawer__panel { top: 112px !important; }
+    @media (max-width: 640px) { .drawer__panel { top: 108px !important; } }
   </style>
 
   <header class="wd-header">
